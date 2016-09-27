@@ -1,0 +1,227 @@
+
+
+}.navbar-index{
+	background-color: #F5F5F5;
+}
+.login{
+	max-width: 300px;
+	margin: 0 auto;
+	padding-top:50px;
+}
+
+.login h2{
+	text-align: center;
+}
+.featurette-heading {
+	margin-top: 05px;
+}
+h2, p{
+ color: black;
+}
+.navbar-collapse{
+	margin-right: 90px !important;
+}
+.cor {
+background-color: white;
+}
+.cor1{
+	background-color: #8B1A1A !important;
+}
+.navi i{
+	color: black !important;
+}
+.navi a{
+	border-color: white !important;
+}
+
+.navi a:hover{
+	background-color: #f5f5f5 !important;
+	color: #8B0000 !important;
+border-left:#8B0000 !important;
+	box-shadow:  #ccc inset !important;
+}
+.meio, .centro{
+	text-align: center;
+}
+h4{
+	font-size: 20px;
+	color: #000000;
+
+
+}
+.duvidas , li{
+	font-size: 15px;
+}
+
+.pequeno{
+	width: 230px;
+
+}
+.esconde{
+	display: none;
+}
+
+.fonte{
+	color:#191970;
+}
+.fonte1{
+
+	font-size: 20px;
+}
+.t{
+	font-size: 20px;
+}
+
+.depoimentos{
+	font-size: 20px;
+
+}
+.nome{
+	font-size: 15px;
+	text-align: right;
+color: black;
+}
+.empresa{
+	font-size: 25px;
+	text-align: center;
+
+}
+.home{
+	margin-top: 80px;
+
+}
+.diferente{
+	margin-left: auto;
+color: white;
+font-size: 25px;
+text-align: center;
+
+
+}
+.diferente1, .diferente5, .diferente3{
+	background-color: #EE3B3B;
+height: 200px;
+color: white;
+}
+.diferente2, .diferente4, .diferente6{
+	background-color: #8B0000;
+height: 200px;
+color: white;
+}
+
+.titulo{
+	text-align: center;
+	font-size: 30px;
+}
+.sobre{
+
+	text-align: center;
+
+}
+.sobre1{
+	color:Firebrick;
+	font-size: 20px;
+}
+.direita1{
+
+}
+.para{text-align: center;
+	font-size: 20px;
+}
+.rodape{
+	font-size: 12px;
+	text-align: center;
+}
+.direita{
+	text-align: right;
+}
+.grande {
+		font-size: 60px;
+		margin-left: 05px;
+		color: #333333;
+	}
+	.tabela {
+			border: 0;
+			width: 1px;
+			height: 100px;
+		}
+		.cor {
+		background-color: #C0C0C0;
+	}
+	.conheca{
+		font-size: 20px;
+	}
+
+.baixo{
+	margin-top: 50px;
+}
+@media (min-width: 768px) {
+		.baixo{
+			margin-top: 50px;
+			height: 200px;
+		}
+
+		h1{
+			font-size: 40px;
+		}
+
+
+}
+
+	@media (min-width: 992px) {
+		.baixo{
+			margin-top: 50;
+			height: 200px;
+
+		}
+
+.carousel .item{
+	height: 200px
+}
+
+
+		h1{
+			font-size: 50px;
+		}
+		body{
+			background-color: #white;
+		}
+		.esconde{
+			display: inline;
+		}
+
+
+		.titulo{
+			text-align: center;
+			font-size: 40px;
+		}
+		.sobre{
+			font-size:15px;
+		}
+		.para{text-align: center;
+		}
+		.rodape{
+			font-size: 10px;
+			text-align: right;
+		}
+		.direita{
+			text-align: right;;
+		}
+		.grande {
+				font-size: 30px;
+				margin-left: 05px;
+				color: #333333;
+			}
+			.tabela {
+					border: 0;
+					width: 1px;
+					height: 100px;
+				}
+				.cor {
+				background-color: #C0C0C0;
+			}
+			.conheca{
+				font-size: 20px;
+			}
+
+	}
