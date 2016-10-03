@@ -31,19 +31,19 @@
               <!-- Entrada nome doador-->
 				      <div class="form-group col-lg-12">
                     <label for="nomeDoador">Nome completo*:</label>
-                    <input type="text" id="nomeDoador" name="doador_nome"
+                    <input type="text" id="nomeDoador" name="doador_nome" placeholder="Ex.: João da Silva"
                     value="" class="form-control" required  />
 				      </div>
               <!-- Entrada data de nascimento do doador-->
 				      <div class="form-group col-lg-6">
                    <label for="datanascimentoDoador">Data de Nascimento*:</label>
-                   <input type="date" id="datanascimentoDoador" name="doador_data_nascimento"
+                   <input type="date" id="datanascimentoDoador" name="doador_data_nascimento" placeholder="Ex.: 01/02/1992"
                    value="" class="form-control" required  />
               </div>
               <!-- Entrada telefone do doador-->
 				      <div class="form-group col-lg-6">
 					         <label for="telefoneDoador">Telefone*:</label>
-					         <input type="tel" id="telefoneDoador" name="doador_telefone"
+					         <input type="tel" id="telefoneDoador" name="doador_telefone" placeholder="Ex.: (99) 9999-9999"
 					         value="" class="form-control" required  />
 				      </div>
               <!-- Seleção do tipo sanguineo do doador-->
@@ -77,58 +77,71 @@
             <!-- Entrada email do doador-->
 						<div class="form-group col-lg-12">
                   <label for="emailDoador">Email*:</label>
-                  <input type="email" id="emailDoador" name="doador_email"
+                  <input type="email" id="emailDoador" name="doador_email" placeholder="joao@email.com"
                   value="" class="form-control" required   />
 						</div>
             <!-- Entrada senha do doador-->
 				    <div class="form-group col-lg-6">
 					         <label for="senhaDoador">Senha*:</label>
-					         <input type="password"	id="senhaDoador" name="doador_senha"
+					         <input type="password"	id="senhaDoador" name="doador_senha" placeholder="Digite sua senha"
 					         value="" class="form-control" required  />
 					 </div>
            <!-- Repetindo a senha para ver se confere-->
 				   <div class="form-group col-lg-6">
 					        <label for="senhaDoador">Repita a senha*:</label>
-					        <input type="password" id="senhaDoador" name="doador_senha"
+					        <input type="password" id="senhaDoador" name="doador_senha" placeholder="Repita sua senha"
 					        value="" class="form-control" required  />
 			   	</div>
-          <!-- Entrada endereço do doador -->
+
 
           <!-- Entrada estado do doador-->
-				  <div class="form-group col-lg-6">
-					       <label for="estadoDoador">Estado*:</label>
-				         <input type="text" id="estadoDoador" name="doador_estado"
-				         value="" class="form-control" required  />
-				  </div>
+
+          <div class="form-group col-lg-6">
+              <label for="estadoDoador">Estado*:</label>
+                   <select class="form-control" name="doador_estado" id="estadoDoador">
+                     <option value="AC">Acre</option>
+                     <option value="AL">Alagoas</option>
+                     <option value="AM">Amazonas</option>
+                     <option value="AP">Amapá</option>
+                     <option value="BA">Bahia</option>
+                     <option value="CE">Ceará</option>
+                     <option value="DF">Distrito Federal</option>
+                     <option value="ES">Espírito Santo</option>
+                     <option value="GO">Goiás</option>
+                     <option value="MA">Maranhão</option>
+                     <option value="MT">Mato Grosso</option>
+                     <option value="MS">Mato Grosso do Sul</option>
+                     <option value="MG">Minas Gerais</option>
+                     <option value="PA">Pará</option>
+                     <option value="PB">Paraíba</option>
+                     <option value="PR">Paraná</option>
+                     <option value="PE">Pernambuco</option>
+                     <option value="PI">Piauí</option>
+                     <option value="RJ">Rio de Janeiro</option>
+                     <option value="RN">Rio Grande do Norte</option>
+                     <option value="RO">Rondônia</option>
+                     <option value="RS">Rio Grande do Sul</option>
+                     <option value="RR">Roraima</option>
+                     <option value="SC">Santa Catarina</option>
+                     <option value="SE">Sergipe</option>
+                     <option value="SP">São Paulo</option>
+                     <option value="TO">Tocantins</option>
+                  </select>
+         </div>
+
           <!-- Entrada cidade do doador-->
 				  <div class="form-group col-lg-6">
 					       <label for="cidadeDoador">Cidade*:</label>
-					       <input type="text" id="cidadeDoador" name="doador_cidade"
+					       <input type="text" id="cidadeDoador" name="doador_cidade" placeholder="Ex.: São Paulo"
 					       value="" class="form-control" required  />
 				  </div>
-          <!-- Entrada rua do doador-->
+        <!-- Entrada endereço do doador -->
 				  <div class="form-group col-lg-12">
 					       <label for="enderecoHemocentro">Endereco*:</label>
-					       <input type="text" id="enderecoHemocentro" name="doador_endereco"
+					       <input type="text" id="enderecoHemocentro" name="doador_endereco" placeholder="Ex.: Rua, numero 999, Bairro"
 					       value="" class="form-control" required  />
 				  </div>
-          <!-- Entrada bairro do doador-->
-				  <div class="form-group col-lg-6">
-					       <label for="bairroDoador">Bairro*:</label>
-					       <input type="text" id="bairroDoador" name="doador_bairro"
-					       value="" class="form-control" required  />
-				  </div>
-          <!-- Entrada numero do doador
-	        <div class="form-group col-lg-6">
-		            <label for="numeroHemocentro">Número*:</label>
-		            <input type="text" id="numeroHemocentro" name="Hemocentro_numero"
-		            value="" class="form-control" required  />
-	        </div> -->
-          <!-- Entrada cep do doador-->
-	        <div class="form-group col-lg-6"><label for="cepDoador">CEP*:</label>
-	             <input type="text" id="cepDoador" name="doador_cep"
-	             value="" class="form-control" required  />
-	        </div>
+
 
           <h5>*Campos obrigatórios</h5>
           <!-- Botão para cadastrar-->
@@ -136,7 +149,7 @@
 				        <button type="submit" class="btn btn-danger">
 					             CADASTRAR
 				        </button>
-              
+
 			    </div>
           <div class="col-lg-3">
 
@@ -144,6 +157,9 @@
                         VOLTAR
                 </button>
 			    </div>
+          <?php $nivel = "DOADOR"; ?>
+          <input type="hidden" name="doador_data_nascimento" value="<?php echo date('Y/m/d'); ?>"/>
+          <input type="hidden" name="nivel" value="<?php echo $nivel; ?>"/>
 				  <br>
 				  <br>
         </form><!-- Fecha formulário-->

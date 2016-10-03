@@ -27,7 +27,7 @@
                         </li>
                     </ul>
                 </li>
-            <li class="dropdown">
+        <!--    <li class="dropdown">
 
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Entrar <span class="caret"></span></a>
                 <ul id="login-dp" class="dropdown-menu ">
@@ -64,7 +64,7 @@
 							<li class="active">
 								<a data-toggle="tab" href="#hemocentro">hemocentro</a>
 							</li>
-						</ul>-->
+						</ul>
 
 						<div class="tab-content">
 
@@ -111,10 +111,10 @@
                       </div>
                     </div>
                    </div>
-                </li>
+                </li>-->
                 </ul>
           </ul>
-        </li>
+        </li> 
         </div><!--/.nav-collapse -->
       </div>
     </nav>

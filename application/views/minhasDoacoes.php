@@ -25,10 +25,10 @@
 
                 <div class="navi">
                     <ul>
-                        <li class="ativo"><a href="<?=site_url('painel_doador/index')?>"><i class="fa fa-home " aria-hidden="true"></i>Home</a></li>
+                        <li><a href="<?=site_url('painel_doador/index')?>"><i class="fa fa-home " aria-hidden="true"></i>Home</a></li>
                         <li><a href="<?=site_url('painel_doador/carregaPerfilDoador')?>"><i class="fa fa-user" aria-hidden="true"></i>Perfil</a></li>
-                        <li ><a href="<?=site_url('doacoes/index')?>"><i class="fa fa-plus " aria-hidden="true"></i>Add Doação</a></li>
-                      <li><a href="<?=site_url('painel_doador/carregaMinhasDoacoes')?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Minhas Doações</a></li>
+                        <li><a href="<?=site_url('doacoes/index')?>"><i class="fa fa-plus " aria-hidden="true"></i>Add Doação</a></li>
+                        <li class="ativo"><a class"ativo" href="<?=site_url('painel_doador/carregaMinhasDoacoes')?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Minhas Doações</a></li>
                         <li><a href="<?=site_url('painel_doador/editaPerfilDoador')?>"><i class="fa fa-cog" aria-hidden="true"></i>Configurações</a></li>
                     </ul>
                 </div>
@@ -49,7 +49,7 @@
                                 </div>
                             </nav>
                             <div class="search hidden-xs hidden-sm">
-                                <h2>Faltas 5 dias para uma nova doação
+                                <h2>Minhas Doações </h2>
 
                             </div>
                         </div>
@@ -66,6 +66,12 @@
                     </header>
 
 
+                    <div class="col-lg-12">
+                      <div class="col-lg-7">
+
+                      </div>
+
+                    </div>
 
                 </div>
 

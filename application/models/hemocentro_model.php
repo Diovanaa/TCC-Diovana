@@ -2,18 +2,17 @@
 
 class Hemocentro_model extends CI_Model {
 
-	//public $id_hemocentro;
+	public $id_hemocentro;
 	public $nome;
 	public $telefone;
 	public $email;
 	public $senha;
-	public $estoque;
 	public $endereco;
 	public $estado;
 	public $cidade;
 	public $bairro;
 	public $cep;
-	//public $endereco;
+
 
 	function __construct() {
 		parent::__construct();

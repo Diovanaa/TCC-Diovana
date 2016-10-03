@@ -2,7 +2,7 @@
 
 class Doador_model extends CI_Model {
 
-	//public $id_doador = 3;
+	public $id_doador ;
 	public $nome;
 	public $email;
 	public $telefone;
@@ -13,9 +13,7 @@ class Doador_model extends CI_Model {
 	public $endereco;
 	public $estado;
 	public $cidade;
-	public $bairro;
-	public $cep;
-	//public $id_endereco = 4;
+
 
 	function __construct() {
 		parent::__construct();

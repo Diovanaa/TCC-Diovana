@@ -27,10 +27,10 @@
                 <div class="navi">
                     <ul>
                         <li><a href="<?=site_url('painel_doador/Index')?>"><i class="fa fa-home " aria-hidden="true"></i>Home</a></li>
-                        <li class="ativo"><a class"ativo" href="<?=site_url('painel_doador/carregaPerfilDoador')?>"><i class="fa fa-user" aria-hidden="true"></i>Perfil</a></li>
+                        <li><a href="<?=site_url('painel_doador/carregaPerfilDoador')?>"><i class="fa fa-user" aria-hidden="true"></i>Perfil</a></li>
                         <li><a href="<?=site_url('doacoes/index')?>"><i class="fa fa-plus " aria-hidden="true"></i>Add Doação</a></li>
                         <li><a href="<?=site_url('painel_doador/carregaMinhasDoacoes')?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Minhas Doações</a></li>
-                        <li><a href="<?=site_url('painel_doador/editaPerfilDoador')?>"><i class="fa fa-cog" aria-hidden="true"></i>Configurações</a></li>
+                        <li class="ativo"><a class"ativo" href="<?=site_url('painel_doador/editaPerfilDoador')?>"><i class="fa fa-cog" aria-hidden="true"></i>Configurações</a></li>
                     </ul>
                 </div>
             </div>
@@ -65,11 +65,71 @@
                             </div>
                         </div>
                     </header>
+                    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <h1 class="page-header">Meu Perfil</h1>
+        <div class="row">
+          <div class="col-sm-12  col-xs-12 ">
+
+            <div class="sales">
+              <!-- -->
+
+              <form action="<?=site_url('Painel_doador/Editar')?>" method="post">
+                <div class="row">
+
+                  <div class="col-sm-12">
+                    <div class="form-group col-sm-6">
+                      <label for="exampleInputEmail1">Nome</label>
+                      <input
+                      type="text" class="form-control" name="nome"
+                      placeholder="Nome" value="<?php echo $dadosVoluntario->nome ?>"  />
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>Telefone</label>
+                        <input type="tel" class="form-control"
+                        name="telefone" placeholder="telefone"
+                        value="<?php echo $dadosVoluntario->telefone ?>" required/>
+                      </div>
+                    </div>
+                    <input type="hidden" name="email" value="<?php echo $dadosVoluntario->email ?>">
+                  </div>
+
+                  <div class="col-sm-12">
+                    <div class="form-group col-sm-6">
+                      <label for="exampleInputEmail1">Email</label>
+                      <input
+                      type="email" class="form-control" name=""
+                      placeholder="Email" value="<?php echo $dadosVoluntario->email ?>" disabled  />
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label>Senha</label>
+                        <input type="password" class="form-control"
+                        name="senha_voluntario" placeholder="senha"
+                        value="" />
+                      </div>
+                    </div>
+
+                  </div>
 
                 </div>
-                <h2>seu perfil</h2>
+
+                <button type="submit" class="btn btn-primary pull-right">
+                  SALVAR
+                  ALTERAÇÕES
+                </button>
+
+              </form>
             </div>
+
+          </div>
+
         </div>
 
+      </div>
+    </div>
+                </div>
+            </div>
+        </div>
 
 </div>

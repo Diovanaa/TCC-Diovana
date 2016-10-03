@@ -32,14 +32,13 @@ class Doador extends CI_Controller {
 			$this->form_validation->set_rules('doador_telefone', 'Telefone', 'required|max_length[12]');
 			$this->form_validation->set_rules('doador_email', 'E-mail', 'required|max_length[60]|valid_email');
 			$this->form_validation->set_rules('doador_senha', 'Senha', 'required|max_length[30]|min_length[8]');
-      $this->form_validation->set_rules('doador_data_nascimento', 'Data de Nascimento', 'required|max_length[8]');
+      $this->form_validation->set_rules('doador_data_nascimento', 'Data de Nascimento', 'required|max_length[12]');
       $this->form_validation->set_rules('doador_tipo_sanguineo', 'Tipo Sanguíneo', 'required|max_length[3]');
       $this->form_validation->set_rules('doador_sexo', 'Sexo', 'required|max_length[20]');
 			$this->form_validation->set_rules('doador_endereco', 'Endereco', 'required|max_length[60]');
 			$this->form_validation->set_rules('doador_estado', 'Estado', 'required|max_length[60]');
 			$this->form_validation->set_rules('doador_cidade', 'Cidade', 'required|max_length[60]');
-			$this->form_validation->set_rules('doador_bairro', 'Bairro', 'required|max_length[60]');
-			$this->form_validation->set_rules('doador_cep', 'CEP', 'required|max_length[60]');
+
 
 			if ($this->form_validation->run() == FALSE) {
 				$this->index();
@@ -55,8 +54,6 @@ class Doador extends CI_Controller {
 				$this->Doador_model->endereco = $this->input->post('doador_endereco');
 				$this->Doador_model->estado = $this->input->post('doador_estado');
 				$this->Doador_model->cidade = $this->input->post('doador_cidade');
-			$this->Doador_model->bairro = $this->input->post('doador_bairro');
-			$this->Doador_model->cep = $this->input->post('doador_cep');
 
 				$this->Doador_model->Salvar();
 
@@ -96,10 +93,7 @@ class Doador extends CI_Controller {
 
 			$this->session->set_userdata('doadorLogado', TRUE);
 			$this->session->set_userdata('id_doador', $doador->id_doador);
-	//		$this->session->set_userdata('nivel',$admin->nivel);
-			//$nivel = $this->session->userdata('nivel');
-		//	if ($nivel == "doador"):redirect('/painel_doador');
-		//else: redirect('/painel_hemocentro');
+
        // direciona para o modulo doador
 			redirect('login/doadorEntrar');
 
@@ -108,6 +102,7 @@ class Doador extends CI_Controller {
 			redirect('/Login/loginDoador/?alerta=1');
 
 		}
+		
 
 	}
 

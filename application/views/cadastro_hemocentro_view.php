@@ -34,18 +34,24 @@
         						</div>
         						<?php } ?>
         <form action="<?=site_url('hemocentro/salvar_hemocentro')?>" method="post">
-				<div class="form-group col-lg-12">
+				<div class="form-group col-lg-6">
           <label for="nomeHemocentro">Nome Hemocentro*:</label>
           <input type="text"
-          id="nomeHemocentro" name="hemocentro_nome"
+          id="nomeHemocentro" name="hemocentro_nome" placeholder="Ex.: HemoUnião"
           value="" class="form-control" required />
 				</div>
 
+        <div class="form-group col-lg-6">
+            <label for="telefoneHemocentro">Telefone*:</label>
+            <input type="tel"
+            id="telefoneHemocentro" name="hemocentro_telefone" placeholder="Ex.: (99) 9999-9999"
+            value="" class="form-control" required  />
 
+        </div>
         <div class="form-group col-lg-12">
           <label for="emailHemocentro">E-mail*:</label>
           <input type="email"
-          name="hemocentro_email" id="emailHemocentro"
+          name="hemocentro_email" id="emailHemocentro" placeholder="Ex.: hemouniao@email.com"
           value="" class="form-control" required  />
 
         </div>
@@ -53,55 +59,69 @@
 				<div class="form-group col-lg-6">
           <label for="senhaHemocentro">Senha*:</label>
           <input type="password"
-          id="senhaHemocentro" name="hemocentro_senha"
+          id="senhaHemocentro" name="hemocentro_senha" placeholder="Digite uma senha"
           value="" class="form-control" required  />
 				</div>
 
         <div class="form-group col-lg-6">
           <label for="senhaHemocentro">Confirmar Senha*:</label>
           <input type="password"
-          id="senhaHemocentro" name="hemocentro_senha"
+          id="senhaHemocentro" name="hemocentro_senha" placeholder="Repita a senha "
           value="" class="form-control" required  />
 				</div>
-        <div class="form-group col-lg-6">
-            <label for="telefoneHemocentro">Telefone*:</label>
-            <input type="tel"
-            id="telefoneHemocentro" name="hemocentro_telefone"
-            value="" class="form-control" required  />
 
-        </div>
-        <div class="form-group col-lg-6">
-            <label for="estoqueHemocentro">Quantide de sangue em estoque*:</label>
-            <input type="tel"
-            id="estoqueHemocentro" name="hemocentro_estoque"
-            value="" class="form-control" required  />
 
-        </div>
-				<div class="form-group col-lg-6">
-					<label for="estadoHemocentro">Estado*:</label>
-				<input type="text"
-				id="estadoHemocentro" name="hemocentro_estado"
-				value="" class="form-control" required  />
-				</div>
+        <div class="form-group col-lg-6">
+            <label for="estadoHemocentro">Estado*:</label>
+                 <select class="form-control" name="hemocentro_estado" id="estadoHemocentro">
+                   <option value="AC">Acre</option>
+                   <option value="AL">Alagoas</option>
+                   <option value="AM">Amazonas</option>
+                   <option value="AP">Amapá</option>
+                   <option value="BA">Bahia</option>
+                   <option value="CE">Ceará</option>
+                   <option value="DF">Distrito Federal</option>
+                   <option value="ES">Espírito Santo</option>
+                   <option value="GO">Goiás</option>
+                   <option value="MA">Maranhão</option>
+                   <option value="MT">Mato Grosso</option>
+                   <option value="MS">Mato Grosso do Sul</option>
+                   <option value="MG">Minas Gerais</option>
+                   <option value="PA">Pará</option>
+                   <option value="PB">Paraíba</option>
+                   <option value="PR">Paraná</option>
+                   <option value="PE">Pernambuco</option>
+                   <option value="PI">Piauí</option>
+                   <option value="RJ">Rio de Janeiro</option>
+                   <option value="RN">Rio Grande do Norte</option>
+                   <option value="RO">Rondônia</option>
+                   <option value="RS">Rio Grande do Sul</option>
+                   <option value="RR">Roraima</option>
+                   <option value="SC">Santa Catarina</option>
+                   <option value="SE">Sergipe</option>
+                   <option value="SP">São Paulo</option>
+                   <option value="TO">Tocantins</option>
+                </select>
+       </div>
 
 				<div class="form-group col-lg-6">
 					<label for="cidadeHemocentro">Cidade*:</label>
 					<input type="text"
-					id="cidadeHemocentro" name="hemocentro_cidade"
+					id="cidadeHemocentro" name="hemocentro_cidade" placeholder="Ex.: São Paulo"
 					value="" class="form-control" required  />
 				</div>
 
 				<div class="form-group col-lg-12">
 					<label for="enderecoHemocentro">Endereço*:</label>
 					<input type="text"
-						id="enderecoHemocentro" name="hemocentro_endereco"
+						id="enderecoHemocentro" name="hemocentro_endereco" placeholder="Ex.: Rua, Numero"
 					value="" class="form-control" required  />
 				</div>
 
 				<div class="form-group col-lg-6">
 					<label for="bairroHemocentro">Bairro*:</label>
 					<input type="text"
-					id="bairroHecmocentro" name="hemocentro_bairro"
+					id="bairroHecmocentro" name="hemocentro_bairro" placeholder="Ex.: Centro"
 					value="" class="form-control" required  />
 				</div>
 
@@ -115,7 +135,7 @@
 
 	<div class="form-group col-lg-6"><label for="cepHemocentro">CEP*:</label>
 	<input type="text"
-	id="cepHemocentro" name="hemocentro_cep"
+	id="cepHemocentro" name="hemocentro_cep" placeholder="Ex.: 00000-000"
 	value="" class="form-control" required  />
 	</div>
   <div class="col-lg-12">
@@ -128,7 +148,7 @@
 				</button>
 
 			</div>
-    
+
       <button type="button" class="btn btn-primary" onclick="history.go(-1)">
               VOLTAR
       </button>
