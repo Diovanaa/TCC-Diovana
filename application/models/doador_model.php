@@ -29,7 +29,7 @@ class Doador_model extends CI_Model {
 		->select("*")
 		->from("doacao")
 		->join('doador', 'doacao.id_doador = doador.id_doador')
-		->where('id_doador', $id_doador);
+		->where('doador.id_doador', $id_doador);
 		return $this->db->get()->result();
 	}
 	//excluir doador e suas doações

@@ -23,13 +23,8 @@ class Painel_Doador2 extends MY_ControllerLogado {
 		$id_doador = $this->session->userdata('id_doador');
 		$data = array("dadosDoacao" => $this->Doador_model->minhasDoacoes());
 
-		$dadosDoacao = $this->Doador_model->minhasDoacoes();
-
-		foreach ($dadosDoacao as  $row) {
-			echo $row->id_doador;
-		}
-		//$this->load->view('cabecalho_view');
-		//$this->load->view('minhasDoacoes');
+		$this->load->view('cabecalho_view');
+		$this->load->view('minhasDoacoes', $data);
 	}
 	public function editaPerfilDoador() {
 		$id_doador = $this->session->userdata('id_doador');

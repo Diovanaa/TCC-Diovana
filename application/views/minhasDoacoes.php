@@ -97,6 +97,7 @@
                                 </div>
                               </div>
                               <div class="panel-body">
+                                <?php foreach ($dadosDoacao as $key): ?>
                                 <table class="table table-striped table-bordered table-list">
                                   <thead>
                                     <tr>
@@ -110,37 +111,26 @@
                                         <th><em class="fa fa-cog"></em></th>
                                     </tr>
                                   </thead>
+
+
+
                                   <tbody>
                                           <tr>
 
                                             <td class="hidden-xs">1</td>
-                                            <td><<?php echo $dados_doacao ?></td>
+                                            <td><?php echo $key->tipo_doacao; ?></td>
                                             <td>
-                                              Hemo leste
+                                              <?php echo $key->hemocentro_nome; ?>
                                             </td>
-                                            <td>20/05/2016</td>
+                                            <td><?php echo $key->data_doacao; ?></td>
                                             <td align="center">
                                               <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
                                               <a class="btn btn-default"><em class="fa fa-trash"></em></a>
                                             </td>
                                           </tr>
                                         </tbody>
-                                        <tbody>
-                                                <tr>
-
-                                                  <td class="hidden-xs">2</td>
-                                                  <td>Doação por aferise</td>
-                                                  <td>
-                                                    Hemo leste
-                                                  </td>
-                                                  <td>20/04/2015</td>
-                                                  <td align="center">
-                                                    <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                                                    <a class="btn btn-default"><em class="fa fa-trash"></em></a>
-                                                  </td>
-                                                </tr>
-                                              </tbody>
                                 </table>
+                                <?php endforeach; ?>
 
                               </div>
                               <div class="panel-footer ">
