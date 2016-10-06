@@ -1,7 +1,9 @@
 <link href="<?=base_url('assets/css/style.css')?>" rel="stylesheet">
+<link href="<?=base_url('assets/css/style1.css')?>" rel="stylesheet">
 <link href="<?=base_url('assets/css/signin.css')?>" rel="stylesheet">
 <link href="<?=base_url('assets/css/cadastro.css')?>" rel="stylesheet">
 <link href="<?=base_url('assets/css/login.css')?>" rel="stylesheet">
+
 <link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/main.css')?>">
 
 <title> HemoUnião</title>
@@ -30,6 +32,7 @@
 	<script src="<?=base_url('assets/js/ie-emulation-modes-warning.js')?>"></script>
 	<script src="<?=base_url('jquery/jquery-1.10.2.js')?>" type="text/javascript"></script>
 	<script src="<?=base_url('assets/js/bootstrap.js')?>" type="text/javascript"></script>
+
 	<script src="<?=base_url('assets/js/login-register.js')?>" type="text/javascript"></script>
 <!--	<script src="<?=base_url('assets/js/jquery.min.js')?>" ></script>
   <script src="<?=base_url('assets/js/jquery.knob.js')?>"></script>

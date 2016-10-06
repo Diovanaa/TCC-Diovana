@@ -93,7 +93,7 @@ class Hemocentro extends CI_Controller {
 			//$this->session->set_userdata('logado', TRUE);
 			$this->session->set_userdata('id_hemocentro', $Hemocentro->id_hemocentro);
 
-			redirect('home/index');
+			redirect('login/hemocentroEntrar');
 
 		} else {
 			//se não tiver login e senha certo vai cair aqui

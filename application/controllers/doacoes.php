@@ -8,14 +8,15 @@ class Doacoes extends CI_Controller {
 		$this->load->view('doacoes_view');
 	}
 	public function carregarCadastroDoacao() {
-		$id_hemocentro = $this->session->userdata('id_hemocentro');
+	//	$id_hemocentro = $this->session->userdata('id_hemocentro');
 	$id_doador = $this->session->userdata('id_doador');
-		$data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row());
+		//$data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row());
 		$data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
 		$this->load->view('cabecalho_view');
 		$this->load->view('minhasDoacoes', $data);
 
 	}
+
 
   public function salvar() {
 		$dados_doacoes = array();
@@ -24,7 +25,7 @@ class Doacoes extends CI_Controller {
     $this->Doacao_model->doacao_ultimadoacao = $this->input->post('doacao_ultimadoacao');
     $this->Doacao_model->tipo_doacao = $this->input->post('doacao_tipo');
     $this->Doacao_model->hemocentro_nome = $this->input->post('hemocentro_nome');
-		$this->Doacao_model->id_hemocentro = $session_id = $this->session->userdata('id_hemocentro');
+		//$this->Doacao_model->id_hemocentro = $session_id = $this->session->userdata('id_hemocentro');
 		$this->Doacao_model->id_doador = $session_id = $this->session->userdata('id_doador');
     $this->Doacao_model->data_proximadoacao = $this->input->post('doacao_proximadoacao');
 
@@ -45,5 +46,7 @@ class Doacoes extends CI_Controller {
 		}
 
 	}
+
+
 
 }

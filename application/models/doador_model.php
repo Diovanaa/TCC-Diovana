@@ -28,9 +28,9 @@ class Doador_model extends CI_Model {
 		$this->db
 		->select("*")
 		->from("doacao")
-		->join('doador', 'doacao.id_doacao = doador.id_doador')
+		->join('doador', 'doacao.id_doador = doador.id_doador')
 		->where('id_doador', $id_doador);
-		return $query = $this->db->get()->result();
+		return $this->db->get()->result();
 	}
 	//excluir doador e suas doações
 public function excluirDoador($id_doador)
@@ -42,19 +42,25 @@ public function excluirDoador($id_doador)
 	}
   //mostrando tudo do doador
 	function getDoador($doador) {
+		$id_doador = $this->session->userdata('id_doador');
 		$this->db
 		->select("*")
 		->from("Doador")
 		->where('id_doador', $id_doador);
-		return $this->db->get('Doador');
+		return $this->db->get();
 	}
-
+	//function getDoador($id_doador) {
+//			$id_doador = (int)$id_doador;
+//			$this->db->where('id_doador', $id_doador);
+//			return $this->db->get('doador');
+//		}
 	function alterarDoador($data) {
 		$id_doador = $this->session->userdata('id_doador');
 		$this->db->where('id_doador', $id_doador);
 		$this->db->set($data);
 		return $this->db->update('Doador');
 	}
+
 	function alterarDoacao($data,$id_doador)
 	{
 		$id_doacao = $this->session->userdata('id_doacao');

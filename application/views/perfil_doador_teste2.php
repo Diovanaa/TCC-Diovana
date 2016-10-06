@@ -26,10 +26,10 @@
                 <div class="navi">
                     <ul>
                         <li ><a href="<?=site_url('painel_doador2/index')?>"><i class="fa fa-home " aria-hidden="true"></i>Home</a></li>
-                        <li><a href="<?=site_url('painel_doador2/carregarPerfil')?>"><i class="fa fa-user" aria-hidden="true"></i>Perfil</a></li>
+                        <li class="ativo"><a href="<?=site_url('painel_doador2/carregarPerfil')?>"><i class="fa fa-user" aria-hidden="true"></i>Perfil</a></li>
                         <li ><a href="<?=site_url('painel_doador2/carregarCadastroDocao')?>"><i class="fa fa-plus " aria-hidden="true"></i>Add Doação</a></li>
                       <li><a href="<?=site_url('painel_doador2/carregaMinhasDoacoes')?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Minhas Doações</a></li>
-                        <li class="ativo"><a href="<?=site_url('painel_doador2/editaPerfilDoador')?>"><i class="fa fa-cog" aria-hidden="true"></i>Configurações</a></li>
+                        <li><a href="<?=site_url('painel_doador2/editaPerfilDoador')?>"><i class="fa fa-cog" aria-hidden="true"></i>Configurações</a></li>
                     </ul>
                 </div>
             </div>

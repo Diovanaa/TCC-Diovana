@@ -18,18 +18,17 @@
 </div><!-- fecha  cabeçalho-->
 </br>
 </br>
-</br>
-<!-- perfil do doador Doador perfil-->
+</br><!-- home doador pagina de home-->
     <div class="container-fluid display-table ">
         <div class="row display-table-row ">
             <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box cor1 " id="navigation">
 
                 <div class="navi">
                     <ul>
-                        <li><a href="<?=site_url('painel_doador/Index')?>"><i class="fa fa-home " aria-hidden="true"></i>Home</a></li>
-                        <li class="ativo"><a class"ativo" href="<?=site_url('painel_doador/carregaPerfilDoador')?>"><i class="fa fa-user" aria-hidden="true"></i>Perfil</a></li>
-                        <li><a href="<?=site_url('doacoes/index')?>"><i class="fa fa-plus " aria-hidden="true"></i>Add Doação</a></li>
-                        <li><a href="<?=site_url('painel_doador/carregaMinhasDoacoes')?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Minhas Doações</a></li>
+                        <li class="ativo"><a href="<?=site_url('painel_doador/index')?>"><i class="fa fa-home " aria-hidden="true"></i>Home</a></li>
+                        <li><a href="<?=site_url('painel_doador/carregaPerfilDoador')?>"><i class="fa fa-user" aria-hidden="true"></i>Perfil</a></li>
+                        <li ><a href="<?=site_url('doacoes/index')?>"><i class="fa fa-plus " aria-hidden="true"></i>Add Doação</a></li>
+                      <li><a href="<?=site_url('painel_doador/carregaMinhasDoacoes')?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Minhas Doações</a></li>
                         <li><a href="<?=site_url('painel_doador/editaPerfilDoador')?>"><i class="fa fa-cog" aria-hidden="true"></i>Configurações</a></li>
                     </ul>
                 </div>
@@ -50,7 +49,7 @@
                                 </div>
                             </nav>
                             <div class="search hidden-xs hidden-sm">
-                                <h2>Olá, Doador </h2>
+                                <h2>Faltas 5 dias para uma nova doação
 
                             </div>
                         </div>
@@ -65,10 +64,11 @@
                             </div>
                         </div>
                     </header>
-<h3>Seja bem vindo: <?php echo $dadosDoador->nome ?>!!!</h3><br>
+
+
+
                 </div>
 
+                </div>
+            </div>
         </div>
-
-
-</div>
