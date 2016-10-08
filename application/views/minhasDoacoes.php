@@ -26,8 +26,8 @@
                 <div class="navi">
                     <ul>
                         <li><a href="<?=site_url('painel_doador2/index')?>"><i class="fa fa-home " aria-hidden="true"></i>Home</a></li>
-                        <li><a href="<?=site_url('painel_doador2/carregaPerfilDoador')?>"><i class="fa fa-user" aria-hidden="true"></i>Perfil</a></li>
-                        <li ><a href="<?=site_url('painel_doador2/carregarCadastroDocao')?>"><i class="fa fa-plus " aria-hidden="true"></i>Add Doação</a></li>
+                        <li><a href="<?=site_url('painel_doador2/carregarPerfil')?>"><i class="fa fa-user" aria-hidden="true"></i>Perfil</a></li>
+                        <li ><a href="<?=site_url('painel_doador2/carregarCadastroDocao')?>"><i class="fa fa-plus " aria-hidden="true"></i>Nova Doação</a></li>
                         <li class="ativo"><a href="<?=site_url('painel_doador2/carregaMinhasDoacoes')?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Minhas Doações</a></li>
                         <li><a href="<?=site_url('painel_doador2/editaPerfilDoador')?>"><i class="fa fa-cog" aria-hidden="true"></i>Configurações</a></li>
                     </ul>
@@ -92,64 +92,65 @@
                                   <div class="col col-xs-6 text-right">
 
 
-                                      <a href="<?=site_url('painel_doador2/carregaMinhasDoacoes')?>">  <button type="button" class="btn btn-sm btn-danger btn-create">Add Doação</button></a>
+                                      <a href="<?=site_url('painel_doador2/carregaMinhasDoacoes')?>">
+                                          </a>
+
+                                            <a href="<?=
+                                            site_url('painel_doador2/carregarCadastroDoacao')?>" class="btn btn-danger">Nova Doação</a>
+
                                   </div>
                                 </div>
                               </div>
                               <div class="panel-body">
-                                <?php foreach ($dadosDoacao as $key): ?>
-                                <table class="table table-striped table-bordered table-list">
-                                  <thead>
-                                    <tr>
-
-                                        <th class="hidden-xs">ID</th>
-                                        <th>Tipo doação</th>
+                                <table class="table">
+                                <thead>
+                                		<tr>
+                                				<th>Nome Hemocentro</th>
                                         <th>
-                                          Nome Hemocentro
+                                          Tipo doação
                                         </th>
-                                        <th>Data Doação</th>
-                                        <th><em class="fa fa-cog"></em></th>
-                                    </tr>
-                                  </thead>
+                                				<th>Data Doação</th>
+                                        <th>Data Ultima Doação</th>
+                                		</tr>
+                                </thead>
+                                <tbody id="myTable">
+                                <?php if (!empty($dadosDoacao)):
+                                	 foreach ($dadosDoacao as $row): ?>
+                                						<td>
+                                							<?php echo $row->hemocentro_nome;?>
+                                						</td>
+                                						<td>
+                                							<?php echo $row->tipo_doacao;?>
+                                						</td>
+                                            <td><?php echo $row->data_doacao; ?></td>
+                                            <td><?php echo $row->data_ultimadoacao; ?></td>
+                                						<td>
+                                              <a class="btn btn-primary"><em class="fa fa-pencil"></em></a>
+                                							<a  href="<?= site_url('painel_doador2/excluir/' . $row->id_doacao . '/' . $row->id_doador ) ?>"
+                                								class="btn btn-danger"
+                                								onclick="return confirm('Têm certeza que deseja excluir esta informação?')">
+                                									<i class="fa fa-trash" aria-hidden="true"></i>
+                                							</a>
+
+                                						</td>
 
 
+                                			</tr>
+                                						<?php endforeach; ?>
+                                					<?php else: {
+                                						echo "<td colspan='5' align = 'center'>
+                                					Você não tem nenhuma Doação
+                                											</td>";
+                                					} ?>
+                                					<?php	endif; ?>
+                                </tbody>
 
-                                  <tbody>
-                                          <tr>
-
-                                            <td class="hidden-xs">1</td>
-                                            <td><?php echo $key->tipo_doacao; ?></td>
-                                            <td>
-                                              <?php echo $key->hemocentro_nome; ?>
-                                            </td>
-                                            <td><?php echo $key->data_doacao; ?></td>
-                                            <td align="center">
-                                              <a class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                                              <a class="btn btn-default"><em class="fa fa-trash"></em></a>
-                                            </td>
-                                          </tr>
-                                        </tbody>
                                 </table>
-                                <?php endforeach; ?>
 
                               </div>
                               <div class="panel-footer ">
                                 <div class="row">
-                                <!--  <div class="col col-xs-4">Page 1 of 5
-                                  </div>
-                                  <div class="col col-xs-8">
-                                    <ul class="pagination hidden-xs pull-right">
-                                      <li><a href="#">1</a></li>
-                                      <li><a href="#">2</a></li>
-                                      <li><a href="#">3</a></li>
-                                      <li><a href="#">4</a></li>
-                                      <li><a href="#">5</a></li>
-                                    </ul>
-                                    <ul class="pagination visible-xs pull-right">
-                                        <li><a href="#">«</a></li>
-                                        <li><a href="#">»</a></li>
-                                    </ul>
-                                  </div>-->
+
                                 </div>
                               </div>
                             </div>

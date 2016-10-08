@@ -28,7 +28,7 @@ class Login extends CI_Controller {
 		$this->load->view('login_hemocentro_view');
 
 	}
-	public function loginDoador2()
+	/*public function loginDoador2()
 	{
 		$this->load->view('cabecalho_view');
 		$this->load->view('login2_doador_view');
@@ -39,7 +39,7 @@ class Login extends CI_Controller {
 		$this->load->view('cabecalho_view');
 		$this->load->view('login2_hemocentro_view');
 
-	}
+	}*/
 	public function doadorEntrar(){
 		$this->load->view('cabecalho_view');
 		$this->load->view('home_doador_view');

@@ -158,7 +158,7 @@
                 </button>
 			    </div>
           <?php $nivel = "DOADOR"; ?>
-          <input type="hidden" name="doador_data_nascimento" value="<?php echo date('Y/m/d'); ?>"/>
+
           <input type="hidden" name="nivel" value="<?php echo $nivel; ?>"/>
 				  <br>
 				  <br>

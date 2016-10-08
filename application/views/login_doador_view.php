@@ -18,9 +18,7 @@
   </div>
 <div class="col-lg-9 ">
 
-  <div class="alert alert-success col-lg-7">
-        <h2>Cadastrado efetuado com sucesso!</h2>
-  </div>
+
 
   <h3 class="col-lg-7"> Doador efetue o login:</h3>
   <?php if ($this->input->get('alerta') == 1) { ?>

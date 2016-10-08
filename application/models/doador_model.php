@@ -40,12 +40,28 @@ public function excluirDoador($id_doador)
 		$this->db->where('id_doacao', $id_doacao);
 		$this->db->delete('doador','doacao');
 	}
+
+	public function excluir($id_doador, $id_doacao){
+	$id_doador = $this->session->userdata('id_doador');
+	$this->db->where('id_doador', $id_doador);
+	$this->db->where('id_doacao', $id_doacao);
+	$this->db->delete('doacao');
+
+}
   //mostrando tudo do doador
 	function getDoador($doador) {
 		$id_doador = $this->session->userdata('id_doador');
 		$this->db
 		->select("*")
 		->from("Doador")
+		->where('id_doador', $id_doador);
+		return $this->db->get();
+	}
+	function getDoacao($doacao) {
+		$id_doador = $this->session->userdata('id_doador');
+		$this->db
+		->select("*")
+		->from("Doacao")
 		->where('id_doador', $id_doador);
 		return $this->db->get();
 	}
@@ -60,15 +76,39 @@ public function excluirDoador($id_doador)
 		$this->db->set($data);
 		return $this->db->update('Doador');
 	}
-
-	function alterarDoacao($data,$id_doador)
-	{
-		$id_doacao = $this->session->userdata('id_doacao');
+	function alterarDoacao($data) {
+		$id_doador = $this->session->userdata('id_doador');
 		$this->db->where('id_doador', $id_doador);
-		$this->db->where('id_doacao',$id_doacao);
 		$this->db->set($data);
 		return $this->db->update('Doacao');
 	}
+	function alterarSenha($data) {
+		$id_doador = $this->session->userdata('id_doador');
+		$this->db->where('id_doador', $id_doador);
+		$this->db->set($data);
+		return $this->db->update('Doador');
+	}
+	function alterarDadosPessoais($data) {
+		$id_doador = $this->session->userdata('id_doador');
+		$this->db->where('id_doador', $id_doador);
+		$this->db->set($data);
+		return $this->db->update('Doador');
+	}
+	function alterarEndereco($data) {
+		$id_doador = $this->session->userdata('id_doador');
+		$this->db->where('id_doador', $id_doador);
+		$this->db->set($data);
+		return $this->db->update('Doador');
+	}
+
+	//function alterarDoacao($data,$id_doador)
+	//{
+		//$id_doacao = $this->session->userdata('id_doacao');
+		//$this->db->where('doador.id_doador', $id_doador);
+		//$this->db->where('id_doacao',$id_doacao);
+		//$this->db->set($data);
+		//return $this->db->update('Doacao');
+	//}
 //	function alterarEndereco($data,$id_doador){
 	//	$id_endereco = $this->session->username('id_endereco');
 		//$this->db->where('id_doador', $id_doador);

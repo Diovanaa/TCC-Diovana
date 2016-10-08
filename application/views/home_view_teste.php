@@ -19,11 +19,11 @@
                     </a>
                     <ul class="dropdown-menu" role="menu">
                         <li>
-                            <a href="<?= site_url('login/loginDoador2') ?>"><i class="fa fa-user"></i> Sou Doador</a>
+                            <a href="<?= site_url('login/loginDoador') ?>"><i class="fa fa-user"></i> Sou Doador</a>
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="<?= site_url('login/loginHemocentro2') ?>"><i class="fa fa-tint"></i> Sou Hemocentro</a>
+                            <a href="<?= site_url('login/loginHemocentro') ?>"><i class="fa fa-tint"></i> Sou Hemocentro</a>
                         </li>
                     </ul>
                 </li>
@@ -114,7 +114,7 @@
                 </li>-->
                 </ul>
           </ul>
-        </li> 
+        </li>
         </div><!--/.nav-collapse -->
       </div>
     </nav>

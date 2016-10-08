@@ -49,7 +49,7 @@
                                 </div>
                             </nav>
                             <div class="search hidden-xs hidden-sm">
-<h1><?php echo $dadosDoador->nome ?></h1>
+
 																<h2></h2>
 
                             </div>
@@ -77,7 +77,7 @@
 								<!-- -->
 
 
-      <form action="<?=site_url('Painel_doador2/AtualizarDadosPessoais') ?>" method="post">
+      <form action="<?=site_url('Painel_doador2/AtualizarDoacao') ?>" method="post">
               <div class="table-responsive">
                 <table class="table">
                   <thead>
@@ -92,8 +92,8 @@
                   <tbody>
                           <tr>
 
-                            <td class="hidden-xs"><b>Nome</b></td>
-                            <td><input type="text" class="form-control" name="doador_nome" placeholder="Nome" value="<?php echo $dadosDoador->nome ?>" />
+                            <td class="hidden-xs"><b>Nome Hemocentro</b></td>
+                            <td><input type="text" class="form-control" name="hemocentro_nome" placeholder="Nome" value="<?php echo $dadosDoacao->hemocentro_nome ?>" />
       </td>
                             <td align="center">
                               <button type="submit" class="btn btn-danger " >
