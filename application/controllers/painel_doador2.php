@@ -167,7 +167,7 @@ $this->load->view('cabecalho_view');
 
 		$id_doador = $this->session->userdata('id_doador');
 		$data = array(
-				"excluir" => $this->doador_model->excluir($id_doador, $id_vaga)
+				"excluir" => $this->doacao_model->excluir($id_doador, $id_vaga)
 		);
 
 		redirect('painel_doador2/carregaMinhasDoacoes');

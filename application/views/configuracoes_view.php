@@ -27,7 +27,7 @@
                     <ul>
                         <li ><a href="<?=site_url('painel_doador2/index')?>"><i class="fa fa-home " aria-hidden="true"></i>Home</a></li>
                         <li><a href="<?=site_url('painel_doador2/carregarPerfil')?>"><i class="fa fa-user" aria-hidden="true"></i>Perfil</a></li>
-                        <li ><a href="<?=site_url('painel_doador2/carregarCadastroDocao')?>"><i class="fa fa-plus " aria-hidden="true"></i>Nova Doação</a></li>
+                        <li ><a href="<?=site_url('painel_doador2/carregarCadastroDoacao')?>"><i class="fa fa-plus " aria-hidden="true"></i>Nova Doação</a></li>
                       <li><a href="<?=site_url('painel_doador2/carregaMinhasDoacoes')?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Minhas Doações</a></li>
                         <li class="ativo"><a href="<?=site_url('painel_doador2/editaPerfilDoador')?>"><i class="fa fa-cog" aria-hidden="true"></i>Configurações</a></li>
                     </ul>
@@ -166,6 +166,11 @@
                                               </td>
                                             </tr>
                                           </tbody>
+                                          <tbody>
+                                            <tr>
+
+                                            </tr>
+                                          </tbody>
                 </table>
               </div>
             </form>
@@ -226,6 +231,11 @@
                                                               </td>
                                                             </tr>
                                                           </tbody>
+                                                          <tbody>
+                                                            <tr>
+
+                                                            </tr>
+                                                          </tbody>
       </table>
     </div>
   </form>
@@ -251,7 +261,7 @@
                     <input type="hidden" name="doador_email" value="<?php echo $dadosDoador->email ?>">
                   </div></td>
                       <td align="center">
-                        <button type="submit" class="btn btn-danger" >
+                        <button type="submit" class="btn btn-danger"disabled  >
                           <a  class="fa fa-pencil"></a>
                         </button>
 
@@ -269,12 +279,18 @@
                                   value="" required/></td>
                                   <td align="center">
                                     <button type="submit" class="btn btn-danger" >
-                                      <a  class="fa fa-pencil"></a>
+                                      <a  class="fa fa-pencil" ></a>
                                     </button>
                                   </td>
                                 </tr>
                               </tbody>
-                  <tbody>
+
+                
+                    <tbody>
+                      <tr>
+
+                      </tr>
+                    </tbody>
 
           </table>
         </div>

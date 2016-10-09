@@ -50,7 +50,7 @@
                                 </div>
                             </nav>
                             <div class="search hidden-xs hidden-sm">
-                                <h2>Adicionar doação </h2>
+                                <h2>Cadastrar nova doação </h2>
 
                             </div>
                         </div>

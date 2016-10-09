@@ -20,3 +20,4 @@ class Doacao extends MY_ControllerLogado {
 
     $this->load->view('minhas_doacoes', $data);
   }
+	

@@ -32,4 +32,11 @@ class Doacao_model extends CI_Model {
    function atualizarDoacao(){
 
    }
+   public function excluir($id_doador, $id_doacao){
+ 	$id_doador = $this->session->userdata('id_doador');
+ 	$this->db->where('id_doador', $id_doador);
+ 	$this->db->where('id_doacao', $id_doacao);
+ 	$this->db->delete('doacao');
+
+ }
 }
