@@ -1,11 +1,11 @@
 </br>
-<footer class="footer">
+<!--<footer class="footer">
     <div class="container">
     </br>
     </br><hr class="featurette-divider">
       <p class="text-muted">Hemo União 2016</p>
     </div>
-  </footer>
+  </footer>-->
  <script
    src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
  <script>

@@ -32,14 +32,17 @@ class Hemocentro_model extends CI_Model {
 		return $this->db->insert('hemocentro', $this);
 	}
 
-	function getHemocentro($id_hemocentro) {
-		$id_hemocentro = (int)$id_hemocentro;
-		$this->db->where('id_hemocentro', $id_hemocentro);
-		return $this->db->get('Hemocentro');
+	function getHemocentro($hemocentro) {
+		$id_hemocentro = $this->session->userdata('id_hemocentro');
+		$this->db
+->select('*')
+->from('Hemocentro')
+->where('id_hemocentro', $id_hemocentro);
+		return $this->db->get();
 	}
 
 	function alterar($data) {
-		$id_hemocentro = $this -> session -> userdata('id_hemocentro');
+		$id_hemocentro = $this->session->userdata('id_hemocentro');
 		$this->db->where('id_hemocentro', $id_hemocentro);
 		$this->db->set($data);
 		return $this->db->update('hemocentro');
@@ -55,20 +58,28 @@ class Hemocentro_model extends CI_Model {
 		return $query2 = $this->db->get()->result();
 
 }
+function getEstoque($estoque) {
+	$id_hemocentro = $this->session->userdata('id_hemocentro');
+	$this->db
+	->select("*")
+	->from("Estoque")
+	->where('id_hemocentro', $id_hemocentro);
+	return $this->db->get();
+}
 /* metodo registrar doacao
 registra uma doação, incrementa o estoque atual
 @param  $doacao = sangue adquirido
-*/
+
 public function registrarDoacao($doacao){
 	$this->estoque += $doacao;
 }
-
+*/
 /* metodo getEstoque
 retorna a quantidade em estoque
-*/
+
 public function getEstoque()
 {
 return $this->estoque;
-	}
+	}*/
 
 }

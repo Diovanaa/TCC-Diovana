@@ -120,23 +120,21 @@
                                 </tr>
                               </tbody>
                               <tbody>
-                                <tr>
-                                  <td>
-                                  <b>Sexo</b>
-                                  </td>
-                                  <td>
-                              <input type="text" class="form-control"
-                              name="doador_sexo" placeholder="Sexo"
-                              value="<?php echo $dadosDoador->sexo ?>" required>
+                                      <tr>
 
-                                </td>
-                                <td align="center">
-                                  <button type="submit" class="btn btn-danger" >
-                                    <a  class="fa fa-pencil"></a>
-                                  </button>
-                                </td>
-                              </tr>
-                              </tbody>
+                                        <td class="hidden-xs"><b>Sexo</b></td>
+                                        <td><input type="text"
+                                        class="form-control" name="doador_sexo"
+                                        placeholder="Telefone"
+                                        value="<?php echo $dadosDoador->sexo ?>" required></td>
+                                        <td align="center">
+                                          <button type="submit" class="btn btn-danger" >
+                                            <a  class="fa fa-pencil"></a>
+                                          </button>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                            
                               <tbody>
                                       <tr>
 
@@ -285,7 +283,7 @@
                                 </tr>
                               </tbody>
 
-                
+
                     <tbody>
                       <tr>
 

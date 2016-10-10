@@ -140,18 +140,20 @@
 	</div>
   <div class="col-lg-12">
   				<h5>*Campos obrigatórios</h5>
-        </div>
 
-				<div class="col-lg-3">
+
+				<div class="col-xs-7 col-md-5 col-lg-3">
 				<button type="submit" class="btn btn-danger">
 					CADASTRAR
 				</button>
 
 			</div>
-
+      	<div class="col-xs-7 col-md-5 col-lg-3 ">
       <button type="button" class="btn btn-primary" onclick="history.go(-1)">
               VOLTAR
       </button>
+    </div>
+    </div>
     </div>
 				<br>
 

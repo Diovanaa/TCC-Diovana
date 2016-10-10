@@ -11,11 +11,14 @@ class Painel_Doador2 extends MY_ControllerLogado {
 		$data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
     $this->load->view('cabecalho_view');
 		$this->load->view('home_doador_view', $data);
+		$this->load->view('rodape_view');
 	}
 
 	function deslogar() {
 		$this->session->sess_destroy();
-    redirect('Home/index');
+		$this->load->view('cabecalho_view');
+		$this->load->view('home_view_teste');
+		$this->load->view('rodape_view');
 
 	}
 	public function carregaMinhasDoacoes() {
@@ -24,12 +27,14 @@ class Painel_Doador2 extends MY_ControllerLogado {
 
 		$this->load->view('cabecalho_view');
 		$this->load->view('minhasDoacoes', $data);
+		$this->load->view('rodape_view');
 	}
 	public function editaPerfilDoador() {
 		$id_doador = $this->session->userdata('id_doador');
 		$data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
 		$this->load->view('cabecalho_view');
     $this->load->view('configuracoes_view', $data);
+		$this->load->view('rodape_view');
 	}
 
 	public function carregarPerfil() {
@@ -37,6 +42,7 @@ class Painel_Doador2 extends MY_ControllerLogado {
 		$data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
 $this->load->view('cabecalho_view');
     $this->load->view('perfil_doador_teste2', $data);
+		$this->load->view('rodape_view');
 	}
 
 	public function carregarCadastroDoacao() {
@@ -44,6 +50,7 @@ $this->load->view('cabecalho_view');
 		$data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
 $this->load->view('cabecalho_view');
     $this->load->view('cadastrar_doacoes', $data);
+		$this->load->view('rodape_view');
 	}
 
 	public function salvarDoacao() {
@@ -111,6 +118,7 @@ $this->load->view('cabecalho_view');
 		$dados2 = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
     $this->load->view('cabecalho_view');
     $this->load->view('configuracoes_view', $dados2);
+		$this->load->view('rodape_view');
 
 	}
 
@@ -128,6 +136,7 @@ $this->load->view('cabecalho_view');
 		$dados2 = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
     $this->load->view('cabecalho_view');
     $this->load->view('configuracoes_view', $dados2);
+		$this->load->view('rodape_view');
 
 	}
 
@@ -143,6 +152,7 @@ $this->load->view('cabecalho_view');
 		$dados2 = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
 		$this->load->view('cabecalho_view');
 		$this->load->view('configuracoes_view', $dados2);
+		$this->load->view('rodape_view');
 
 	}
 	function AtualizarDoacao() {
@@ -160,6 +170,7 @@ $this->load->view('cabecalho_view');
 		$dados2 = array("dadosDoacao" => $this->Doador_model->getDoacao($id_doador)->row());
     $this->load->view('cabecalho_view');
     $this->load->view('editar_doacoes_view', $dados2);
+		$this->load->view('rodape_view');
 
 	}
 
