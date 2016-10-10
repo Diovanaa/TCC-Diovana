@@ -78,10 +78,22 @@
 
                 <div class="container">
                     <div class="row">
-
+                      <div class="col-sm-10">
+                                  <?php if ($this->input->get('alerta') == 1) { ?>
+                                  <div class="alert alert-danger">
+                                    Você excluiu a doação com sucesso!!!
+                                  </div>
+                                  <?php } ?>
+                                  <?php if ($this->input->get('alerta') == 2) { ?>
+                                  <div class="alert alert-success">
+                                    Você adicionou uma nova doação com sucesso!!!
+                                  </div>
+                                  <?php } ?>
+                      </div>
 
 
                         <div class="col-md-10 ">
+
 
                             <div class="panel panel-default panel-table">
                               <div class="panel-heading ">
@@ -126,7 +138,7 @@
                                             <td><?php echo $row->data_ultimadoacao; ?></td>
                                 						<td>
                                               <a class="btn btn-primary"><em class="fa fa-pencil"></em></a>
-                                							<a  href="<?= site_url('painel_doador2/excluir/' . $row->id_doacao . '/' . $row->id_doador ) ?>"
+                                							<a  href="<?= site_url('painel_doador2/excluir/' . $row->id_doacao) ?>"
                                 								class="btn btn-danger"
                                 								onclick="return confirm('Têm certeza que deseja excluir esta informação?')">
                                 									<i class="fa fa-trash" aria-hidden="true"></i>

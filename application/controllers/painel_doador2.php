@@ -74,7 +74,7 @@ $this->load->view('cabecalho_view');
 			return;
 		} else {
 			$this->Doacao_model->Salvar();
-			redirect('Painel_doador2/carregaMinhasDoacoes');
+			redirect('Painel_doador2/carregaMinhasDoacoes/?alerta=2');
 		}
 	}
 
@@ -178,9 +178,9 @@ $this->load->view('cabecalho_view');
 
 		$id_doador = $this->session->userdata('id_doador');
 		$data = array(
-				"excluir" => $this->doacao_model->excluir($id_doador, $id_vaga)
+				"excluir" => $this->Doacao_model->excluir($id_doador, $id_doacao)
 		);
 
-		redirect('painel_doador2/carregaMinhasDoacoes');
+		redirect('painel_doador2/carregaMinhasDoacoes/?alerta=1');
 	}
 }
