@@ -8,6 +8,9 @@ class MY_ControllerLogado extends CI_Controller{
       if(! $this->session->userdata('doadorLogado')){
         redirect('doador/carregarLogin/?aviso=2');
       }
+      if(! $this->session->userdata('hemocentroLogado')){
+        redirect('hemocentro/carregarLogin/?aviso=2');
+      }
 
   }
 }

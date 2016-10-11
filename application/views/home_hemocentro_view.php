@@ -25,9 +25,9 @@
 
                 <div class="navi">
                     <ul>
-                      <li><a href="<?=site_url('Painel_hemocentro/index')?>"><i class="fa fa-home " aria-hidden="true"></i>Home</a></li>
+                      <li><a href="#"><i class="fa fa-home " aria-hidden="true"></i>Home</a></li>
                       <li><a href="<?=site_url('Painel_hemocentro/carregarPerfil')?>"><i class="fa fa-user" aria-hidden="true"></i>Perfil</a></li>
-                      <li ><a href="<?=site_url('Painel_hemocentro/carregarCadastroEstoque')?>"><i class="fa fa-plus " aria-hidden="true"></i>Nova Doação</a></li>
+                      <li ><a href="<?=site_url('Painel_hemocentro/carregarCadastroEstoque')?>"><i class="fa fa-plus " aria-hidden="true"></i>Novo Estoque</a></li>
                       <li><a href="<?=site_url('Painel_hemocentro/carregaMeuEstoque')?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Meu Estoque</a></li>
                       <li><a href="<?=site_url('Painel_hemocentro/carregaMeuEstoque')?>"><i class="fa fa-plus" aria-hidden="true"></i>Procurar Doadores</a></li>
                       <li><a href="<?=site_url('Painel_hemocentro/editaPerfilHemocentro')?>"><i class="fa fa-cog" aria-hidden="true"></i>Configurações</a></li>
@@ -52,7 +52,7 @@
                                 </div>
                             </nav>
                             <div class="search hidden-xs hidden-sm">
-                                <h2>Faltas 5 dias para uma nova doação
+                                
 
                             </div>
                         </div>

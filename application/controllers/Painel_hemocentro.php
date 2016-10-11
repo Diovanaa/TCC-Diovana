@@ -23,7 +23,7 @@ class Painel_hemocentro extends MY_ControllerLogado {
 		$id_hemocentro = $this->session->userdata('id_hemocentro');
 		$data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row());
 		$this->load->view('cabecalho_view');
-		$this->load->view('perfil_hemocentro', $data);
+		$this->load->view('perfil_hemocentro_teste', $data);
 		$this->load->view('rodape_view');
 	}
 	//chama tela de editar perfil do hemocentro
