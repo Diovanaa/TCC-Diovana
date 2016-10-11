@@ -90,11 +90,11 @@ class Hemocentro extends CI_Controller {
 		if ($dadosHemocentro->num_rows() > 0) {
 			$Hemocentro = $dadosHemocentro -> row();
 
-			
-			$this->session->set_userdata('hemocentroLogado', TRUE);
-			$this->session->set_userdata('id_hemocentro', $Hemocentro->id_hemocentro);
 
-			redirect('login/hemocentroEntrar');
+			$this->session->set_userdata('usuarioLogado', TRUE);
+			$this->session->set_userdata('id_hemocentro', $hemocentro->id_hemocentro);
+
+			redirect('Painel_hemocentro/index');
 
 		} else {
 			//se não tiver login e senha certo vai cair aqui

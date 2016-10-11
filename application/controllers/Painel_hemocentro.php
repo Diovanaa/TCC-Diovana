@@ -8,7 +8,7 @@ class Painel_hemocentro extends MY_ControllerLogado {
 		$id_hemocentro = $this->session->userdata('id_hemocentro');
 		$data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row());
 		$this->load->view('cabecalho_view');
-		$this->load->view('home_hemocentro', $data);
+		$this->load->view('home_hemocentro_view', $data);
 		$this->load->view('rodape_view');
 	}
 	//sai do sistema

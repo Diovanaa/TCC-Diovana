@@ -28,27 +28,6 @@ class Login extends CI_Controller {
 		$this->load->view('login_hemocentro_view');
 
 	}
-	/*public function loginDoador2()
-	{
-		$this->load->view('cabecalho_view');
-		$this->load->view('login2_doador_view');
 
-	}
-	public function loginHemocentro2()
-	{
-		$this->load->view('cabecalho_view');
-		$this->load->view('login2_hemocentro_view');
 
-	}*/
-	public function doadorEntrar(){
-		$this->load->view('cabecalho_view');
-		$this->load->view('home_doador_view');
-		$this->load->view('rodape_view');
-	}
- public function hemocentroEntrar()
-	{
-		$this->load->view('cabecalho_view');
-		$this->load->view('home_hemocentro_view');
-		$this->load->view('rodape_view');
-	}
  }

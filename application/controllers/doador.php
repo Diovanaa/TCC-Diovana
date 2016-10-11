@@ -91,18 +91,18 @@ class Doador extends CI_Controller {
 		if ($dadosDoador->num_rows() > 0) {
 			$doador = $dadosDoador -> row();
 
-			$this->session->set_userdata('doadorLogado', TRUE);
+			$this->session->set_userdata('usuarioLogado', TRUE);
 			$this->session->set_userdata('id_doador', $doador->id_doador);
 
        // direciona para o modulo doador
-			redirect('login/doadorEntrar');
+			redirect('Painel_doador2/index');
 
 		} else {
 			//se não tiver login e senha certo vai cair aqui
 			redirect('/Login/loginDoador/?alerta=1');
 
 		}
-		
+
 
 	}
 
