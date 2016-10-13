@@ -21,6 +21,14 @@ class Painel_Doador2 extends MY_ControllerLogado {
 		$this->load->view('rodape_view');
 
 	}
+
+		public function carregarPerfil() {
+			$id_doador = $this->session->userdata('id_doador');
+			$data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
+			$this->load->view('cabecalho_view');
+	    $this->load->view('perfil_doador_teste2', $data);
+			$this->load->view('rodape_view');
+		}
 	public function carregaMinhasDoacoes() {
 		$id_doador = $this->session->userdata('id_doador');
 		$data = array("dadosDoacao" => $this->Doador_model->minhasDoacoes());
@@ -37,13 +45,6 @@ class Painel_Doador2 extends MY_ControllerLogado {
 		$this->load->view('rodape_view');
 	}
 
-	public function carregarPerfil() {
-		$id_doador = $this->session->userdata('id_doador');
-		$data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
-$this->load->view('cabecalho_view');
-    $this->load->view('perfil_doador_teste2', $data);
-		$this->load->view('rodape_view');
-	}
 
 	public function carregarCadastroDoacao() {
 		$id_doador = $this->session->userdata('id_doador');

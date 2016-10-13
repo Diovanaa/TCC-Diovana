@@ -85,24 +85,41 @@ $this->load->view('cabecalho_view');
 	}
 	// atualiza perfil hemocentro
 	function Atualizar() {
+
 		$data = array();
+
 		$data['senha'] = md5($this->input->post('hemocentro_senha'));
 		$data['nome'] = $this ->input->post('hemocentro_nome');
 		$data['telefone'] = $this->input->post('hemocentro_telefone');
 		$data['email'] = $this->input->post('hemocentro_email');
-		$data['rua'] = $this->input->post('hemocentro_rua');
+		//$data['rua'] = $this->input->post('hemocentro_rua');
 		$data['bairro'] = $this->input->post('hemocentro_bairro');
 		$data['endereco'] = $this->input->post('hemocentro_endereco');
 		$data['cidade'] = $this->input->post('hemocentro_cidade');
 		$data['estado'] = $this->input->post('hemocentro_estado');
 		$data['cep'] = $this->input->post('hemocentro_cep');
 		//altera os dados
-		$this->Hemocentro_model->alterar($data);
+		$this->hemocentro_model->alterar($data);
 		//atualiza tela com as alteraçõe
 		$id_hemocentro = $this->session->userdata('id_hemocentro');
-		$dados2 = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row());
+		$dados2 = array("dadosHemocentro" => $this->hemocentro_model->getHemocentro($id_hemocentro)->row());
 		$this->load->view('cabecalho_view');
 		$this->load->view('configuracoes_hemocentro_view', $dados2);
 		$this->load->view('rodape_view');
+	}
+	function AtualizarSenha() {
+
+		$data = array();
+		$data['senha'] = md5($this->input->post('hemocentro_senha'));
+		$data['email'] = $this->input->post('hemocentro_email');
+
+		$this->hemocentro_model->alterarSenha($data);
+
+		$id_hemocentro = $this->session->userdata('id_hemocentro');
+		$dados2 = array("dadosHemocentro" => $this->hemocentro_model->getHemocentro($id_hemocentro)->row());
+		$this->load->view('cabecalho_view');
+		$this->load->view('configuracoes_hemocentro_view', $dados2);
+		$this->load->view('rodape_view');
+
 	}
 }

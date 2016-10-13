@@ -125,7 +125,7 @@
                                         <td class="hidden-xs"><b>Sexo</b></td>
                                         <td><input type="text"
                                         class="form-control" name="doador_sexo"
-                                        placeholder="Telefone"
+                                        placeholder="Sexo"
                                         value="<?php echo $dadosDoador->sexo ?>" required></td>
                                         <td align="center">
                                           <button type="submit" class="btn btn-danger" >
@@ -134,7 +134,7 @@
                                         </td>
                                       </tr>
                                     </tbody>
-                            
+
                               <tbody>
                                       <tr>
 
@@ -180,7 +180,7 @@
         <thead>
           <tr>
 
-              <th class="hidden-xs">Alterar Endereco</th>
+              <th class="hidden-xs">Alterar Endereço</th>
 
           </tr>
         </thead>

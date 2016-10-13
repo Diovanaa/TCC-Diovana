@@ -45,7 +45,13 @@ class Hemocentro_model extends CI_Model {
 		$id_hemocentro = $this->session->userdata('id_hemocentro');
 		$this->db->where('id_hemocentro', $id_hemocentro);
 		$this->db->set($data);
-		return $this->db->update('hemocentro');
+		return $this->db->update('Hemocentro');
+	}
+	function alterarSenha($data) {
+		$id_hemocentro = $this->session->userdata('id_hemocentro');
+		$this->db->where('id_hemocentro', $id_hemocentro);
+		$this->db->set($data);
+		return $this->db->update('Hemocentro');
 	}
   // fazer a função de listar os hemocentros;
 	function getHemocentroSozinho($id_hemocentro) {
