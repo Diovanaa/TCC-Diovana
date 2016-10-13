@@ -95,7 +95,7 @@ class Doador extends CI_Controller {
 			$this->session->set_userdata('id_doador', $doador->id_doador);
 
        // direciona para o modulo doador
-			redirect('Painel_doador2/index');
+			redirect('Painel_doador/index');
 
 		} else {
 			//se não tiver login e senha certo vai cair aqui

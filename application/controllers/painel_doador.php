@@ -2,15 +2,15 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Painel_Doador2 extends MY_ControllerLogado {
+class Painel_Doador extends MY_ControllerLogado {
 
 	public function index() {
 
 		$id_doador = $this->session->userdata('id_doador');
 
 		$data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
-    $this->load->view('cabecalho_view');
-		$this->load->view('home_doador_view', $data);
+    $this->load->view('doador/cabecalho_doador');
+		$this->load->view('doador/home_doador_view', $data);
 		$this->load->view('rodape_view');
 	}
 
@@ -25,23 +25,23 @@ class Painel_Doador2 extends MY_ControllerLogado {
 		public function carregarPerfil() {
 			$id_doador = $this->session->userdata('id_doador');
 			$data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
-			$this->load->view('cabecalho_view');
-	    $this->load->view('perfil_doador_teste2', $data);
+			$this->load->view('doador/cabecalho_doador');
+	    $this->load->view('doador/perfil_doador_teste2', $data);
 			$this->load->view('rodape_view');
 		}
 	public function carregaMinhasDoacoes() {
 		$id_doador = $this->session->userdata('id_doador');
 		$data = array("dadosDoacao" => $this->Doador_model->minhasDoacoes());
 
-		$this->load->view('cabecalho_view');
-		$this->load->view('minhasDoacoes', $data);
+		$this->load->view('doador/cabecalho_doador');
+		$this->load->view('doador/minhasDoacoes', $data);
 		$this->load->view('rodape_view');
 	}
 	public function editaPerfilDoador() {
 		$id_doador = $this->session->userdata('id_doador');
 		$data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
-		$this->load->view('cabecalho_view');
-    $this->load->view('configuracoes_view', $data);
+		$this->load->view('doador/cabecalho_doador');
+    $this->load->view('doador/configuracoes_view', $data);
 		$this->load->view('rodape_view');
 	}
 
@@ -49,8 +49,8 @@ class Painel_Doador2 extends MY_ControllerLogado {
 	public function carregarCadastroDoacao() {
 		$id_doador = $this->session->userdata('id_doador');
 		$data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
-$this->load->view('cabecalho_view');
-    $this->load->view('cadastrar_doacoes', $data);
+		$this->load->view('doador/cabecalho_doador');
+    $this->load->view('doador/cadastrar_doacoes', $data);
 		$this->load->view('rodape_view');
 	}
 
@@ -71,11 +71,11 @@ $this->load->view('cabecalho_view');
 		$this->form_validation->set_rules('hemocentro_nome', 'Nome do Hemocentro', 'required|max_length[120]');
 
 		if ($this->form_validation->run() == FALSE) {
-			$this->carregarCadastroDocao();
+			$this->carregarCadastroDoacao();
 			return;
 		} else {
 			$this->Doacao_model->Salvar();
-			redirect('Painel_doador2/carregaMinhasDoacoes/?alerta=2');
+			redirect('Painel_doador/carregaMinhasDoacoes/?alerta=2');
 		}
 	}
 
@@ -117,9 +117,8 @@ $this->load->view('cabecalho_view');
 
 		$id_doador = $this->session->userdata('id_doador');
 		$dados2 = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
-    $this->load->view('cabecalho_view');
-    $this->load->view('configuracoes_view', $dados2);
-		$this->load->view('rodape_view');
+    $this->load->view('doador/cabecalho_doador');
+    $this->load->view('doador/configuracoes_view', $dados2);
 
 	}
 
@@ -135,9 +134,9 @@ $this->load->view('cabecalho_view');
 
 		$id_doador = $this->session->userdata('id_doador');
 		$dados2 = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
-    $this->load->view('cabecalho_view');
-    $this->load->view('configuracoes_view', $dados2);
-		$this->load->view('rodape_view');
+    $this->load->view('doador/cabecalho_doador');
+    $this->load->view('doador/configuracoes_view', $dados2);
+
 
 	}
 
@@ -151,8 +150,8 @@ $this->load->view('cabecalho_view');
 
 		$id_doador = $this->session->userdata('id_doador');
 		$dados2 = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
-		$this->load->view('cabecalho_view');
-		$this->load->view('configuracoes_view', $dados2);
+		$this->load->view('doador/cabecalho_doador');
+		$this->load->view('doador/configuracoes_view', $dados2);
 		$this->load->view('rodape_view');
 
 	}
@@ -169,9 +168,8 @@ $this->load->view('cabecalho_view');
 
 		$id_doador = $this->session->userdata('id_doador');
 		$dados2 = array("dadosDoacao" => $this->Doador_model->getDoacao($id_doador)->row());
-    $this->load->view('cabecalho_view');
-    $this->load->view('editar_doacoes_view', $dados2);
-		$this->load->view('rodape_view');
+    $this->load->view('doador/cabecalho_doador');
+    $this->load->view('doador/editar_doacoes_view', $dados2);
 
 	}
 
@@ -182,6 +180,6 @@ $this->load->view('cabecalho_view');
 				"excluir" => $this->Doacao_model->excluir($id_doador, $id_doacao)
 		);
 
-		redirect('painel_doador2/carregaMinhasDoacoes/?alerta=1');
+		redirect('painel_doador/carregaMinhasDoacoes/?alerta=1');
 	}
 }
