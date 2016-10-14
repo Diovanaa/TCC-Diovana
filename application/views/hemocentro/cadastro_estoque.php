@@ -1,46 +1,5 @@
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
 
-    <title>Dashboard Template for Bootstrap</title>
-
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-
-
-  </head>
-
-  <body>
-
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">HemoUnião</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="<?=site_url('Painel_hemocentro/deslogar')?>">Sair</a></li>
-
-          </ul>
-          <form class="navbar-form navbar-right">
-            <input type="text" class="form-control" placeholder="Search...">
-          </form>
-        </div>
-      </div>
-    </nav>
 
     <div class="container-fluid">
       <div class="row">
@@ -71,32 +30,47 @@
                <div class="panel-body">
                  <form action="<?=site_url('Painel_hemocentro/carregarCadastroEstoque')?>" method="post">
                         <!-- Entrada nome doador-->
-                        <div class="form-group col-lg-6">
-                              <label for="nomeHemocentro">Nome Hemocentro*:</label>
-                              <input type="text" id="nomeHemocentro" name="hemocentro_nome" placeholder="Nome do Hemocentro"
+                        <div class="form-group col-lg-3">
+                              <label for="sangue_tipoA-">Tipo A-:</label>
+                              <input type="text" id="sangue_tipoA-" name="tipo_a0" placeholder="Tipo A-"
                               value="" class="form-control" required  />
                         </div>
                         <!-- Seleção do tipo sanguineo do doador-->
-                        <div class="form-group col-lg-6">
-                            <label for="tipoDoacao">Tipo de Doação*:</label>
-                                 <select class="form-control" name="doacao_tipodoacao" id="tipoDoacao">
-                                      <option>Doação de sangue total</option>
-                                      <option>Doação por aferise</option>
-                                      <option>Doação de medula óssea</option>
-
-                                </select>
-                       </div>
-                        <!-- Entrada data de nascimento do doador-->
-                        <div class="form-group col-lg-6">
-                             <label for="dataDoacao">Data da doação*:</label>
-                             <input type="date" id="dataDoacao" name="doacao_datadoacao"
-                             value="" class="form-control" required placeholder="Data da doação" />
+                        <div class="form-group col-lg-3">
+                              <label for="sangue_tipoA+">Tipo A+:</label>
+                              <input type="text" id="sangue_tipoA+" name="tipo_a1" placeholder="Tipo A+"
+                              value="" class="form-control" required  />
                         </div>
-                        <!-- Entrada telefone do doador-->
-                        <div class="form-group col-lg-6">
-                             <label for="ultimaDoacao">Data ultima doação*:</label>
-                             <input type="date" id="ultimaDoacao" name="doacao_ultimadoacao" placeholder="Data da ultima doação"
-                             value="" class="form-control" required  />
+                        <div class="form-group col-lg-3">
+                              <label for="sangue_tipoB-">Tipo B-:</label>
+                              <input type="text" id="sangue_tipoB-" name="tipo_b0" placeholder="Tipo B-"
+                              value="" class="form-control" required  />
+                        </div>
+                        <div class="form-group col-lg-3">
+                              <label for="sangue_tipoB+">Tipo B+:</label>
+                              <input type="text" id="sangue_tipoB+" name="tipo_b1" placeholder="Tipo B+"
+                              value="" class="form-control" required  />
+                        </div>
+                        <div class="form-group col-lg-3">
+                              <label for="sangue_tipoAB-">Tipo AB-:</label>
+                              <input type="text" id="sangue_tipoAB-" name="tipo_ab0" placeholder="Tipo AB-"
+                              value="" class="form-control" required  />
+                        </div>
+                        <!-- Seleção do tipo sanguineo do doador-->
+                        <div class="form-group col-lg-3">
+                              <label for="sangue_tipoAB+">Tipo AB+:</label>
+                              <input type="text" id="sangue_tipoAB+" name="tipo_ab1" placeholder="Tipo AB+"
+                              value="" class="form-control" required  />
+                        </div>
+                        <div class="form-group col-lg-3">
+                              <label for="sangue_tipoO-">Tipo O-:</label>
+                              <input type="text" id="sangue_tipoO-" name="tipo_o0" placeholder="Tipo O-"
+                              value="" class="form-control" required  />
+                        </div>
+                        <div class="form-group col-lg-3">
+                              <label for="sangue_tipoO+">Tipo O+:</label>
+                              <input type="text" id="sangue_tipoO+" name="tipo_o1" placeholder="Tipo O+"
+                              value="" class="form-control" required  />
                         </div>
 
                     <h5>*Campos obrigatórios</h5>

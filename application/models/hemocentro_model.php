@@ -21,11 +21,12 @@ class Hemocentro_model extends CI_Model {
 		return $this->db->insert('hemocentro', $this);
 	}
 
-	function getHemocentro() {
-		$id_hemocentro = $this->session->userdata('id_hemocentro');
+	function getHemocentro($id_hemocentro) {
+		//$id_hemocentro = $this->session->userdata('id_hemocentro');
+		//var_dump($id_hemocentro);
 		$this->db
 		->select('*')
-		->from('Hemocentro')
+		->from('hemocentro')
 		->where('id_hemocentro', $id_hemocentro);
 		return $this->db->get();
 	}

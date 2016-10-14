@@ -9,9 +9,10 @@ class Painel_Doador extends MY_ControllerLogado {
 		$id_doador = $this->session->userdata('id_doador');
 
 		$data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
-    $this->load->view('doador/cabecalho_doador');
-		$this->load->view('doador/home_doador_view', $data);
-		$this->load->view('rodape_view');
+		echo $id_doador;
+    //$this->load->view('doador/cabecalho_doador');
+	//	$this->load->view('doador/home_doador_view', $data);
+	//	$this->load->view('rodape_view');
 	}
 
 	function deslogar() {

@@ -41,7 +41,7 @@
 	            <li><a href="<?=site_url('painel_doador/deslogar')?>">Sair</a></li>
 	          </ul>
 	          <form class="navbar-form navbar-right">
-	            <input type="text" class="form-control" placeholder="Procurar...">
+	          <!--  <input type="text" class="form-control" placeholder="Procurar...">-->
 	          </form>
 	        </div>
 	      </div>

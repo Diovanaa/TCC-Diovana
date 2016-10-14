@@ -24,11 +24,12 @@ class Painel_hemocentro extends MY_ControllerLogado {
 
 		public function carregarPerfil() {
 			$id_hemocentro = $this->session->userdata('id_hemocentro');
-			$data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro()->row(),
+			$data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->result(),
 			 "dadosEstoque" => $this->Hemocentro_model->meuEstoque());
-			$this->load->view('hemocentro/cabecalho_hemocentro');
-	    $this->load->view('hemocentro/perfil_hemocentro_teste', $data);
-			$this->load->view('rodape_view');
+
+		var_dump($id_hemocentro);	//$this->load->view('hemocentro/cabecalho_hemocentro');
+	    //$this->load->view('hemocentro/perfil_hemocentro_teste', print_r($data));
+			//->load->view('rodape_view');
 		}
 	public function carregaMeuEstoque() {
 		$id_hemocentro = $this->session->userdata('id_hemocentro');
