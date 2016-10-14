@@ -17,26 +17,24 @@ class Hemocentro_model extends CI_Model {
 	function __construct() {
 		parent::__construct();
 	}
-	/* metodo construtor
-	*/
-/*	public function __construct($id_hemocentro, $nome, $telefone, $email, $senha, $estoque )
-	{
-		$this->id_hemocentro = $id_hemocentro;
-		$this->nome = $nome;
-		$this->telefone = $telefone;
-		$this->email = $email;
-		$this->estoque = $estoque;
-	}*/
-
 	public function Salvar() {
 		return $this->db->insert('hemocentro', $this);
 	}
 
-	function getHemocentro($hemocentro) {
+	function getHemocentro() {
 		$id_hemocentro = $this->session->userdata('id_hemocentro');
 		$this->db
 		->select('*')
 		->from('Hemocentro')
+		->where('id_hemocentro', $id_hemocentro);
+		return $this->db->get();
+	}
+
+	function getEstoque($estoque) {
+		$id_hemocentro = $this->session->userdata('id_hemocentro');
+		$this->db
+		->select("*")
+		->from("estoque")
 		->where('id_hemocentro', $id_hemocentro);
 		return $this->db->get();
 	}
@@ -53,39 +51,27 @@ class Hemocentro_model extends CI_Model {
 		$this->db->set($data);
 		return $this->db->update('Hemocentro');
 	}
+	function alterarEstoque($data) {
+		$id_hemocentro = $this->session->userdata('id_hemocentro');
+		$this->db->where('id_hemocentro', $id_hemocentro);
+		$this->db->set($data);
+		return $this->db->update('Estoque');
+	}
   // fazer a função de listar os hemocentros;
-	function getHemocentroSozinho($id_hemocentro) {
+	public function excluir($id_hemocentro, $id_estoque){
+	$id_hemocentro = $this->session->userdata('id_hemocentro');
+	$this->db->where('id_hemocentro', $id_hemocentro);
+	$this->db->where('id_estoque', $id_estoque);
+	$this->db->delete('Estoque');
 
-		$this->db
-		->select("*")
-		->from("hemocentro")
-		->where('id_hemocentro', $id_hemocentro);
-
-		return $query2 = $this->db->get()->result();
-
-}
-function getEstoque($estoque) {
+	}
+function meuEstoque() {
 	$id_hemocentro = $this->session->userdata('id_hemocentro');
 	$this->db
 	->select("*")
 	->from("Estoque")
-	->where('id_hemocentro', $id_hemocentro);
-	return $this->db->get();
+	->join('hemocentro', 'estoque.id_hemocentro = hemocentro.id_hemocentro')
+	->where('hemocentro.id_hemocentro', $id_hemocentro);
+	return $this->db->get()->result();
 }
-/* metodo registrar doacao
-registra uma doação, incrementa o estoque atual
-@param  $doacao = sangue adquirido
-
-public function registrarDoacao($doacao){
-	$this->estoque += $doacao;
-}
-*/
-/* metodo getEstoque
-retorna a quantidade em estoque
-
-public function getEstoque()
-{
-return $this->estoque;
-	}*/
-
 }

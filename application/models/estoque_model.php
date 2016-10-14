@@ -21,15 +21,15 @@ class Estoque_model extends CI_Model {
    }
 
    function estoque(){
-     	$id_hemocentro = $this->session->userdata('id_hemocentro');
+     	$id_estoque = $this->session->userdata('id_estoque');
       $this->db
      ->select("*")
      ->from('Estoque')
-     ->join('Hemocentro', 'estoque.id_estoque = Hemocentro.id_hemocentro')
+     ->join('Hemocentro', 'estoque.id_hemocentro = Hemocentro.id_hemocentro')
      ->where('id_hemocentro', $id_hemocentro);
      return $query = $this->db->get()->result();
    }
-   public function meuEstoque(){
+  /* public function meuEstoque(){
      $id_hemocentro = $this->session->userdata('id_hemocentro');
      $this->db
      ->select("*")
@@ -37,7 +37,7 @@ class Estoque_model extends CI_Model {
      ->join('hemocentro', 'estoque.id_hemocentro = hemocentro.id_hemocentro')
      ->where('hemocentro.id_hemocentro', $id_hemocentro);
      return $this->db->get()->result();
-   }
+   }*/
 //  public function excluir($id_hemocentro, $id_estoque){
 // 	$id_hemocentro = $this->session->userdata('id_hemocentro');
  //	$this->db->where('id_hemocentro', $id_hemocentro);

@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Painel_hemocentro extends MY_ControllerLogado {
+class Painel_hemocentro2 extends MY_ControllerLogado {
 
 	public function index() {
 
@@ -24,8 +24,7 @@ class Painel_hemocentro extends MY_ControllerLogado {
 
 		public function carregarPerfil() {
 			$id_hemocentro = $this->session->userdata('id_hemocentro');
-			$data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro()->row(),
-			 "dadosEstoque" => $this->Hemocentro_model->meuEstoque());
+			$data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row(), "dadosEstoque" => $this->Hemocentro_model->meuEstoque());
 			$this->load->view('hemocentro/cabecalho_hemocentro');
 	    $this->load->view('hemocentro/perfil_hemocentro_teste', $data);
 			$this->load->view('rodape_view');
@@ -82,7 +81,7 @@ class Painel_hemocentro extends MY_ControllerLogado {
 			return;
 		} else {
 			$this->Estoque_model->Salvar();
-			redirect('Painel_hemocentro/carregaMeuEstoque/?alerta=2');
+			redirect('Painel_hemocentro2/carregaMeuEstoque/?alerta=2');
 		}
 	}
 
@@ -150,6 +149,6 @@ class Painel_hemocentro extends MY_ControllerLogado {
 				"excluir" => $this->Estoque_model->excluir($id_hemocentro, $id_estoque)
 		);
 
-		redirect('Painel_hemocentro/carregaMeuEstoque/?alerta=1');
+		redirect('Painel_hemocentro2/carregaMeuEstoque/?alerta=1');
 	}
 }
