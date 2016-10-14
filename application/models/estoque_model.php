@@ -1,9 +1,9 @@
 <?php
 
-class Doacao_model extends CI_Model {
+class Estoque_model extends CI_Model {
 
-  public  $id_estoque;
-  public $id_hemocentro;
+    public  $id_estoque;
+    public  $id_hemocentro;
     public  $tipo_a0;
   	public  $tipo_a1;
     public  $tipo_b0;

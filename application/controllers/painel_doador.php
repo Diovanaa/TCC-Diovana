@@ -24,14 +24,14 @@ class Painel_Doador extends MY_ControllerLogado {
 
 		public function carregarPerfil() {
 			$id_doador = $this->session->userdata('id_doador');
-			$data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
+			$data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row(), "dadosDoacao" => $this->Doador_model->minhasDoacoes());
 			$this->load->view('doador/cabecalho_doador');
 	    $this->load->view('doador/perfil_doador_teste2', $data);
 			$this->load->view('rodape_view');
 		}
 	public function carregaMinhasDoacoes() {
 		$id_doador = $this->session->userdata('id_doador');
-		$data = array("dadosDoacao" => $this->Doador_model->minhasDoacoes());
+		$data = array("dadosDoacao" => $this->Doador_model->minhasDoacoes(), "dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
 
 		$this->load->view('doador/cabecalho_doador');
 		$this->load->view('doador/minhasDoacoes', $data);

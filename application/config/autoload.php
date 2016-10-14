@@ -132,4 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('Doador_model','Hemocentro_model','Doacao_model');
+$autoload['model'] = array('Doador_model','Hemocentro_model','Doacao_model','Estoque_model');

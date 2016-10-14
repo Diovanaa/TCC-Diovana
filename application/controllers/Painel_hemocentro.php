@@ -27,12 +27,11 @@ class Painel_hemocentro extends MY_ControllerLogado {
 
 	}
 	//chama tela de editar perfil do hemocentro
-	public function editaPerfilHemocentro() {
+public function editaPerfilHemocentro() {
 		$id_hemocentro = $this->session->userdata('id_hemocentro');
-		$data = array("dadosHemocentro" => $this->hemocentro_model->getHemocentro($id_hemocentro)->row());
+		$data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row(), "dadosEstoque" => $this->Estoque_model->meuEstoque());
 		$this->load->view('hemocentro/cabecalho_hemocentro');
-		$this->load->view('configuracoes_Hemocentro_view', $data);
-
+    $this->load->view('hemocentro/configuracoes_hemocentro_view', $data);
 	}
 	//chama tela de cadastro de estoque do hemocentro
 	public function carregarCadastroEstoque() {
@@ -88,10 +87,10 @@ class Painel_hemocentro extends MY_ControllerLogado {
 
 		$data = array();
 
-		$data['senha'] = md5($this->input->post('hemocentro_senha'));
+		//$data['senha'] = md5($this->input->post('hemocentro_senha'));
 		$data['nome'] = $this ->input->post('hemocentro_nome');
 		$data['telefone'] = $this->input->post('hemocentro_telefone');
-		$data['email'] = $this->input->post('hemocentro_email');
+	//	$data['email'] = $this->input->post('hemocentro_email');
 		//$data['rua'] = $this->input->post('hemocentro_rua');
 		$data['bairro'] = $this->input->post('hemocentro_bairro');
 		$data['endereco'] = $this->input->post('hemocentro_endereco');
@@ -99,12 +98,12 @@ class Painel_hemocentro extends MY_ControllerLogado {
 		$data['estado'] = $this->input->post('hemocentro_estado');
 		$data['cep'] = $this->input->post('hemocentro_cep');
 		//altera os dados
-		$this->hemocentro_model->alterar($data);
+		$this->Hemocentro_model->alterar($data);
 		//atualiza tela com as alteraçõe
 		$id_hemocentro = $this->session->userdata('id_hemocentro');
-		$dados2 = array("dadosHemocentro" => $this->hemocentro_model->getHemocentro($id_hemocentro)->row());
+		$dados2 = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row());
 		$this->load->view('hemocentro/cabecalho_hemocentro');
-		$this->load->view('configuracoes_hemocentro_view', $dados2);
+		$this->load->view('hemocentro/configuracoes_hemocentro_view', $dados2);
 
 	}
 	function AtualizarSenha() {
@@ -113,12 +112,12 @@ class Painel_hemocentro extends MY_ControllerLogado {
 		$data['senha'] = md5($this->input->post('hemocentro_senha'));
 		$data['email'] = $this->input->post('hemocentro_email');
 
-		$this->hemocentro_model->alterarSenha($data);
+		$this->Hemocentro_model->alterarSenha($data);
 
 		$id_hemocentro = $this->session->userdata('id_hemocentro');
-		$dados2 = array("dadosHemocentro" => $this->hemocentro_model->getHemocentro($id_hemocentro)->row());
+		$dados2 = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row());
 		$this->load->view('hemocentro/cabecalho_hemocentro');
-		$this->load->view('configuracoes_hemocentro_view', $dados2);
+		$this->load->view('hemocentro/configuracoes_hemocentro_view', $dados2);
 
 
 	}

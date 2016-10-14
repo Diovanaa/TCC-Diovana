@@ -50,14 +50,14 @@
 					    <div class="form-group col-lg-6">
 					      	<label for="tiposanguineoDoador">Tipo Sanguineo*:</label>
 						           <select class="form-control" name="doador_tipo_sanguineo" id="tipoSanguineo">
-							              <option>A-</option>
-							              <option>A+</option>
-							              <option>B-</option>
-							              <option>B+</option>
-							              <option>AB-</option>
-							              <option>AB+</option>
-							              <option>O-</option>
-						               	<option>O+</option>
+							              <option value="A-">A-</option>
+							              <option value="A+">A+</option>
+							              <option value="B-">B-</option>
+							              <option value="B+">B+</option>
+							              <option value="AB-">AB-</option>
+							              <option value="AB+">AB+</option>
+							              <option value="O-">O-</option>
+						               	<option value="O+">O+</option>
 						          </select>
 						 </div>
              <!-- Escolha do sexo do doador-->

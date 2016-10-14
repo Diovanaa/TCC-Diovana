@@ -35,9 +35,9 @@ class Hemocentro_model extends CI_Model {
 	function getHemocentro($hemocentro) {
 		$id_hemocentro = $this->session->userdata('id_hemocentro');
 		$this->db
-->select('*')
-->from('Hemocentro')
-->where('id_hemocentro', $id_hemocentro);
+		->select('*')
+		->from('Hemocentro')
+		->where('id_hemocentro', $id_hemocentro);
 		return $this->db->get();
 	}
 
