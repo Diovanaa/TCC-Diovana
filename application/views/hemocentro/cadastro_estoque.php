@@ -5,18 +5,18 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li><a href="<?=site_url('Painel_hemocentro/index')?>"><i class="fa fa-home " aria-hidden="true"></i>Home</a></li>
-      <li ><a href="<?=site_url('Painel_hemocentro/carregarPerfil')?>"><i class="fa fa-user" aria-hidden="true"></i>Perfil</a></li>
-      <li class="active"><a href="<?=site_url('Painel_hemocentro/carregarCadastroEstoque')?>"><i class="fa fa-plus " aria-hidden="true"></i>Novo Estoque</a></li>
-      <li><a href="<?=site_url('Painel_hemocentro/carregaMeuEstoque')?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Meu Estoque</a></li>
-      <li><a href="<?=site_url('Painel_hemocentro/carregaMeuEstoque')?>"><i class="fa fa-plus" aria-hidden="true"></i>Procurar Doadores</a></li>
-      <li><a href="<?=site_url('Painel_hemocentro/editaPerfilHemocentro')?>"><i class="fa fa-cog" aria-hidden="true"></i>Configurações</a></li>
+            <li><a href="<?=site_url('Painel_hemocentro/index')?>"><i class="fa fa-home " aria-hidden="true"></i> Home</a></li>
+      <li ><a href="<?=site_url('Painel_hemocentro/carregarPerfil')?>"><i class="fa fa-user" aria-hidden="true"></i> Perfil</a></li>
+      <li class="active"><a href="<?=site_url('Painel_hemocentro/carregarCadastroEstoque')?>"><i class="fa fa-plus " aria-hidden="true"></i> Novo Estoque</a></li>
+      <li><a href="<?=site_url('Painel_hemocentro/carregaMeuEstoque')?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Meu Estoque</a></li>
+      <li><a href="<?=site_url('Painel_hemocentro/carregaMeuEstoque')?>"><i class="fa fa-plus" aria-hidden="true"></i> Procurar Doadores</a></li>
+      <li><a href="<?=site_url('Painel_hemocentro/editaPerfilHemocentro')?>"><i class="fa fa-cog" aria-hidden="true"></i> Configurações</a></li>
           </ul>
 
 
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-          <h1 class="page-header"></h1>
+          <h1 class="page-header"><?php echo $dadosHemocentro->nome; ?></h1>
 
           <div class="panel panel-default panel-table">
                <div class="panel-heading ">
@@ -28,55 +28,55 @@
                  </div>
                </div>
                <div class="panel-body">
-                 <form action="<?=site_url('Painel_hemocentro/carregarCadastroEstoque')?>" method="post">
+                 <form action="<?=site_url('Painel_hemocentro/salvarEstoque')?>" method="post">
                         <!-- Entrada nome doador-->
                         <div class="form-group col-lg-3">
                               <label for="sangue_tipoA-">Tipo A-:</label>
-                              <input type="text" id="sangue_tipoA-" name="tipo_a0" placeholder="Tipo A-"
+                              <input type="text" id="sangue_tipoA-" name="estoquetipo_a0" placeholder="Tipo A-"
                               value="" class="form-control" required  />
                         </div>
                         <!-- Seleção do tipo sanguineo do doador-->
                         <div class="form-group col-lg-3">
                               <label for="sangue_tipoA+">Tipo A+:</label>
-                              <input type="text" id="sangue_tipoA+" name="tipo_a1" placeholder="Tipo A+"
+                              <input type="text" id="sangue_tipoA+" name="estoquetipo_a1" placeholder="Tipo A+"
                               value="" class="form-control" required  />
                         </div>
                         <div class="form-group col-lg-3">
                               <label for="sangue_tipoB-">Tipo B-:</label>
-                              <input type="text" id="sangue_tipoB-" name="tipo_b0" placeholder="Tipo B-"
+                              <input type="text" id="sangue_tipoB-" name="estoquetipo_b0" placeholder="Tipo B-"
                               value="" class="form-control" required  />
                         </div>
                         <div class="form-group col-lg-3">
                               <label for="sangue_tipoB+">Tipo B+:</label>
-                              <input type="text" id="sangue_tipoB+" name="tipo_b1" placeholder="Tipo B+"
+                              <input type="text" id="sangue_tipoB+" name="estoquetipo_b1" placeholder="Tipo B+"
                               value="" class="form-control" required  />
                         </div>
                         <div class="form-group col-lg-3">
                               <label for="sangue_tipoAB-">Tipo AB-:</label>
-                              <input type="text" id="sangue_tipoAB-" name="tipo_ab0" placeholder="Tipo AB-"
+                              <input type="text" id="sangue_tipoAB-" name="estoquetipo_ab0" placeholder="Tipo AB-"
                               value="" class="form-control" required  />
                         </div>
                         <!-- Seleção do tipo sanguineo do doador-->
                         <div class="form-group col-lg-3">
                               <label for="sangue_tipoAB+">Tipo AB+:</label>
-                              <input type="text" id="sangue_tipoAB+" name="tipo_ab1" placeholder="Tipo AB+"
+                              <input type="text" id="sangue_tipoAB+" name="estoquetipo_ab1" placeholder="Tipo AB+"
                               value="" class="form-control" required  />
                         </div>
                         <div class="form-group col-lg-3">
                               <label for="sangue_tipoO-">Tipo O-:</label>
-                              <input type="text" id="sangue_tipoO-" name="tipo_o0" placeholder="Tipo O-"
+                              <input type="text" id="sangue_tipoO-" name="estoquetipo_o0" placeholder="Tipo O-"
                               value="" class="form-control" required  />
                         </div>
                         <div class="form-group col-lg-3">
                               <label for="sangue_tipoO+">Tipo O+:</label>
-                              <input type="text" id="sangue_tipoO+" name="tipo_o1" placeholder="Tipo O+"
+                              <input type="text" id="sangue_tipoO+" name="estoquetipo_o1" placeholder="Tipo O+"
                               value="" class="form-control" required  />
                         </div>
 
                     <h5>*Campos obrigatórios</h5>
                     <!-- Botão para cadastrar-->
                     <div class="col-lg-3">
-                          <button type="submit" class="btn btn-danger">
+                          <button type="submit" class="btn btn-primary">
                                  Salvar
                           </button>
 

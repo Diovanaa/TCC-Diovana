@@ -29,6 +29,12 @@ class Painel_Doador extends MY_ControllerLogado {
         $this->load->view('doador/perfil_doador_teste2', $data);
         $this->load->view('rodape_view');
     }
+    public function carregarDoadores() {
+        $id_doador = $this->session->userdata('id_doador');
+        $data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
+        $this->load->view('hemocentro/cabecalho_hemocentro');
+        $this->load->view('hemocentro/home_hemocentro_view', $data);
+      }
 
     public function carregaMinhasDoacoes() {
         $id_doador = $this->session->userdata('id_doador');
@@ -111,7 +117,7 @@ class Painel_Doador extends MY_ControllerLogado {
         $data['nome'] = $this->input->post('doador_nome');
         $data['telefone'] = $this->input->post('doador_telefone');
         $data['data_nascimento'] = $this->input->post('doador_datanascimento');
-        $data['tipo_sanguineo'] = $this->input->post('doador_tiposanguineo');
+        $data['tipo_sanguineo'] = $this->input->post('doador_tipo_sanguineo');
         $data['sexo'] = $this->input->post('doador_sexo');
 
         $this->Doador_model->alterarDadosPessoais($data);

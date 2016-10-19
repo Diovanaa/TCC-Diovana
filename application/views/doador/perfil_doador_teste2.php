@@ -112,12 +112,14 @@
                                       </a>
 
                                         <a href="<?=
-                                        site_url('painel_doador/carregarCadastroDoacao')?>" class="btn btn-primary">Nova Doação</a>
+                                        site_url('painel_doador/carregarCadastroDoacao')?>" class="btn btn-primary"> Nova Doação </a>
 
                               </div>
                             </div>
                           </div>
                           <div class="panel-body">
+<div class="table-responsive">
+
 
                             <table class="table">
                             <thead>
@@ -127,7 +129,7 @@
                                       Tipo doação
                                     </th>
                                     <th>Data Doação</th>
-                                    <th>Data Ultima Doação</th>
+                                    <!--<th>Data Ultima Doação</th>-->
                                 </tr>
                             </thead>
                             <tbody id="myTable">
@@ -140,7 +142,7 @@
                                           <?php echo $row->tipo_doacao;?>
                                         </td>
                                         <td><?php echo $row->data_doacao; ?></td>
-                                        <td><?php echo $row->data_ultimadoacao; ?></td>
+                                      <!--  <td><?php echo $row->data_ultimadoacao; ?></td>-->
                                         <td>
                                           <a class="btn btn-primary"><em class="fa fa-pencil"></em></a>
                                           <a  href="<?= site_url('painel_doador/excluir/' . $row->id_doacao . '/' . $row->id_doador ) ?>"
@@ -163,7 +165,7 @@
                             </tbody>
 
                             </table>
-
+</div>
                           </div>
 
                         </div>

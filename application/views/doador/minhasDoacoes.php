@@ -35,7 +35,7 @@
              <div class="panel-heading ">
                <div class="row ">
                  <div class="col col-xs-6">
-                   <h3 class="panel-title"></h3>
+                   <h3 class="panel-title">Minhas Doações</h3>
                  </div>
                  <div class="col col-xs-6 text-right">
 
@@ -50,6 +50,9 @@
                </div>
              </div>
              <div class="panel-body">
+               <div class="table-responsive">
+
+
                <table class="table">
                <thead>
                    <tr>
@@ -58,10 +61,10 @@
                          Tipo doação
                        </th>
                        <th>Data Doação</th>
-                       <th>Data Ultima Doação</th>
+                      <!-- <th>Data Ultima Doação</th>-->
                    </tr>
                </thead>
-               <tbody id="myTable">
+               <!--<tbody id="myTable">-->
                <?php if (!empty($dadosDoacao)):
                   foreach ($dadosDoacao as $row): ?>
                            <td>
@@ -71,7 +74,7 @@
                              <?php echo $row->tipo_doacao;?>
                            </td>
                            <td><?php echo $row->data_doacao; ?></td>
-                           <td><?php echo $row->data_ultimadoacao; ?></td>
+                           <!--<td><?php echo $row->data_ultimadoacao; ?></td>-->
                            <td>
                              <a class="btn btn-primary"><em class="fa fa-pencil"></em></a>
                              <a  href="<?= site_url('painel_doador/excluir/' . $row->id_doacao) ?>"
@@ -94,7 +97,7 @@
                </tbody>
 
                </table>
-
+</div>
              </div>
              <div class="panel-footer ">
                <div class="row">

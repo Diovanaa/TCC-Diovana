@@ -57,6 +57,14 @@ public function excluirDoador($id_doador)
 		->where('id_doador', $id_doador);
 		return $this->db->get();
 	}
+	function doadores($doador) {
+	//	$id_doador = $this->session->userdata('id_doador');
+		$this->db
+		->select("doador.nome,doador.tipo_sanguineo, doador.estado, doador.cidade, doador.endereco, doador.telefone")
+		->from("Doador")
+		->where('id_doador', $id_doador);
+		return $this->db->get();
+	}
 	function getDoacao($doacao) {
 		$id_doador = $this->session->userdata('id_doador');
 		$this->db
@@ -65,11 +73,7 @@ public function excluirDoador($id_doador)
 		->where('id_doador', $id_doador);
 		return $this->db->get();
 	}
-	//function getDoador($id_doador) {
-//			$id_doador = (int)$id_doador;
-//			$this->db->where('id_doador', $id_doador);
-//			return $this->db->get('doador');
-//		}
+
 	function alterarDoador($data) {
 		$id_doador = $this->session->userdata('id_doador');
 		$this->db->where('id_doador', $id_doador);
@@ -101,20 +105,6 @@ public function excluirDoador($id_doador)
 		return $this->db->update('Doador');
 	}
 
-	//function alterarDoacao($data,$id_doador)
-	//{
-		//$id_doacao = $this->session->userdata('id_doacao');
-		//$this->db->where('doador.id_doador', $id_doador);
-		//$this->db->where('id_doacao',$id_doacao);
-		//$this->db->set($data);
-		//return $this->db->update('Doacao');
-	//}
-//	function alterarEndereco($data,$id_doador){
-	//	$id_endereco = $this->session->username('id_endereco');
-		//$this->db->where('id_doador', $id_doador);
-		//$this->db->where('id_endereco',$id_endereco);
-		//$this->db->set($data);
-		//return $this->db->update('Endereco');
-	//}
+
 
 }

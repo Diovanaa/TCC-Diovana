@@ -14,8 +14,8 @@
 	<link href="<?=base_url('assets/css/bootstrap.min.css')?>" rel="stylesheet">
 	<link href="<?=base_url('assets/css/ie10-viewport-bug-workaround.css')?>" rel="stylesheet">
 	<link href="<?=base_url('assets/css/dashboard.css')?>" rel="stylesheet">
-<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-  	<script src="<?=base_url('assets/js/bootstrap.min.js')?>" type="text/javascript"></script>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+  <script src="<?=base_url('assets/js/bootstrap.min.js')?>" type="text/javascript"></script>
 
 
 
@@ -36,8 +36,13 @@
 	          <a class="navbar-brand" href="#">HemoUnião</a>
 	        </div>
 	        <div id="navbar" class="navbar-collapse collapse">
-	          <ul class="nav navbar-nav navbar-right">
 
+						<ul class="nav navbar-nav navbar-right ">
+							<li><a href="<?=site_url('painel_doador/index')?>"><i class="fa fa-home " aria-hidden="true"></i> Home</a></li>
+							<li><a href="<?=site_url('painel_doador/carregarPerfil')?>"><i class="fa fa-user" aria-hidden="true"></i> Perfil</a></li>
+							<li ><a href="<?=site_url('painel_doador/carregarCadastroDoacao')?>"><i class="fa fa-plus " aria-hidden="true"></i> Nova Doação</a></li>
+							<li><a href="<?=site_url('painel_doador/carregaMinhasDoacoes')?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Minhas Doações</a></li>
+							<li><a href="<?=site_url('painel_doador/editaPerfilDoador')?>"><i class="fa fa-cog" aria-hidden="true"></i> Configurações</a></li>
 	            <li><a href="<?=site_url('painel_doador/deslogar')?>">Sair</a></li>
 	          </ul>
 	          <form class="navbar-form navbar-right">

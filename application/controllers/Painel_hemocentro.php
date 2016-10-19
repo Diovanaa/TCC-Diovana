@@ -10,15 +10,13 @@ class Painel_hemocentro extends MY_ControllerLogado {
         $data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row());
         $this->load->view('hemocentro/cabecalho_hemocentro');
         $this->load->view('hemocentro/home_hemocentro_view', $data);
-        $this->load->view('rodape_view');
-    }
+      }
 
     function deslogar() {
         $this->session->sess_destroy();
         $this->load->view('cabecalho_view');
         $this->load->view('home_view_teste');
-        $this->load->view('rodape_view');
-    }
+      }
 
     public function carregarPerfil() {
         $id_hemocentro = $this->session->userdata('id_hemocentro');
@@ -26,8 +24,7 @@ class Painel_hemocentro extends MY_ControllerLogado {
             "dadosEstoque" => $this->Hemocentro_model->meuEstoque());
         $this->load->view('hemocentro/cabecalho_hemocentro');
         $this->load->view('hemocentro/perfil_hemocentro_teste', $data);
-        $this->load->view('rodape_view');
-    }
+      }
 
     public function carregaMeuEstoque() {
         $id_hemocentro = $this->session->userdata('id_hemocentro');
@@ -35,23 +32,20 @@ class Painel_hemocentro extends MY_ControllerLogado {
 
         $this->load->view('hemocentro/cabecalho_hemocentro');
         $this->load->view('hemocentro/meu_estoque_view', $data);
-        $this->load->view('rodape_view');
-    }
+      }
 
     public function editaPerfilHemocentro() {
         $id_hemocentro = $this->session->userdata('id_hemocentro');
         $data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row());
         $this->load->view('hemocentro/cabecalho_hemocentro');
         $this->load->view('hemocentro/configuracoes_hemocentro_view', $data);
-        $this->load->view('rodape_view');
-    }
+      }
 
     public function carregarCadastroEstoque() {
         $id_hemocentro = $this->session->userdata('id_hemocentro');
         $data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row());
         $this->load->view('hemocentro/cabecalho_hemocentro');
         $this->load->view('hemocentro/cadastro_Estoque', $data);
-        $this->load->view('rodape_view');
     }
 
     public function salvarEstoque() {
@@ -116,8 +110,7 @@ class Painel_hemocentro extends MY_ControllerLogado {
         $dados2 = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row());
         $this->load->view('hemocentro/cabecalho_hemocentro');
         $this->load->view('hemocentro/configuracoes_hemocentro_view', $dados2);
-        $this->load->view('rodape_view');
-    }
+      }
 
     function AtualizarEstoque() {
 

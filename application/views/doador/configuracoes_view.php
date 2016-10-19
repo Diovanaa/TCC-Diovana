@@ -104,7 +104,7 @@
                                     <td class="hidden-xs"><b>Tipo Sanguíneo</b></td>
                                     <td >
                                         <select class="form-control" name="doador_tipo_sanguineo" id="tipoSanguineo">
-                                            <option value="<?php echo $dadosDoador->tipo_sanguineo ?>"><?php echo $dadosDoador->tipo_sanguineo ?></option>
+                                          <!--  <option value="<?php echo $dadosDoador->tipo_sanguineo ?>"><?php echo $dadosDoador->tipo_sanguineo ?></option> -->
                                             <option value="A-">A-</option>
                                             <option value="A+">A+</option>
                                             <option value="B-">B-</option>
@@ -168,7 +168,7 @@
 
                                     <td class="hidden-xs"><b>Estado</b></td>
                                     <td >  <select class="form-control" name="doador_estado" id="estadoDoador">
-                                            <option value="<?php echo $dadosDoador->estado; ?>"><?php echo $dadosDoador->estado; ?></option>
+                                            <!-- <option value="<?php echo $dadosDoador->estado; ?>"><?php echo $dadosDoador->estado; ?></option> -->
                                             <option value="Acre">Acre</option>
                                             <option value="Alagoas">Alagoas</option>
                                             <option value="Amazonas">Amazonas</option>
@@ -247,7 +247,7 @@
                 <div class="panel-heading ">
                     <div class="row ">
                         <div class="col col-xs-6">
-                            <h1 class="panel-title"></h1>
+                            <h1 class="panel-title">Alterar dados</h1>
                         </div>
                         <div class="col col-xs-6 text-right">
                             <form action="<?= site_url('Painel_doador/AtualizarSenha') ?>" method="post">
@@ -266,7 +266,7 @@
                             <thead>
                                 <tr>
 
-                                    <th class="hidden-xs">Alterar dados</th>
+                                    <th class="hidden-xs"></th>
 
                                 </tr>
                             </thead>
@@ -325,6 +325,8 @@
 <script src="<?= base_url('assets/js/jquery-1.10.2.js') ?>"></script>
 <script type="text/javascript">
     $('#sexo').val('<?php echo $dadosDoador->sexo; ?>');
+  $('#tipoSanguineo').val('<?php echo $dadosDoador->tipo_sanguineo; ?>');
+  $('#estadoDoador').val('<?php echo $dadosDoador->estado; ?>');
 </script>
 </body>
 </html>
