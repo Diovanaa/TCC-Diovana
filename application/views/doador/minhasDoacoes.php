@@ -56,11 +56,11 @@
                <table class="table">
                <thead>
                    <tr>
-                       <th>Nome Hemocentro</th>
+                       <th>Nome hemocentro</th>
                        <th>
                          Tipo doação
                        </th>
-                       <th>Data Doação</th>
+                       <th>Data da doação</th>
                       <!-- <th>Data Ultima Doação</th>-->
                    </tr>
                </thead>
@@ -73,7 +73,7 @@
                            <td>
                              <?php echo $row->tipo_doacao;?>
                            </td>
-                           <td><?php echo $row->data_doacao; ?></td>
+                           <td><?php echo $row->doacao_dia; ?>/<?php echo $row->doacao_mes; ?>/<?php echo $row->doacao_ano; ?></td>
                            <!--<td><?php echo $row->data_ultimadoacao; ?></td>-->
                            <td>
                              <a class="btn btn-primary"><em class="fa fa-pencil"></em></a>

@@ -59,7 +59,7 @@
                  <tbody id="myTable">
                  <tr>
                    <td><b>Data de nascimento:</b> </td>
-                   <td> <?php echo $dadosDoador->data_nascimento;?> </td>
+                   <td> <?php echo $dadosDoador->data_dia;?>/<?php echo $dadosDoador->data_mes;?>/<?php echo $dadosDoador->data_ano;?></td>
                  </tr>
                  </tbody>
                  <tbody id="myTable">

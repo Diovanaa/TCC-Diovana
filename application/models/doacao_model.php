@@ -4,11 +4,17 @@ class Doacao_model extends CI_Model {
 
     public  $id_doacao;
     public  $tipo_doacao;
-  	public  $data_doacao;
-  	public  $data_ultimadoacao;
-  	public  $data_proximadoacao;
+  	public  $doacao_dia;
+    public $doacao_mes;
+    public $doacao_ano;
+    public $ultima_dia;
+    public $ultima_mes;
+    public $ultima_ano;
+    public $proxima_dia;
+    public $proxima_mes;
     public  $id_doador;
     public $hemocentro_nome;
+  
     function __construct() {
         parent::__construct();
     }
