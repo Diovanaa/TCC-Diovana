@@ -4,11 +4,11 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class=""><a href="<?=site_url('painel_doador/index')?>"><i class="fa fa-home " aria-hidden="true"></i> Home</a></li>
-  <li class="active"><a href="<?=site_url('painel_doador/carregarPerfil')?>"><i class="fa fa-user" aria-hidden="true"></i> Perfil</a></li>
-  <li ><a href="<?=site_url('painel_doador/carregarCadastroDoacao')?>"><i class="fa fa-plus " aria-hidden="true"></i> Nova Doação</a></li>
-<li><a href="<?=site_url('painel_doador/carregaMinhasDoacoes')?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Minhas Doações</a></li>
-  <li><a href="<?=site_url('painel_doador/editaPerfilDoador')?>"><i class="fa fa-cog" aria-hidden="true"></i> Configurações</a></li>
+            <li><a class="fonte2" href="<?=site_url('painel_doador/index')?>"><i class="fa fa-home " aria-hidden="true"></i> Home</a></li>
+            <li class="active"><a class="fonte2" href="<?=site_url('painel_doador/carregarPerfil')?>"><i class="fa fa-user" aria-hidden="true"></i> Perfil</a></li>
+            <li><a class="fonte2" href="<?=site_url('painel_doador/carregarCadastroDoacao')?>"><i class="fa fa-plus " aria-hidden="true"></i> Nova Doação</a></li>
+            <li><a class="fonte2" href="<?=site_url('painel_doador/carregaMinhasDoacoes')?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Minhas Doações</a></li>
+            <li><a class="fonte2" href="<?=site_url('painel_doador/editaPerfilDoador')?>"><i class="fa fa-cog" aria-hidden="true"></i> Configurações</a></li>
 
           </ul>
 
@@ -118,16 +118,14 @@
                             </div>
                           </div>
                           <div class="panel-body">
-<div class="table-responsive">
+                              <div class="table-responsive">
 
 
                             <table class="table">
                             <thead>
                                 <tr>
                                     <th>Nome Hemocentro</th>
-                                    <th>
-                                      Tipo doação
-                                    </th>
+                                    <th>Tipo doação</th>
                                     <th>Data Doação</th>
                                     <!--<th>Data Ultima Doação</th>-->
                                 </tr>
@@ -141,8 +139,8 @@
                                         <td>
                                           <?php echo $row->tipo_doacao;?>
                                         </td>
-                                        <td><?php echo $row->data_doacao; ?></td>
-                                      <!--  <td><?php echo $row->data_ultimadoacao; ?></td>-->
+                                        <td><?php echo $row->doacao_dia; ?>/<?php echo $row->doacao_mes; ?>/<?php echo $row->doacao_ano; ?></td>
+
                                         <td>
                                           <a class="btn btn-primary"><em class="fa fa-pencil"></em></a>
                                           <a  href="<?= site_url('painel_doador/excluir/' . $row->id_doacao . '/' . $row->id_doador ) ?>"

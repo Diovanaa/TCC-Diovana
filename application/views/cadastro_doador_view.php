@@ -1,3 +1,4 @@
+<div class="row fundo">
 <div class="col-lg-12"><!-- cabeçalho-->
     <!-- navbar -->
     <nav class="navbar navbar-inverse navbar-fixed-top cor1">
@@ -8,11 +9,11 @@
         <div id="navbar" class="navbar-collapse collapse ">
           <ul class="nav navbar-nav pull-right " >
 
-						<li><a data-toggle="modal" href="<?=site_url('home')?>" >
+						<li><a class="branco" data-toggle="modal" href="<?=site_url('home')?>" >
 	              <i class="fa fa-home" aria-hidden="true"></i>	 Home</a></li>
 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <a href="#" class="dropdown-toggle branco" data-toggle="dropdown">
                         Entrar <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
@@ -37,8 +38,11 @@
 </br>
 </br>
 <!-- cadastro-->
-<div class=" content container-fluid card col-sm-12 col-sm-offset-2">
-		<div class="container-page">
+
+
+
+<div class=" fundo content container-fluid card col-sm-12 col-sm-offset-2 ">
+		<div class=" fundo container-page">
 			<div class="col-md-6">
 				<h3>Cadastro de Doador:</h3>
                 <?php echo validation_errors(); ?>
@@ -339,17 +343,12 @@
           <h5>*Campos obrigatórios</h5>
           <!-- Botão para cadastrar-->
 				  <div class="col-lg-3">
-				        <button type="submit" class="btn btn-danger">
+				        <button type="submit" class="btn btn-primary">
 					             CADASTRAR
 				        </button>
 
 			    </div>
-          <div class="col-lg-3">
 
-                <button type="button" class="btn btn-primary" onclick="history.go(-1)">
-                        VOLTAR
-                </button>
-			    </div>
           <?php $nivel = "DOADOR"; ?>
 
           <input type="hidden" name="nivel" value="<?php echo $nivel; ?>"/>
@@ -359,3 +358,4 @@
 			 </div>
 		</div>
 </div> <!-- fecha cadastro-->
+</div>

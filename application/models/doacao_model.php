@@ -14,7 +14,7 @@ class Doacao_model extends CI_Model {
     public $proxima_mes;
     public  $id_doador;
     public $hemocentro_nome;
-  
+
     function __construct() {
         parent::__construct();
     }
@@ -32,6 +32,7 @@ class Doacao_model extends CI_Model {
      ->where('id_doador', $id_doador);
      return $query = $this->db->get()->result();
    }
+   
    function atualizarDoacao(){
 
    }

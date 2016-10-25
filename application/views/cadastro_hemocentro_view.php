@@ -10,11 +10,11 @@
         <div id="navbar" class="navbar-collapse collapse ">
           <ul class="nav navbar-nav pull-right " >
 
-						<li><a data-toggle="modal" href="<?=site_url('home')?>" >
+						<li><a class="branco" data-toggle="modal" href="<?=site_url('home')?>" >
 	              <i class="fa fa-home" aria-hidden="true"></i>	 Home</a></li>
 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <a href="#" class="dropdown-toggle branco" data-toggle="dropdown">
                         Entrar <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
@@ -168,16 +168,12 @@
 
 
 				<div class="col-xs-7 col-md-5 col-lg-3">
-				<button type="submit" class="btn btn-danger">
+				<button type="submit" class="btn btn-primary">
 					CADASTRAR
 				</button>
 
 			</div>
-      	<div class="col-xs-7 col-md-5 col-lg-3 ">
-      <button type="button" class="btn btn-primary" onclick="history.go(-1)">
-              VOLTAR
-      </button>
-    </div>
+
     </div>
     </div>
 				<br>

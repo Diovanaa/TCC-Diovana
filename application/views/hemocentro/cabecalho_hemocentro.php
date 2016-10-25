@@ -1,4 +1,4 @@
-
+<link href="<?=base_url('assets/css/style.css')?>" rel="stylesheet">
 
 <title> HemoUnião</title>
 
@@ -25,8 +25,8 @@
 <body>
 
 
-	    <nav class="navbar navbar-inverse navbar-fixed-top">
-	      <div class="container-fluid">
+	    <nav class="navbar navbar-inverse navbar-fixed-top cor1">
+	      <div class="container-fluid cor1">
 	        <div class="navbar-header">
 	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 	            <span class="sr-only">Toggle navigation</span>
@@ -40,18 +40,18 @@
 
 						<ul class="nav navbar-nav navbar-right ">
 							<li class="dropdown">
-						 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu<span class="caret"></span></a>
-						 <ul class="dropdown-menu">
+						 <a href="#" class="dropdown-toggle branco" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu<span class="caret"></span></a>
+						 <ul class="dropdown-menu " role="menu">
 							 <li><a href="#"><i class="fa fa-home " aria-hidden="true"></i>Home</a></li>
  							<li><a href="<?=site_url('Painel_hemocentro/carregarPerfil')?>"><i class="fa fa-user" aria-hidden="true"></i> Perfil</a></li>
  							<li ><a href="<?=site_url('Painel_hemocentro/carregarCadastroEstoque')?>"><i class="fa fa-plus " aria-hidden="true"></i> Novo Estoque</a></li>
  							<li><a href="<?=site_url('Painel_hemocentro/carregaMeuEstoque')?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Meu Estoque</a></li>
  							<li><a href="<?=site_url('Painel_hemocentro/carregaMeuEstoque')?>"><i class="fa fa-plus" aria-hidden="true"></i> Procurar Doadores</a></li>
  							<li><a href="<?=site_url('Painel_hemocentro/editaPerfilHemocentro')?>"><i class="fa fa-cog" aria-hidden="true"></i> Configurações</a></li>
- 							
+
 						 </ul>
 					 </li>
-								<li><a href="<?=site_url('Painel_hemocentro/deslogar')?>">Sair</a></li>
+								<li><a class="branco" href="<?=site_url('Painel_hemocentro/deslogar')?>">Sair</a></li>
 	          </ul>
 	          <form class="navbar-form navbar-right">
 	          <!--  <input type="text" class="form-control" placeholder="Procurar...">-->

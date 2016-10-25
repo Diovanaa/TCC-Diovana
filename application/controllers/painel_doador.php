@@ -45,7 +45,7 @@ class Painel_Doador extends MY_ControllerLogado {
 
         $this->load->view('doador/cabecalho_doador');
         $this->load->view('doador/minhasDoacoes', $data);
-        $this->load->view('rodape_view');
+
     }
 
     public function editaPerfilDoador() {
@@ -53,7 +53,14 @@ class Painel_Doador extends MY_ControllerLogado {
         $data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
         $this->load->view('doador/cabecalho_doador');
         $this->load->view('doador/configuracoes_view', $data);
-        $this->load->view('rodape_view');
+
+    }
+    public function editarDoacoes() {
+        $id_doador = $this->session->userdata('id_doador');
+        $data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row(), "dadosDoacao" => $this->Doador_model->getDoacao($id_doador)->row());
+        $this->load->view('doador/cabecalho_doador');
+        $this->load->view('doador/editar_doacoes', $data);
+
     }
 
     public function carregarCadastroDoacao() {
@@ -156,15 +163,20 @@ class Painel_Doador extends MY_ControllerLogado {
 
         $data['hemocentro_nome'] = $this->input->post('hemocentro_nome');
         $data['tipo_doacao'] = $this->input->post('doacao_tipodoacao');
-        $data['data_doacao'] = $this->input->post('doacao_datadoacao');
-        $data['data_ultimadoacao'] = $this->input->post('doacao_ultimadoacao');
+        $data['doacao_dia'] = $this->input->post('doacao_dia');
+        $data['doacao_mes'] = $this->input->post('doacao_mes');
+        $data['doacao_ano'] = $this->input->post('doacao_ano');
+        $data['ultima_dia'] = $this->input->post('ultima_dia');
+        $data['ultima_mes'] = $this->input->post('ultima_mes');
+        $data['ultima_ano'] = $this->input->post('ultima_ano');
+
 
         $this->Doador_model->alterarDoacao($data);
 
         $id_doador = $this->session->userdata('id_doador');
-        $dados2 = array("dadosDoacao" => $this->Doador_model->getDoacao($id_doador)->row());
-        $this->load->view('doador/cabecalho_doador');
-        $this->load->view('doador/editar_doacoes_view', $dados2);
+        $dados2 = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row(), "dadosDoacao" => $this->Doador_model->getDoacao($id_doador)->row());
+      $this->load->view('doador/cabecalho_doador');
+        $this->load->view('doador/editar_doacoes', $dados2);
     }
 
     public function excluir($id_doacao, $id_doador) {
@@ -176,5 +188,9 @@ class Painel_Doador extends MY_ControllerLogado {
 
         redirect('painel_doador/carregaMinhasDoacoes/?alerta=1');
     }
+
+
+
+
 
 }

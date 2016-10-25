@@ -58,14 +58,17 @@ public function excluirDoador($id_doador)
 		->where('id_doador', $id_doador);
 		return $this->db->get();
 	}
-	function doadores($doador) {
-	//	$id_doador = $this->session->userdata('id_doador');
-		$this->db
-		->select("doador.nome,doador.tipo_sanguineo, doador.estado, doador.cidade, doador.endereco, doador.telefone")
-		->from("Doador")
-		->where('id_doador', $id_doador);
-		return $this->db->get();
-	}
+
+	function getDoadores($teste) {
+
+	 $this->db
+	 ->select('*')
+	 ->from('doador')
+	 ->like('tipo_sanguineo', $teste)
+	 ->where('id_doador', $id_doador);
+	 return $qr = $this->db->get()->result();
+ }
+
 	function getDoacao($doacao) {
 		$id_doador = $this->session->userdata('id_doador');
 		$this->db

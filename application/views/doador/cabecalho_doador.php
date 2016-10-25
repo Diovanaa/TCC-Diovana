@@ -1,4 +1,4 @@
-
+<link href="<?=base_url('assets/css/style.css')?>" rel="stylesheet">
 <title> HemoUnião</title>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -24,8 +24,8 @@
 <body>
 
 
-	    <nav class="navbar navbar-inverse navbar-fixed-top">
-	      <div class="container-fluid">
+	    <nav class="navbar navbar-inverse navbar-fixed-top cor1">
+	      <div class="container-fluid cor1">
 	        <div class="navbar-header">
 	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 	            <span class="sr-only">Toggle navigation</span>
@@ -39,7 +39,7 @@
 
 						<ul class="nav navbar-nav navbar-right ">
 							<li class="dropdown">
-						 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu<span class="caret"></span></a>
+						 <a href="#" class="dropdown-toggle branco" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu<span class="caret"></span></a>
 						 <ul class="dropdown-menu">
 							 <li><a href="<?=site_url('painel_doador/index')?>"><i class="fa fa-home " aria-hidden="true"></i> Home</a></li>
  							<li><a href="<?=site_url('painel_doador/carregarPerfil')?>"><i class="fa fa-user" aria-hidden="true"></i> Perfil</a></li>
@@ -49,7 +49,7 @@
 
 						 </ul>
 					 </li>
-							<li><a href="<?=site_url('painel_doador/deslogar')?>">Sair</a></li>
+							<li><a class="branco" href="<?=site_url('painel_doador/deslogar')?>">Sair</a></li>
 	          </ul>
 	          <form class="navbar-form navbar-right">
 	          <!--  <input type="text" class="form-control" placeholder="Procurar...">-->

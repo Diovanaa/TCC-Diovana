@@ -10,11 +10,11 @@
         <div id="navbar" class="navbar-collapse collapse ">
           <ul class="nav navbar-nav pull-right " >
 
-						<li><a data-toggle="modal" href="<?=site_url('home')?>" >
-	              <i class="fa fa-home" aria-hidden="true"></i>	 Home</a></li>
+						<li><a class="branco" data-toggle="modal" href="<?=site_url('home')?>" >
+	              <i class="fa fa-home branco" aria-hidden="true"></i>	 Home</a></li>
 
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <a href="#" class="dropdown-toggle branco" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         Entrar <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
@@ -27,7 +27,7 @@
                         </li>
                     </ul>
                 </li>
-        
+
                 </ul>
           </ul>
         </li>
@@ -35,8 +35,11 @@
       </div>
     </nav>
 </br>
+<div class="row fundo">
+
+
 <div class="col-lg-12 home">
-<div class="row col-lg-12 diferente ">
+<div class="row col-lg-12 diferente fundo">
   <div class="col-lg-2"></div>
 
     <a href="<?=site_url('cadastro/chamandoCadastroDoador')?>" > <div class="col-lg-3 col-md-6 col-xs-12 diferente1"><h2 class="diferente"></br></br></br>Cadastro de Doador</h2></div></a>
@@ -67,4 +70,5 @@
 </div>
 </div>
 </br>
-<hr class="featurette-divider">
+
+</div>
