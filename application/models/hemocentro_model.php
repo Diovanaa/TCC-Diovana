@@ -21,6 +21,15 @@ class Hemocentro_model extends CI_Model {
 		return $this->db->insert('hemocentro', $this);
 	}
 
+	function getHemocentroPorEstado($teste) {
+	 $this->db
+	 ->select('*')
+	 ->from('hemocentro')
+	 ->like('estado', $teste)
+	 ->where('id_hemocentro', $id_hemocentro);
+	 return $qr = $this->db->get()->result();
+ }
+
 	function getHemocentro($id_hemocentro) {
 		//$id_hemocentro = $this->session->userdata('id_hemocentro');
 		//var_dump($id_hemocentro);
@@ -39,6 +48,7 @@ class Hemocentro_model extends CI_Model {
 		->where('id_hemocentro', $id_hemocentro);
 		return $this->db->get();
 	}
+
 
 	function alterar($data) {
 		$id_hemocentro = $this->session->userdata('id_hemocentro');
