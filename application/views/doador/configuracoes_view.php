@@ -484,24 +484,7 @@
 
 
 
-            </div>
-            <div class="panel panel-default panel-table">
-                <div class="panel-heading ">
-                    <div class="row ">
-                        <div class="col col-xs-6">
-                            <h1 class="panel-title">Editar Doação</h1>
-                        </div>
-                        <div class="col col-xs-6 text-right">
-                            <form action="<?= site_url('Painel_doador/AtualizarDoacao') ?>" method="post">
-                                <button type="submit" class="btn btn-primary" >
-                                    Salvar
-                                </button>
-                        </div>
-                    </div>
-                </div>
-
-
-        </div>
+          
 
 
 <!-- Bootstrap core JavaScript
