@@ -55,14 +55,14 @@ class Painel_Doador extends MY_ControllerLogado {
         $this->load->view('doador/configuracoes_view', $data);
 
     }
-    public function editarDoacoes() {
+    public function editarDoacoes($id_doacao) {
         $id_doador = $this->session->userdata('id_doador');
-        $data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row(), "dadosDoacao" => $this->Doador_model->getDoacao($id_doador)->row());
+        $data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row(),
+         "dadosDoacao" => $this->Doador_model->getDoacao($id_doador)->row());
         $this->load->view('doador/cabecalho_doador');
         $this->load->view('doador/editar_doacoes', $data);
 
     }
-
     public function carregarCadastroDoacao() {
         $id_doador = $this->session->userdata('id_doador');
         $data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
@@ -173,7 +173,7 @@ class Painel_Doador extends MY_ControllerLogado {
 
         $this->Doador_model->alterarDoacao($data);
 
-        $id_doador = $this->session->userdata('id_doador');
+        $id_doacao = $this->session->userdata('id_doacao');
         $dados2 = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row(), "dadosDoacao" => $this->Doador_model->getDoacao($id_doador)->row());
       $this->load->view('doador/cabecalho_doador');
         $this->load->view('doador/editar_doacoes', $dados2);

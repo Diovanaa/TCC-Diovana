@@ -77,7 +77,9 @@
                            <!--<td><?php echo $row->data_ultimadoacao; ?></td>-->
                            <td>
 
-                             <a href="<?=site_url('painel_doador/editarDoacoes')?>" class="btn btn-primary"><em class="fa fa-pencil"></em></a>
+                             <a href="<?=site_url('painel_doador/editarDoacoes/' . $row->id_doacao )?>"
+                               class="btn btn-primary"><em class="fa fa-pencil"></em></a>
+
                              <a  href="<?= site_url('painel_doador/excluir/' . $row->id_doacao) ?>"
                                class="btn btn-danger"
                                onclick="return confirm('Têm certeza que deseja excluir esta informação?')">
