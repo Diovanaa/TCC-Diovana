@@ -228,14 +228,6 @@ class Painel_Doador extends MY_ControllerLogado {
       		$this->load->view('doador/cabecalho_doador');
       		$this->load->view('doador/localizar_hemocentro', $data);
       	}
-        public function teste_procurar(){
-        		$id_doador = $this->session->userdata('id_doador');
-        		$data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row(),
-          "dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row());
-        		$this->load->view('hemocentro/cabecalho_hemocentro');
-        		$this->load->view('hemocentro/home_hemocentro_view', $data);
-        	}
-
       public function localizar(){
 
       $teste = $this->input->post('busca');
@@ -250,8 +242,8 @@ class Painel_Doador extends MY_ControllerLogado {
       }
 
       else {
-        $id_hemocentro = $this->session->userdata('id_hemocentro');
-        $data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentroPorEstado($id_hemocentro)->row());
+        $id_doador = $this->session->userdata('id_doador');
+        $data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentroPorEstado($teste)->row());
         $this->load->view('doador/cabecalho_doador');
         $this->load->view('doador/localizar_hemocentro', $data);
       }
