@@ -33,12 +33,13 @@
                  <div class="col col-xs-6">
                    <h3 class="panel-title">Procurar Hemocentros</h3>
                  </div>
+                  <form action="<?=site_url('Painel_doador/localizar')?>" method="post">
                  <div class="col col-xs-6 text-right">
 
                    <button type="submit" class="btn btn-primary">
                      <i class="fa fa-search"></i>		Procurar
                    </button>
-                  
+
 
 
                  </div>
@@ -50,7 +51,7 @@
 
                <table class="table">
                  <div class="panel-body">
-                 <form action="<?=site_url('Painel_doador/localizar')?>" method="post">
+
                    <div class="row">
 
 

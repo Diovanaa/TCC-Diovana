@@ -234,7 +234,6 @@ class Painel_Doador extends MY_ControllerLogado {
 
       $this->db->select('*');
       $this->db->like('estado', $this->input->post('busca'));
-      $this->db->where('id_hemocentro', $id_hemocentro);
       $retorno = $this->db->get('hemocentro')->num_rows();
 
       if ($retorno == 0) {
@@ -243,7 +242,8 @@ class Painel_Doador extends MY_ControllerLogado {
 
       else {
         $id_doador = $this->session->userdata('id_doador');
-        $data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentroPorEstado($teste)->row());
+        $data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentroPorEstado($teste),
+      "dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
         $this->load->view('doador/cabecalho_doador');
         $this->load->view('doador/localizar_hemocentro', $data);
       }
