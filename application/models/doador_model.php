@@ -23,6 +23,16 @@ class Doador_model extends CI_Model {
 	public function Salvar() {
 		return $this->db->insert('Doador', $this);
 	}
+	function getDoadorPorTipoSanguineo($teste) {
+	 $this->db
+	 ->select('*')
+	 ->from('doador')
+	 ->like('tipo_sanguineo', $teste)
+	 ->or_like('estado', $teste)
+
+	 ->order_by("doador.nome", "asc");
+	 return $qr = $this->db->get()->result();
+ }
 	//buscando todas as minhas doações
 	public function minhasDoacoes(){
 		$id_doador = $this->session->userdata('id_doador');

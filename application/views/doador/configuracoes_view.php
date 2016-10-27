@@ -97,7 +97,7 @@
                                           <div class="col-md-4 col-lg-4 - col-xs-12">
 
                                       <select class=" form-control" name="doador_data_dia" id="data_dia">
-                                           <option value="DD">DD</option>
+
                                            <option value="01">01</option>
                                            <option value="02">02</option>
                                            <option value="03">03</option>
@@ -153,7 +153,7 @@
                                     </div>
                                     <div class="col-md-4 col-lg-4 - col-xs-12">
                                       <select class=" form-control" name="doador_data_ano" id="data_ano">
-                                           <option value="AAAA">AAAA</option>
+
                                            <option value="2015">2015</option>
                                            <option value="2014">2014</option>
                                            <option value="2013">2013</option>
@@ -484,7 +484,7 @@
 
 
 
-          
+
 
 
 <!-- Bootstrap core JavaScript
@@ -498,13 +498,6 @@
     $('#data_dia').val('<?php echo $dadosDoador->data_dia; ?>');
     $('#data_mes').val('<?php echo $dadosDoador->data_mes; ?>');
     $('#data_ano').val('<?php echo $dadosDoador->data_ano; ?>');
-    $('#tipoDoacao').val('<?php echo $dadosDoacao->tipo_doacao; ?>');
-    $('#doacao_dia').val('<?php echo $dadosDoacao->doacao_dia; ?>');
-    $('#doacao_mes').val('<?php echo $dadosDoacao->doacao_mes; ?>');
-    $('#doacao_ano').val('<?php echo $dadosDoacao->doacao_ano; ?>');
-    $('#ultima_dia').val('<?php echo $dadosDoacao->ultima_dia; ?>');
-    $('#ultima_mes').val('<?php echo $dadosDoacao->ultima_mes; ?>');
-    $('#ultima_ano').val('<?php echo $dadosDoacao->ultima_ano; ?>');
-</script>
+  </script>
 </body>
 </html>

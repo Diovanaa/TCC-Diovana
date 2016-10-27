@@ -35,9 +35,23 @@
       </div>
     </nav>
 </br>
+<br>
+<br>
+<div class="row">
+<div class="col-lg-3">
+
+</div>
+  <div class="col-lg-9 ">
+<img src=".../img/banner" alt="banner" />
+    <h1>Doe Sangue<br>
+
+Somos um movimento sem fins lucrativos.
+<br>Ajude-nos a divulgar cada vez mais nossos ideais.</h1>
+  </div>
+</div>
+
+
 <div class="row fundo">
-
-
 <div class="col-lg-12 home">
 <div class="row col-lg-12 diferente fundo">
   <div class="col-lg-2"></div>
@@ -72,3 +86,4 @@
 </br>
 
 </div>
+<br>

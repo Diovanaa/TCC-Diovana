@@ -31,7 +31,7 @@
              <div class="panel-heading ">
                <div class="row ">
                  <div class="col col-xs-6">
-                   <h3 class="panel-title">Procurar Hemocentros</h3>
+                   <h3 class="panel-title">Procure o Hemocentro mais próximo de você</h3>
                  </div>
                   <form action="<?=site_url('Painel_doador/localizar')?>" method="post">
                  <div class="col col-xs-6 text-right">

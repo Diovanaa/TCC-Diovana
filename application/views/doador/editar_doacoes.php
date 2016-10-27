@@ -23,8 +23,8 @@
                             <h1 class="panel-title">Editar Doação</h1>
                         </div>
                         <div class="col col-xs-6 text-right">
-                            <form action="<?= site_url('Painel_doador/AtualizarDoacao/' .$row->id_doacao) ?>" method="post">
-                              
+                            <form action="<?= site_url('Painel_doador/AtualizarDoacao') ?>" method="post">
+
                                 <button type="submit" class="btn btn-primary" >
                                     Salvar
                                 </button>

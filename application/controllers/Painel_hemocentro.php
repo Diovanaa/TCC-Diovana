@@ -24,29 +24,53 @@ class Painel_hemocentro extends MY_ControllerLogado {
         $this->load->view('cabecalho_view');
         $this->load->view('home_view_teste');
       }
-    public function procurarDoadoresPorTipoSanguineo(){
+      public function localizarDoadores(){
+          $id_hemocentro = $this->session->userdata('id_hemocentro');
+          $id_doador = $this->session->userdata('id_doador');
 
-		$teste = $this->input->post('input_busca');
+          $data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row(),
+          "dadosDoador" => $this->Doador_model->getDoador($id_doador)->row()
+        );
+      		$this->load->view('hemocentro/cabecalho_hemocentro');
+      		$this->load->view('hemocentro/procurar_doador_view', $data);
+      	}
+      public function localizar(){
 
-		$this->db->select('*');
-		$this->db->like('tipo_sanguineo', $this->input->post('input_busca'));
-		$this->db->where('id_doador', $id_doador);
-		$retorno = $this->db->get('doador')->num_rows();
+      $teste = $this->input->post('busca');
 
-		if ($retorno == 0) {
-			redirect('Painel_hemocentro/teste_procurar/?aviso=2');
-		}
+      //$this->db->select('*');
+    //  $this->db->like('estado', $this->input->post('busca'));
+      //$this->db->or_like('cidade', $this->input->post('busca'));
+    //  $retorno = $this->db->get('hemocentro')->num_rows();
 
-		else {
-			$id_doador = $this->session->userdata('id_doador');
-			$data = array("dadosDoador" => $this->Doador_model->getDoadores($id_doador)->row(),
-      "dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row());
-			$this->load->view('hemocentro/cabecalho_hemocentro');
-			$this->load->view('hemocentro/home_hemocentro_view', $data);
-		}
+      $this->db->select('*')->from('doador')
+              ->group_start()
+                      ->where('tipo_sanguineo', $this->input->post('busca'))
+                      ->or_group_start()
+                      ->where('estado', $this->input->post('busca'))
+                ->group_end()
+              ->group_end()
+
+      ->get();
+
+      $retorno = $this->db->get('doador')->num_rows();
+
+      if ($retorno == 0) {
+        redirect('Painel_hemocentro/localizarDoadores/?aviso=2');
+      }
+
+      else {
+        $id_hemocentro = $this->session->userdata('id_hemocentro');
+        $data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro),
+        "dadosDoador" => $this->Doador_model->getDoadorPorTipoSanguineo($teste)
+        );
+        $this->load->view('hemocentro/cabecalho_hemocentro');
+        $this->load->view('hemocentro/procurar_doador_view', $data);
+      }
 
 
-	}
+
+}
 
     public function carregarPerfil() {
         $id_hemocentro = $this->session->userdata('id_hemocentro');

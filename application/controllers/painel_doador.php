@@ -32,13 +32,7 @@ class Painel_Doador extends MY_ControllerLogado {
         $this->load->view('doador/perfil_doador_teste2', $data);
         $this->load->view('rodape_view');
     }
-    public function carregarDoadores() {
-        $id_doador = $this->session->userdata('id_doador');
-        $data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
-        $this->load->view('hemocentro/cabecalho_hemocentro');
-        $this->load->view('hemocentro/home_hemocentro_view', $data);
-      }
-
+    
     public function carregaMinhasDoacoes() {
         $id_doador = $this->session->userdata('id_doador');
         $data = array("dadosDoacao" => $this->Doador_model->minhasDoacoes(), "dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
@@ -221,8 +215,8 @@ class Painel_Doador extends MY_ControllerLogado {
     	}
       public function localizarHemocentros(){
           $id_doador = $this->session->userdata('id_doador');
-      		$id_hemocentro = $this->session->userdata('id_hemocentro');
-      		$data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row(),
+          $id_hemocentro = $this->session->userdata('id_hemocentro');
+          $data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row(),
           "dadosDoador" => $this->Doador_model->getDoador($id_doador)->row()
         );
       		$this->load->view('doador/cabecalho_doador');
@@ -232,9 +226,24 @@ class Painel_Doador extends MY_ControllerLogado {
 
       $teste = $this->input->post('busca');
 
-      $this->db->select('*');
-      $this->db->like('estado', $this->input->post('busca'));
+      //$this->db->select('*');
+    //  $this->db->like('estado', $this->input->post('busca'));
+      //$this->db->or_like('cidade', $this->input->post('busca'));
+    //  $retorno = $this->db->get('hemocentro')->num_rows();
+
+      $this->db->select('*')->from('hemocentro')
+              ->group_start()
+                      ->where('estado', $this->input->post('busca'))
+                      ->or_group_start()
+                      ->where('cidade', $this->input->post('busca'))
+                ->group_end()
+              ->group_end()
+      ->get();
       $retorno = $this->db->get('hemocentro')->num_rows();
+
+
+
+
 
       if ($retorno == 0) {
         redirect('painel_doador/localizarHemocentros/?aviso=2');

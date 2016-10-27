@@ -25,7 +25,9 @@ class Hemocentro_model extends CI_Model {
 	 $this->db
 	 ->select('*')
 	 ->from('hemocentro')
-	 ->like('estado', $teste);
+	 ->like('estado', $teste)
+	 ->or_like('cidade', $teste)
+	 ->order_by("hemocentro.nome", "asc");
 	 return $qr = $this->db->get()->result();
  }
 
