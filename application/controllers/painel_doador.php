@@ -32,7 +32,7 @@ class Painel_Doador extends MY_ControllerLogado {
         $this->load->view('doador/perfil_doador_teste2', $data);
         $this->load->view('rodape_view');
     }
-    
+
     public function carregaMinhasDoacoes() {
         $id_doador = $this->session->userdata('id_doador');
         $data = array("dadosDoacao" => $this->Doador_model->minhasDoacoes(), "dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
@@ -165,9 +165,13 @@ class Painel_Doador extends MY_ControllerLogado {
         $data['ultima_ano'] = $this->input->post('ultima_ano');
 
 
-        $this->Doador_model->alterarDoacao($data);
 
-        $id_doacao = $this->session->userdata('id_doacao');
+                $id_doador = $this->session->userdata('id_doador');
+                $id_doacao = $this->input->post('id_doacao');
+
+        $this->Doador_model->alterarDoacao($data, $id_doacao);
+
+
         $dados2 = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row(), "dadosDoacao" => $this->Doador_model->getDoacao($id_doador)->row());
       $this->load->view('doador/cabecalho_doador');
         $this->load->view('doador/editar_doacoes', $dados2);

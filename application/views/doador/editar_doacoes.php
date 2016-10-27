@@ -24,7 +24,7 @@
                         </div>
                         <div class="col col-xs-6 text-right">
                             <form action="<?= site_url('Painel_doador/AtualizarDoacao') ?>" method="post">
-
+                                <input type="hidden" name="id_doacao" value="<?php echo $dadosDoacao->id_doacao ?>">
                                 <button type="submit" class="btn btn-primary" >
                                     Salvar
                                 </button>

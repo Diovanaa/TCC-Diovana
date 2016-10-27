@@ -37,53 +37,54 @@
 </br>
 <br>
 <br>
-<div class="row">
-<div class="col-lg-3">
 
+<div class="container theme-showcase" role="main">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <h1 class="meio">Doe Sangue!</h1>
+      <p class="meio maior">Somos uma organização sem fins lucrativos.<br>
+      Ajude-nos a divulgar cada vez mais essa ideia!</p>
+    </div>
+
+
+    <div class="row fundo">
+      <div class="col-lg-12 ">
+        <div class="row col-lg-12 diferente fundo">
+          <a href="<?=site_url('cadastro/chamandoCadastroDoador')?>" >
+             <div class="col-lg-2 col-md-6 col-xs-12 diferente1">
+               <h2 class="diferente"></br></br>Cadastro de Doador</h2>
+             </div>
+          </a>
+          <a href="<?=site_url('como_doar/chamandoComoDoar')?>" >
+             <div class="col-lg-2 col-md-6 col-xs-12 diferente2">
+               <h2 class="diferente"></br></br>Como Doar</h2>
+             </div>
+          </a>
+          <a href="<?=site_url('cadastro/chamandoCadastroHemocentro')?>" >
+            <div class="col-lg-2 col-md-6 col-xs-12 diferente3">
+              <h2 class="diferente"></br></br>Cadastro de Hemocentro</h2>
+            </div>
+          </a>
+          <a href="<?=site_url('ondedoar/chamandoOndeDoar')?>" >
+             <div class="col-lg-2 col-md-6 col-xs-12 diferente4">
+               <h2 class="diferente"></br></br>Onde Doar?</h2>
+             </div>
+          </a>
+          <a href="<?=site_url('como_doar/chamandoComoDoar')?>" >
+             <div class="col-lg-2 col-md-6 col-xs-12 diferente5">
+               <h2 class="diferente"></br></br>Estoques</h2>
+             </div>
+         </a>
+         <a href="<?=site_url('login/loginHemocentro')?>" >
+           <div class="col-lg-2 col-md-6 col-xs-12 diferente6">
+             <h2 class="diferente"></br></br>Sangue</h2>
+           </div>
+         </a>
 </div>
-  <div class="col-lg-9 ">
-<img src=".../img/banner" alt="banner" />
-    <h1>Doe Sangue<br>
-
-Somos um movimento sem fins lucrativos.
-<br>Ajude-nos a divulgar cada vez mais nossos ideais.</h1>
-  </div>
-</div>
-
-
-<div class="row fundo">
-<div class="col-lg-12 home">
-<div class="row col-lg-12 diferente fundo">
-  <div class="col-lg-2"></div>
-
-    <a href="<?=site_url('cadastro/chamandoCadastroDoador')?>" > <div class="col-lg-3 col-md-6 col-xs-12 diferente1"><h2 class="diferente"></br></br></br>Cadastro de Doador</h2></div></a>
-
-
-    <a href="<?=site_url('como_doar/chamandoComoDoar')?>" ><div class="col-lg-3 col-md-6 col-xs-12 diferente2"> <h2 class="diferente"></br></br></br>Como Doar</h2></div></a>
-
-
-<a href="<?=site_url('cadastro/chamandoCadastroHemocentro')?>" > <div class="col-lg-3 col-md-6 col-xs-12 diferente3"><h2 class="diferente"></br></br></br>Cadastro de Hemocentro</h2></div></a>
-
-
-
-  <div class="col-lg-2"></div>
-
-    <a href="<?=site_url('ondedoar/chamandoOndeDoar')?>" > <div class="col-lg-3 col-md-6 col-xs-12 diferente4"><h2 class="diferente"></br></br></br>Onde Doar?</h2></div></a>
-
-
-    <a href="<?=site_url('como_doar/chamandoComoDoar')?>" >
-      <div class="col-lg-3 col-md-6 col-xs-12 diferente5">
-        <h2 class="diferente"></br></br></br>Estoques</h2>
-      </div>
-    </a>
-
-
-<a href="<?=site_url('login/loginHemocentro')?>" > <div class="col-lg-3 col-md-6 col-xs-12 diferente6"><h2 class="diferente"></br></br></br>Sangue</h2></div></a>
-
-
 </div>
 </div>
 </br>
 
-</div>
+<div>
 <br>

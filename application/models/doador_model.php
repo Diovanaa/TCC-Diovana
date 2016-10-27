@@ -94,9 +94,10 @@ public function excluirDoador($id_doador)
 		$this->db->set($data);
 		return $this->db->update('Doador');
 	}
-	function alterarDoacao($data) {
+	function alterarDoacao($data, $id_doacao) {
 		$id_doador = $this->session->userdata('id_doador');
 		$this->db->where('id_doador', $id_doador);
+		$this->db->where('id_doacao', $id_doacao);
 		$this->db->set($data);
 		return $this->db->update('Doacao');
 	}
