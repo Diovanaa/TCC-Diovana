@@ -94,7 +94,7 @@
 
 
 
-                                          <div class="col-md-4 col-lg-4 - col-xs-12">
+                                          <div class="col-md-4 col-lg-4 col-xs-12">
 
                                       <select class=" form-control" name="doador_data_dia" id="data_dia">
 
@@ -132,7 +132,7 @@
 
                                      </select>
                                     </div>
-                                    <div class="col-md-4 col-lg-4 - col-xs-12">
+                                    <div class="col-md-4 col-lg-4 col-xs-12">
 
                                       <select class=" form-control" name="doador_data_mes" id="data_mes">
 
@@ -151,7 +151,7 @@
 
                                      </select>
                                     </div>
-                                    <div class="col-md-4 col-lg-4 - col-xs-12">
+                                    <div class="col-md-4 col-lg-4 col-xs-12">
                                       <select class=" form-control" name="doador_data_ano" id="data_ano">
 
                                            <option value="2015">2015</option>
