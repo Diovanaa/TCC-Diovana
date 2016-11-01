@@ -86,18 +86,6 @@ class Painel_hemocentro extends MY_ControllerLogado {
         $this->load->view('hemocentro/cabecalho_hemocentro');
         $this->load->view('hemocentro/perfil_hemocentro_teste', $data);
       }
-      public function doarAqui() {
-          $id_hemocentro = $this->session->userdata('id_hemocentro');
-          $data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row());
-              $this->load->view('doador/cabecalho_doador');
-              $this->load->view('doador/doar_aqui', $data);
-        }
-        public function hemocentros() {
-            $id_hemocentro = $this->session->userdata('id_hemocentro');
-            $data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row());
-            $this->load->view('doador/cabecalho_doador');
-            $this->load->view('doador/hemocentros', $data);
-          }
 
     public function carregaMeuEstoque() {
         $id_hemocentro = $this->session->userdata('id_hemocentro');

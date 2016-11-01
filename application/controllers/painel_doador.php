@@ -10,7 +10,13 @@ class Painel_Doador extends MY_ControllerLogado {
         $this->load->view('doador/cabecalho_doador');
         $this->load->view('doador/home_doador_view', $data);
     }
-    
+    public function doarAqui() {
+        $id_doador = $this->session->userdata('id_doador');
+        $data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row());
+            $this->load->view('doador/cabecalho_doador');
+            $this->load->view('doador/doar_aqui', $data);
+      }
+
     public function cabecalho() {
         $id_doador = $this->session->userdata('id_doador');
         $data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
