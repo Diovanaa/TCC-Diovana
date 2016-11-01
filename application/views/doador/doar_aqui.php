@@ -55,7 +55,7 @@
                                        <td> <?php echo $row->estado;?> </td>
                                        <td> <?php echo $row->telefone;?> </td>
                                        <td>
-                                         <a href="<?=site_url('painel_doador/doar/')?>"
+                                         <a href="<?=site_url('painel_doador/doar/' . $row->id_hemocentro)?>"
                                            class="btn btn-primary"><em class="fa fa-plus"></em>Doar aqui</a>
                                        </td>
                                  </tr>
@@ -85,7 +85,7 @@
 
 
         </div>
-      
+
 
 
     <!-- Bootstrap core JavaScript

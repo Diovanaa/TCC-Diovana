@@ -35,4 +35,11 @@ class Doacao_model extends CI_Model {
     return	$this->db->delete('doacao');
 
  }
+
+ public function procurarHemocentroParaDoar(){
+   $this->db
+   ->select('*')
+   ->from('hemocentro');
+   return $this->db->get();
+ }
 }

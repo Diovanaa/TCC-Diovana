@@ -64,7 +64,7 @@ public function localizarHemocentros() {
 //Carrega lista de Doadores para doar em um hemocentro específico cadastrado no sistema
 public function doarAqui() {
   $id_doador = $this->session->userdata('id_doador');
-  $data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row(),
+  $data = array("dadosHemocentro" => $this->Doacao_model->procurarHemocentroParaDoar()->result(),
       "dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
   $this->load->view('doador/cabecalho_doador');
   $this->load->view('doador/doar_aqui', $data);
