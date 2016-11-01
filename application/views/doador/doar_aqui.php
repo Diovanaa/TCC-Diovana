@@ -1,4 +1,17 @@
 
+    <div class="container-fluid">
+      <div class="row ">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a class="fonte2" href="<?=site_url('painel_doador/index')?>"><i class="fa fa-home " aria-hidden="true"></i> Home</a></li>
+            <li><a class="fonte2" href="<?=site_url('painel_doador/carregarPerfil')?>"><i class="fa fa-user" aria-hidden="true"></i> Perfil</a></li>
+            <li><a class="fonte2" href="<?=site_url('painel_doador/carregarCadastroDoacao')?>"><i class="fa fa-plus " aria-hidden="true"></i> Nova Doação</a></li>
+            <li><a class="fonte2" href="<?=site_url('painel_doador/carregaMinhasDoacoes')?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Minhas Doações</a></li>
+            <li><a class="fonte2" href="<?=site_url('painel_doador/editaPerfilDoador')?>"><i class="fa fa-cog" aria-hidden="true"></i> Configurações</a></li>
+            <li><a class="fonte2" href="<?=site_url('painel_doador/localizarHemocentros')?>"><i class="fa fa-map-marker" aria-hidden="true"></i> Hemocentros</a></li>
+            <li class="active"><a class="fonte2" href="<?=site_url('painel_doador/doarAqui')?>"><i class="fa fa-map-marker" aria-hidden="true"></i> Doar em um hemocentros</a></li>
+          </ul>
+        </div>
         <br>
         <div class="col-lg-12">
           <h1 class="meio">Lista de Hemocentros do Brasil</h1>
@@ -42,19 +55,9 @@
                                        <td> <?php echo $row->estado;?> </td>
                                        <td> <?php echo $row->telefone;?> </td>
                                        <td>
-
-                                         <!--<a href="<?=site_url('Painel_hemocentro/editarEstoque/' . $row->id_estoque )?>"
-                                           class="btn btn-primary"><em class="fa fa-pencil"></em></a>
-
-                                         <a  href="<?= site_url('Painel_hemocentro/excluir/' . $row->id_estoque) ?>"
-                                           class="btn btn-danger"
-                                           onclick="return confirm('Têm certeza que deseja excluir esta informação?')">
-                                             <i class="fa fa-trash-o " aria-hidden="true"></i>
-                                         </a>-->
-
+                                         <a href="<?=site_url('painel_doador/doar/')?>"
+                                           class="btn btn-primary"><em class="fa fa-plus"></em>Doar aqui</a>
                                        </td>
-
-
                                  </tr>
                                        <?php endforeach; ?>
                                      <?php else: {
@@ -82,8 +85,7 @@
 
 
         </div>
-        </div>
-
+      
 
 
     <!-- Bootstrap core JavaScript
