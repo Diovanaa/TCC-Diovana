@@ -2,17 +2,12 @@
 
 class Doacao_model extends CI_Model {
 
-    public  $id_doacao;
-    public  $tipo_doacao;
-  	public  $doacao_dia;
-    public $doacao_mes;
-    public $doacao_ano;
-    public $ultima_dia;
-    public $ultima_mes;
-    public $ultima_ano;
-    public $proxima_dia;
-    public $proxima_mes;
-    public  $id_doador;
+    public $id_doacao;
+    public $id_doador;
+    public $tipo_doacao;
+  	public $data_doacao;
+    public $data_ultima;
+    public $data_proxima;
     public $hemocentro_nome;
 
     function __construct() {
@@ -23,24 +18,21 @@ class Doacao_model extends CI_Model {
        return $this->db->insert('Doacao', $this);
    }
 
-   function doacoes(){
-     	$id_doacao = $this->session->userdata('id_doacao');
-      $this->db
-     ->select("*")
-     ->from('Doacao')
-     ->join('Doador', 'doacao.id_doacao = doador.id_doador')
-     ->where('id_doador', $id_doador);
-     return $query = $this->db->get()->result();
-   }
-   
-   function atualizarDoacao(){
+  // function doacoes(){
+  //   	$id_doacao = $this->session->userdata('id_doacao');
+  //    $this->db
+  //   ->select("*")
+  //   ->from('Doacao')
+  //   ->join('Doador', 'doacao.id_doacao = doador.id_doador')
+//     ->where('id_doador', $id_doador);
+  //   return $query = $this->db->get()->result();
+  // }
 
-   }
-   public function excluir($id_doador, $id_doacao){
+  public function excluir($id_doador, $id_doacao){
 
- 	$this->db->where('id_doador', $id_doador);
- 	$this->db->where('id_doacao', $id_doacao);
- return	$this->db->delete('doacao');
+ 	  $this->db->where('id_doador', $id_doador);
+ 	  $this->db->where('id_doacao', $id_doacao);
+    return	$this->db->delete('doacao');
 
  }
 }

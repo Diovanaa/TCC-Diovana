@@ -12,6 +12,9 @@
 .navbar-nav{
   color: white !important;
 }
+.arial{
+  font-family: verdana !important;
+}
 .branco{
   color: white !important;
 }
@@ -110,16 +113,17 @@ h4{
 }
 
 .diferente{
-    margin-left: auto;
+
     color: white;
 
-    font-size: 25px;
+    font-size: 18px;
+    font-family:verdana;
     text-align: center;
 }
 
 .diferente1, .diferente5, .diferente3{
     background-color: #000080;
-    height: 200px;
+    height: 100px;
     color: white;
 }
 .ativo{
@@ -128,7 +132,7 @@ h4{
 }
 .diferente2, .diferente4, .diferente6{
     background-color: #4682B4;
-    height: 200px;
+    height: 100px;
     color: white;
 }
 

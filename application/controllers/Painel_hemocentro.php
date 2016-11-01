@@ -19,6 +19,13 @@ class Painel_hemocentro extends MY_ControllerLogado {
       		$this->load->view('hemocentro/home_hemocentro_view', $data);
       	}
 
+        public function editarEstoque($id_estoque) {
+            $id_hemocentro = $this->session->userdata('id_hemocentro');
+            $data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row(),
+                "dadosEstoque" => $this->Hemocentro_model->getEstoque($id_estoque)->row());
+            $this->load->view('hemocentro/cabecalho_hemocentro');
+            $this->load->view('hemocentro/editar_estoque', $data);
+        }
     function deslogar() {
         $this->session->sess_destroy();
         $this->load->view('cabecalho_view');
@@ -166,9 +173,11 @@ class Painel_hemocentro extends MY_ControllerLogado {
         $this->load->view('hemocentro/configuracoes_hemocentro_view', $dados2);
       }
 
+  
     function AtualizarEstoque() {
 
         $data = array();
+
         $data['tipo_a0'] = $this->input->post('estoquetipo_a0');
         $data['tipo_a1'] = $this->input->post('estoquetipo_a1');
         $data['tipo_b0'] = $this->input->post('estoquetipo_b0');
@@ -177,13 +186,14 @@ class Painel_hemocentro extends MY_ControllerLogado {
         $data['tipo_ab1'] = $this->input->post('estoquetipo_ab1');
         $data['tipo_o0'] = $this->input->post('estoquetipo_o0');
         $data['tipo_o1'] = $this->input->post('estoquetipo_o1');
-
-        $this->hemocentro_model->alterarEstoque($data);
-
         $id_hemocentro = $this->session->userdata('id_hemocentro');
-        $dados2 = array("dadosEstoque" => $this->hemocentro_model->getEstoque($id_hemocentro)->row());
+        $id_estoque = $this->input->post('id_estoque');
+
+        $this->Hemocentro_model->alterarEstoque($data, $id_estoque);
+        $dados2 = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row(),
+        "dadosEstoque" => $this->Hemocentro_model->getEstoque($id_estoque)->row());
         $this->load->view('hemocentro/cabecalho_hemocentro');
-        $this->load->view('hemocentro/editar_estoque_view', $dados2);
+        $this->load->view('hemocentro/editar_estoque', $dados2);
     }
 
     public function excluir($id_estoque, $id_hemocentro) {

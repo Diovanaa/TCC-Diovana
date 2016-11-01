@@ -41,13 +41,13 @@ class Hemocentro_model extends CI_Model {
 		return $this->db->get();
 	}
 
+
 	function getEstoque($estoque) {
-		$id_hemocentro = $this->session->userdata('id_hemocentro');
-		$this->db
-		->select("*")
-		->from("estoque")
-		->where('id_hemocentro', $id_hemocentro);
-		return $this->db->get();
+			$this->db
+							->select("*")
+							->from("estoque")
+							->where('id_estoque', $estoque);
+			return $this->db->get();
 	}
 
 
@@ -63,11 +63,12 @@ class Hemocentro_model extends CI_Model {
 		$this->db->set($data);
 		return $this->db->update('Hemocentro');
 	}
-	function alterarEstoque($data) {
-		$id_hemocentro = $this->session->userdata('id_hemocentro');
-		$this->db->where('id_hemocentro', $id_hemocentro);
-		$this->db->set($data);
-		return $this->db->update('Estoque');
+	function alterarEstoque($data, $id_estoque) {
+			$id_hemocentro = $this->session->userdata('id_hemocentro');
+			$this->db->where('id_hemocentro', $id_hemocentro);
+			$this->db->where('id_estoque', $id_estoque);
+			$this->db->set($data);
+			return $this->db->update('Estoque');
 	}
   // fazer a função de listar os hemocentros;
 	public function excluir($id_hemocentro, $id_estoque){

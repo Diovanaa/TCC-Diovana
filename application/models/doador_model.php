@@ -7,9 +7,7 @@ class Doador_model extends CI_Model {
     public $email;
     public $telefone;
     public $senha;
-    public $data_dia;
-    public $data_mes;
-    public $data_ano;
+    public $data_nascimento;
     public $tipo_sanguineo;
     public $sexo;
     public $endereco;

@@ -9,6 +9,8 @@
             <li><a class="fonte2" href="<?=site_url('painel_doador/carregaMinhasDoacoes')?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Minhas Doações</a></li>
             <li><a class="fonte2" href="<?=site_url('painel_doador/editaPerfilDoador')?>"><i class="fa fa-cog" aria-hidden="true"></i> Configurações</a></li>
             <li class="active"><a class="fonte2" href="<?=site_url('painel_doador/localizarHemocentros')?>"><i class="fa fa-map-marker" aria-hidden="true"></i> Hemocentros</a></li>
+            <li><a class="fonte2" href="<?=site_url('painel_doador/hemocentros')?>"><i class="fa fa-map-marker" aria-hidden="true"></i> Doar em um hemocentros</a></li>
+
 
 
           </ul>
@@ -58,7 +60,7 @@
 
                      <div class="col-sm-12">
                        <div class="form-group col-sm-9">
-                         <label for="">Por favor digite o estado</label>
+                         <label for="">Por favor digite o estado ou a cidade</label>
                          <br>	<input
                          type="text" class="form-control" name="busca"
                          placeholder="Procurar Hemocentro" value=""   />

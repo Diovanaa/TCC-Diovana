@@ -77,8 +77,11 @@
                            <td><?php echo $row->tipo_o0; ?></td>
                            <td><?php echo $row->tipo_o1; ?></td>
                            <td>
-                             <a class="btn btn-primary"><em class="fa fa-pencil"></em></a>
-                             <a  href="<?= site_url('Painel_hemocentro/excluir/' . $row->id_hemocentro) ?>"
+
+                             <a href="<?=site_url('Painel_hemocentro/editarEstoque/' . $row->id_estoque )?>"
+                               class="btn btn-primary"><em class="fa fa-pencil"></em></a>
+                               
+                             <a  href="<?= site_url('Painel_hemocentro/excluir/' . $row->id_estoque) ?>"
                                class="btn btn-danger"
                                onclick="return confirm('Têm certeza que deseja excluir esta informação?')">
                                  <i class="fa fa-trash-o " aria-hidden="true"></i>

@@ -36,10 +36,9 @@
 </div><!-- fecha  cabeçalho-->
 </br>
 </br>
-</br>
-<div class="row">
+</br><div class="row">
     <div class="col-lg-12">
-      <h1 class="meio">Como Doar?</h1>
+      <h1 class="meio">Como doar?</h1>
     </div>
     <div class="col-lg-12">
       <h3 class="meio">Existem diferentes tipos de doação de sangue,<br> os quais dependem da necessidade de quem vai receber o sangue coletado.
@@ -48,15 +47,12 @@
       </div>
       <div class="col-lg-8 jumbotron ">
         <h4>Doação de Sangue Total </h4> <br>
-        É a coleta de sangue de doadores voluntários.
-        Consiste na retirada de, aproximadamente, 450 ml de sangue.
-        Todo o material utilizado na doação é estéril, de uso único e descartável,
-         e o processo de doação dura cerca de uma hora.
-         Os doadores necessitam ter entre 16 e 68 anos,
-         pesar no mínimo 50 kg e estar bem de saúde.
-         O intervalo entre as doações para homens é de 90 dias e,
-         para as mulheres, 120 dias. 
-
+        É a coleta de sangue de doadores voluntários convencional, onde são retirando cerca de 450 ml de sangue.
+        O processo da doação dura cerca de uma hora.
+        Todo material utilizado na doação é estéril, de uso único e descartado após o termino do processo.
+        <br>
+        Os doadores voluntários precisam ter entre 16 e 68 anos de idade, estar com a saúde em dia e pesar no mínimo 50 kg.
+        O intervalo entre as doações são de 90 dias para homens e 120 dias para mulheres.
       </div>
       <div class="col-lg-1">
       </div>
@@ -68,16 +64,39 @@
     <div class="col-lg-2">
     </div>
     <div class="col-lg-8 jumbotron ">
-      <h4>HEMOBA </h4> <br>
-      Centro de Hematologia e Hemoterapia da Bahia <br>
-      Av. Vasco da Gama, s/nº <br>
-      Rio Vermelho <br>
-      CEP: 40240-090 - Salvador/BA <br>
-      Fone: (71) 3116-5603 <br>
-      Fax: (71) 3116-5604 <br><br>
+      <h4>Doação por Aférese </h4> <br>
+      A coleta de sangue por aférese é um processo pouco conhecido, porém cada vez mais é utilizado nos bancos de sangue.<br>
+      Nessa doação o processo é um pouco diferente, o sangue é retirado através da veia de um braço, passa por uma máquina que retém partes das
+      plaquetas, plasma e hemácias e o sangue é devolvido ao doador através da veia do outro braço.
+      <br>
+      Esse processo dura cerca de duas horas e o volume coletado é de aproximadamente 300 ml.
+      Todo material utilizado na doação é estéril, de uso único e descartado após o termino do processo.
+      Os doadores voluntários precisam ter entre 16 e 68 anos de idade, e devem ter realizado no mínimo duas doações de sangue total nos últimos 12 meses.
+      <br>O intervalo entre as doações é de 30 dias.
     </div>
     <div class="col-lg-1">
     </div>
+
+
+</div>
+<div class="col-lg-12">
+
+  <div class="col-lg-2">
+  </div>
+  <div class="col-lg-8 jumbotron ">
+    <h4>Autodoação </h4> <br>
+
+    A Autodoação é a coleta prévia do sangue de uma pessoa para uso próprio em uma cirurgia programada.
+    É preciso uma solicitação por escrito do cirurgião do paciente definindo qual a quantidade de sangue
+    necessário, o tipo e data do procedimento cirúrgico.
+
+    Nesse tipo de doação, podem ser obtidos concentrados de hemácias e plasma fresco.
+     O volume coletado por unidade é de aproximadamente 450 ml, e todo o material utilizado é estéril,
+      de uso único e descartável.
+
+  </div>
+  <div class="col-lg-1">
+  </div>
 
 
 </div>

@@ -73,8 +73,8 @@
                            <td>
                              <?php echo $row->tipo_doacao;?>
                            </td>
-                           <td><?php echo $row->doacao_dia; ?>/<?php echo $row->doacao_mes; ?>/<?php echo $row->doacao_ano; ?></td>
-                           <!--<td><?php echo $row->data_ultimadoacao; ?></td>-->
+                           <td><?php echo $row->data_doacao; ?></td>
+                           
                            <td>
 
                              <a href="<?=site_url('painel_doador/editarDoacoes/' . $row->id_doacao )?>"
