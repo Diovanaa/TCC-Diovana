@@ -56,13 +56,13 @@
                                        <td> <?php echo $row->telefone;?> </td>
                                        <td>
                                          <a href="<?=site_url('painel_doador/doar/' . $row->id_hemocentro)?>"
-                                           class="btn btn-primary"><em class="fa fa-plus"></em>Doar aqui</a>
+                                           class="btn btn-primary"><em class="fa fa-plus"></em> Doar aqui</a>
                                        </td>
                                  </tr>
                                        <?php endforeach; ?>
                                      <?php else: {
                                        echo "<td colspan='5' align = 'center'>
-                                     Não possuem Hemocentros
+                                     Não possuem Hemocentros cadastrados
                                                  </td>";
                                      } ?>
                                      <?php	endif; ?>
