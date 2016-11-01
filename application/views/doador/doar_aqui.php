@@ -9,29 +9,23 @@
             <li><a class="fonte2" href="<?=site_url('painel_doador/carregaMinhasDoacoes')?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Minhas Doações</a></li>
             <li><a class="fonte2" href="<?=site_url('painel_doador/editaPerfilDoador')?>"><i class="fa fa-cog" aria-hidden="true"></i> Configurações</a></li>
             <li><a class="fonte2" href="<?=site_url('painel_doador/localizarHemocentros')?>"><i class="fa fa-map-marker" aria-hidden="true"></i> Hemocentros</a></li>
-            <li class="active"><a class="fonte2" href="<?=site_url('painel_doador/hemocentros')?>"><i class="fa fa-map-marker" aria-hidden="true"></i> Doar em um hemocentros</a></li>
+            <li class="active"><a class="fonte2" href="<?=site_url('Painel_hemocentro/hemocentros')?>"><i class="fa fa-map-marker" aria-hidden="true"></i> Doar em um hemocentros</a></li>
           </ul>
         </div>
         <br>
         <div class="col-lg-12">
           <h1 class="meio">Lista de Hemocentros do Brasil</h1>
         </div>
+
 <div class="col-lg-2"></div>
         <div class="col-lg-9">
-
-
-
                       <div class="panel panel-default panel-table">
                          <div class="panel-heading ">
                            <div class="row ">
                              <div class="col col-xs-6">
-                               <h3 class="panel-title"><?php echo $dadosHemocentro->nome ?></h3>
+                               <h3 class="panel-title"></h3>
                              </div>
                              <div class="col col-xs-6 text-right">
-
-
-
-
 
                              </div>
                            </div>
@@ -39,11 +33,10 @@
                          <div class="panel-body">
                            <div class="table-responsive">
 
-
                            <table class="table">
                            <thead>
                                <tr>
-
+                                   <th>Nome</th>
                                    <th>Endereco</th>
                                    <th>Cidade</th>
                                    <th>CEP</th>
@@ -55,7 +48,7 @@
                            <tbody id="myTable">
                            <?php if (!empty($dadosHemocentro)):
                               foreach ($dadosHemocentro as $row): ?>
-
+                                       <td> <?php echo $row->nome;?> </td>
                                        <td> <?php echo $row->endereco;?> </td>
                                        <td><?php echo $row->cidade; ?></td>
                                        <td><?php echo $row->cep; ?></td>
@@ -79,7 +72,7 @@
                                        <?php endforeach; ?>
                                      <?php else: {
                                        echo "<td colspan='5' align = 'center'>
-                                     Você não tem nenhum estoque.
+                                     Não possuem Hemocentros
                                                  </td>";
                                      } ?>
                                      <?php	endif; ?>

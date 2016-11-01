@@ -9,7 +9,7 @@
             <li><a class="fonte2" href="<?=site_url('painel_doador/carregaMinhasDoacoes')?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Minhas Doações</a></li>
             <li><a class="fonte2" href="<?=site_url('painel_doador/editaPerfilDoador')?>"><i class="fa fa-cog" aria-hidden="true"></i> Configurações</a></li>
             <li><a class="fonte2" href="<?=site_url('painel_doador/localizarHemocentros')?>"><i class="fa fa-map-marker" aria-hidden="true"></i> Hemocentros</a></li>
-            <li class="active"><a class="fonte2" href="<?=site_url('painel_doador/hemocentros')?>"><i class="fa fa-map-marker" aria-hidden="true"></i> Doar em um hemocentros</a></li>
+            <li class="active"><a class="fonte2" href="<?=site_url('Painel_hemocentro/hemocentros')?>"><i class="fa fa-map-marker" aria-hidden="true"></i> Doar em um hemocentros</a></li>
           </ul>
         </div>
         <br>
@@ -34,7 +34,7 @@
                     CEP: 40240-090 - Salvador/BA <br>
                     Fone: (71) 3116-5603 <br>
                     Fax: (71) 3116-5604 <br><br>
-                    <a class="btn btn-primary" href="<?=site_url('Painel_doador/doarAqui')?>" role="button">Quero doar aqui</a>
+                    <a class="btn btn-primary" href="<?=site_url('Painel_hemocentro/doarAqui')?>" role="button">Quero doar aqui</a>
 
                   </div>
                   <div class="col-lg-1">
