@@ -197,28 +197,30 @@ public function excluir($id_doacao, $id_doador) {
                 $this->DoacaoMarcada_model->tipo_doacao_marcada = $this->input->post('tipo_doacao_marcada');
                 $this->DoacaoMarcada_model->data_doacao_marcada = $this->input->post('data_doacao_marcada');
                 $this->DoacaoMarcada_model->turno_doacao_marcada = $this->input->post('turno_doacao_marcada');
-                $this->DoacaoMarcada_model->status_doacao_marcada = $this->input->post('status_doacao_marcada');
+
                 $this->DoacaoMarcada_model->id_hemocentro = $this->input->post('id_hemocentro');
                 $this->DoacaoMarcada_model->id_doador = $session_id = $this->session->userdata('id_doador');
+                $this->DoacaoMarcada_model->status_doacao_marcada = 'Aguardando Confirmação';
 
                 $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
                 $this->form_validation->set_rules('tipo_doacao_marcada', 'Tipo da Doacao Marcada', 'required|max_length[120]');
                 $this->form_validation->set_rules('data_doacao_marcada', 'Data doação Marcada', 'required|max_length[60]');
                 $this->form_validation->set_rules('turno_doacao_marcada', 'Turno da doação marcada', 'required|max_length[12]');
-                $this->form_validation->set_rules('status_doacao_marcada', 'Status da doação marcada', 'required|max_length[120]');
+
 
                 if ($this->form_validation->run() == FALSE) {
                     $this->doar();
                     return;
                 } else {
-                    $this->DoacaoMarcada_model->Salvar();
-                    redirect('Painel_doador/doar/?alerta=2');
+                    $this->DoacaoMarcada_model->Salvar($dados_doacao_marcada);
+                    redirect('Painel_doador/doarAqui/?alerta=2');
                 }
             }
             //Carrega pagina de cadastro das doações Marcadas
             public function doar() {
+                $id_hemocentro = $this->input->post('id_hemocentro');
                 $id_doador = $this->session->userdata('id_doador');
-                $data = array("dadosHemocentro" => $this->Doacao_model->procurarHemocentroParaDoar()->row(),
+                $data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row(),
                 "dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
                 $this->load->view('doador/cabecalho_doador');
                 $this->load->view('doador/doar', $data);

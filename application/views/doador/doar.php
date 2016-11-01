@@ -21,7 +21,9 @@
                <div class="panel-heading ">
                  <div class="row ">
                    <div class="col col-xs-6">
-                     <h1 class="panel-title">Quero doar no <?php echo $dadosHemocentro->nome; ?></h1>
+                     
+                        <h1 class="panel-title">Quero doar no <?php echo $dadosHemocentro->nome; ?></h1>
+
                    </div>
 
                  </div>
@@ -53,13 +55,7 @@
                                      <option>Noite</option>
                                </select>
                       </div>
-                      <div class="form-group col-lg-6">
-                          <label for="statusDoacaoMarcada">Status da doação*:</label>
-                               <select class="form-control" name="status_doacao_marcada" id="">
-                                    <option>Aguardando confirmação</option>
 
-                              </select>
-                     </div>
 
                     <h5>*Campos obrigatórios</h5>
                     <!-- Botão para cadastrar-->

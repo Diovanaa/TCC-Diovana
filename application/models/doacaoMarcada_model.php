@@ -14,8 +14,8 @@ class DoacaoMarcada_model extends CI_Model {
         parent::__construct();
     }
 
-    public function Salvar(){
-       return $this->db->insert('Doacao_marcada', $this);
+    public function Salvar($dados){
+       return $this->db->insert('doacao_marcada', $this);
    }
 
   public function excluir($id_doador, $id_doacao){

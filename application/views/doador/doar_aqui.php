@@ -16,8 +16,16 @@
         <div class="col-lg-12">
           <h1 class="meio">Lista de Hemocentros do Brasil</h1>
         </div>
+        <div class="col-sm-9 col-sm-offset-2">
+          <?php if ($this->input->get('alerta') == 2) { ?>
+                <div class="alert alert-success">
+                Doação Cadastrada com sucesso!!!
+                </div>
+                <?php } ?>
+        </div>
 
 <div class="col-lg-2"></div>
+
         <div class="col-lg-9">
                       <div class="panel panel-default panel-table">
                          <div class="panel-heading ">
@@ -54,10 +62,15 @@
                                        <td><?php echo $row->cep; ?></td>
                                        <td> <?php echo $row->estado;?> </td>
                                        <td> <?php echo $row->telefone;?> </td>
-                                       <td>
-                                         <a href="<?=site_url('painel_doador/doar/' . $row->id_hemocentro)?>"
-                                           class="btn btn-primary"><em class="fa fa-plus"></em> Doar aqui</a>
-                                       </td>
+
+                                       <form class="" action="<?=site_url('painel_doador/doar')?>" method="post">
+                                         <input type="hidden" name="id_hemocentro" value="<?php echo $row->id_hemocentro;?>">
+<td>
+
+  <button type="submit" name="button" class="btn btn-primary"><em class="fa fa-plus"></em> Doar aqui</button>
+</td>
+
+                                       </form>
                                  </tr>
                                        <?php endforeach; ?>
                                      <?php else: {
