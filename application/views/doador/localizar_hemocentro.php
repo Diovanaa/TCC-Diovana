@@ -18,13 +18,7 @@
 
         </div>
         <br>
-        <div  class="col-sm-9 col-sm-offset-2 row">
-          <?php if ($this->input->get('aviso') == 5) { ?>
-            <div class="alert alert-danger">
-              Você já se candidatou a essa vaga anteriormente!!!
-            </div>
-            <?php } ?>
-                  </div>
+
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <h1 class="page-header"><?php echo $dadosDoador->nome ?></h1>
 
@@ -60,7 +54,7 @@
 
                      <div class="col-sm-12">
                        <div class="form-group col-sm-9">
-                         <label for="">Por favor digite o estado ou a cidade</label>
+                         <label for="">Por favor digite o Estado ou a Cidade</label>
                          <br>	<input
                          type="text" class="form-control" name="busca"
                          placeholder="Procurar Hemocentro" value=""   />
@@ -89,6 +83,7 @@
                          <th>Bairro</th>
                          <th>Endereço</th>
                          <th>CEP</th>
+                         <th>Opções</th>
                        </tr>
                      </thead>
                      <tbody>
@@ -106,19 +101,22 @@
                            <td><?php echo $row->bairro; ?></td>
                           <td><?php echo $row->endereco; ?></td>
                           <td><?php echo $row->cep; ?></td>
-
-
+                           <form class="" action="<?=site_url('painel_doador/doar')?>" method="post">
+                            <input type="hidden" name="id_hemocentro" value="<?php echo $row->id_hemocentro;?>">
+                          <td>
+                            <button type="submit" name="button" class="btn btn-primary"><em class="fa fa-plus"></em> Doar aqui</button>
+                          </td>
+                           </form>
                          </tr>
 
-                       <?php endforeach;
-                       elseif ($this->input->get('aviso') == 2): {
-                         echo "<td colspan='5' align = 'center'>
-                         <div class='alert alert-danger'>
-                         A sua busca não retornou nenhum resultado...
-                         </div>
-                         </td>";
-                       }
-                     endif; ?>
+                       <?php endforeach;?>
+                     <?php else: {
+                       echo "<td colspan='9' align = 'center'>
+                     Procure um hemocentro próximo de você
+                                 </td>";
+                     } ?>
+                   <?php endif; ?>
+
                    </tbody>
 
                    </table>

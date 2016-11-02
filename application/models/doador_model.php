@@ -43,6 +43,15 @@ class Doador_model extends CI_Model {
                 ->where('doador.id_doador', $id_doador);
         return $this->db->get()->result();
     }
+    public function minhasDoacoesMarcadas() {
+        $id_doador = $this->session->userdata('id_doador');
+        $this->db
+                ->select("*")
+                ->from("Doacao_marcada")
+                ->join('doador', 'doacao.id_doador = doador.id_doador')
+                ->where('doador.id_doador', $id_doador);
+        return $this->db->get()->result();
+    }
 
     //excluir doador e suas doações
     public function excluirDoador($id_doador) {

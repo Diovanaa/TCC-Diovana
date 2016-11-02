@@ -110,6 +110,84 @@
                </div>
              </div>
            </div>
+           <div class="panel panel-default panel-table">
+              <div class="panel-heading ">
+                <div class="row ">
+                  <div class="col col-xs-6">
+                    <h3 class="panel-title">Minhas doações marcadas</h3>
+                  </div>
+                  <div class="col col-xs-6 text-right">
+
+
+                      <a href="<?=site_url('painel_doador/carregaMinhasDoacoes')?>">
+                          </a>
+
+                            <!--<a href="<?=
+                            site_url('painel_doador/carregarCadastroDoacao')?>" class="btn btn-primary">Nova Doação</a>-->
+
+                  </div>
+                </div>
+              </div>
+              <div class="panel-body">
+                <div class="table-responsive">
+
+
+                <table class="table">
+                <thead>
+                    <tr>
+                        <th>Tipo da doação</th>
+                        <th>Data da doação</th>
+                        <th>Turno da doação</th>
+                        <th>Starus da doação</th>
+                    </tr>
+                </thead>
+                <!--<tbody id="myTable">-->
+                <?php if (!empty($dadosDoacaoMarcada)):
+                   foreach ($dadosDoacaoMarcada as $row): ?>
+                            <td>
+                              <?php echo $row->tipo_doacao_marcada;?>
+                            </td>
+                            <td>
+                              <?php echo $row->data_doacao_marcada;?>
+                            </td>
+                            <td><?php echo $row->turno_doacao_marcada; ?></td>
+
+                            <td>
+                              <td><?php echo $row->status_doacao_marcada; ?></td>
+
+                              <td>
+
+                              <a href="<?=site_url('painel_doador/editarDoacoes/' . $row->id_doacao_marcada )?>"
+                                class="btn btn-primary"><em class="fa fa-pencil"></em></a>
+
+                              <a  href="<?= site_url('painel_doador/excluir/' . $row->id_doacao) ?>"
+                                class="btn btn-danger"
+                                onclick="return confirm('Têm certeza que deseja excluir esta informação?')">
+                                  <i class="fa fa-trash-o " aria-hidden="true"></i>
+                              </a>
+
+                            </td>
+
+
+                      </tr>
+                            <?php endforeach; ?>
+                          <?php else: {
+                            echo "<td colspan='5' align = 'center'>
+                          Você não tem nenhuma Doação
+                                      </td>";
+                          } ?>
+                          <?php	endif; ?>
+                </tbody>
+
+                </table>
+ </div>
+              </div>
+              <div class="panel-footer ">
+                <div class="row">
+
+                </div>
+              </div>
+            </div>
 
 
         </div>

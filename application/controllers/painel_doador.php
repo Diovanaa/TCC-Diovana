@@ -45,6 +45,7 @@ class Painel_Doador extends MY_ControllerLogado {
       $this->load->view('doador/cabecalho_doador');
       $this->load->view('doador/minhasDoacoes', $data);
   }
+
   // chama tela de configurações/edições de dados do doador
 public function editaPerfilDoador() {
     $id_doador = $this->session->userdata('id_doador');
@@ -215,6 +216,12 @@ public function excluir($id_doacao, $id_doador) {
                     $this->DoacaoMarcada_model->Salvar($dados_doacao_marcada);
                     redirect('Painel_doador/doarAqui/?alerta=2');
                 }
+            }
+            public function carregaMinhasDoacoesMarcadas() {
+                $id_doador = $this->session->userdata('id_doador');
+                $data = array("dadosDoacaoMarcada" => $this->Doador_model->minhasDoacoesMarcadas(), "dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
+                $this->load->view('doador/cabecalho_doador');
+                $this->load->view('doador/home_doador_view', $data);
             }
             //Carrega pagina de cadastro das doações Marcadas
             public function doar() {
