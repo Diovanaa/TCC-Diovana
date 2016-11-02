@@ -17,7 +17,13 @@ class DoacaoMarcada_model extends CI_Model {
     public function Salvar($dados){
        return $this->db->insert('doacao_marcada', $this);
    }
-
+   function getDoacaoMarcada($doacao) {
+       $this->db
+               ->select("*")
+               ->from("Doacao_marcada")
+               ->where('id_doacao_marcada', $doacao);
+       return $this->db->get();
+   }
   public function excluir($id_doador, $id_doacao){
  	  $this->db->where('id_doador', $id_doador);
  	  $this->db->where('id_doacao', $id_doacao);
