@@ -22,6 +22,16 @@
                 Doação Cadastrada com sucesso!!!
                 </div>
                 <?php } ?>
+                <?php if ($this->input->get('alerta') == 1) { ?>
+                      <div class="alert alert-success">
+                      Doação Aceita com sucesso!!!
+                      </div>
+                      <?php } ?>
+                      <?php if ($this->input->get('alerta') == 3) { ?>
+                            <div class="alert alert-success">
+                            Doação Remarcada com sucesso!!!
+                            </div>
+                            <?php } ?>
         </div>
 
 <div class="col-lg-2"></div>
@@ -57,24 +67,34 @@
                            <tbody id="myTable">
                            <?php if (!empty( $dadosDoacaoMarcada)):
                               foreach ( $dadosDoacaoMarcada as $row): ?>
+                              <?php foreach ($dadosDaPossivelDoacao as $key): ?>
                                         <td><?php echo $row->nome; ?></td>
                                       <td><?php echo $row->telefone; ?></td>
-                                       <td><?php echo $row->tipo_doacao_marcada; ?></td>
-                                       <td><?php echo $row->data_doacao_marcada; ?></td>
-                                       <td> <?php echo $row->turno_doacao_marcada;?> </td>
 
 
-                                       <form class="" action="<?=site_url('painel_doador/doar')?>" method="post">
-                                         <input type="hidden" name="id_doador" value="<?php echo $row->id_doador;?>">
+
+
+                                       <td><?php echo $key->tipo_doacao_marcada; ?></td>
+                                       <td><?php echo $key->data_doacao_marcada; ?></td>
+                                       <td> <?php echo $key->turno_doacao_marcada;?> </td>
+
 <td>
 
-  <button type="submit" name="button" class="btn btn-check"><em class="fa fa-plus"></em> Confirmar</button>
-  <button type="submit" name="button" class="btn btn-eraser"><em class="fa fa-plus"></em> Remarcar</button>
+  <a  href="<?= site_url('Painel_hemocentro/aceitarDoador/' . $key->id_doacao_marcada) ?>"
+                         class="btn btn-primary btn-sm">
+                         <i class="" aria-hidden="true"></i>   Aceitar
+                       </a>
+                       <a  href="<?= site_url('Painel_hemocentro/carregaRemarcarDoacao/' .  $key->id_doacao_marcada) ?>"
+                                              class="btn btn-primary btn-sm">
+                                              <i class="" aria-hidden="true"></i>   Remarcar
+                                            </a>
+
 </td>
 
-                                       </form>
+
                                  </tr>
-                                       <?php endforeach; ?>
+                                 <?php endforeach; ?>
+ <?php endforeach; ?>
                                      <?php else: {
                                        echo "<td colspan='5' align = 'center'>
                                      Não possuem Doadores aguardando confirmação

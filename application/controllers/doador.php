@@ -11,7 +11,7 @@ class Doador extends CI_Controller {
 		$this->load->view('login/loginDoador');
 	}
 	//public function deslogarHemocentro() {
-//		$this->session->sess_destroy();
+	//		$this->session->sess_destroy();
 	//	$this->load->view('home2');
 	//}
 	public function Salvar() {
@@ -33,8 +33,8 @@ class Doador extends CI_Controller {
 			$this->form_validation->set_rules('doador_email', 'E-mail', 'required|max_length[60]|valid_email');
 			$this->form_validation->set_rules('doador_senha', 'Senha', 'required|max_length[30]|min_length[8]');
 			$this->form_validation->set_rules('doador_data_nascimento', 'Data de Nascimento', 'required|max_length[12]');
-		  $this->form_validation->set_rules('doador_tipo_sanguineo', 'Tipo Sanguíneo', 'required|max_length[3]');
-      $this->form_validation->set_rules('doador_sexo', 'Sexo', 'required|max_length[20]');
+			$this->form_validation->set_rules('doador_tipo_sanguineo', 'Tipo Sanguíneo', 'required|max_length[3]');
+			$this->form_validation->set_rules('doador_sexo', 'Sexo', 'required|max_length[20]');
 			$this->form_validation->set_rules('doador_endereco', 'Endereco', 'required|max_length[60]');
 			$this->form_validation->set_rules('doador_estado', 'Estado', 'required|max_length[60]');
 			$this->form_validation->set_rules('doador_cidade', 'Cidade', 'required|max_length[60]');
@@ -49,8 +49,8 @@ class Doador extends CI_Controller {
 				$this->Doador_model->email = $this->input->post('doador_email');
 				$this->Doador_model->senha = md5($this->input->post('doador_senha'));
 				$this->Doador_model->data_nascimento = $this->input->post('doador_data_nascimento');
-			  $this->Doador_model->tipo_sanguineo = $this->input->post('doador_tipo_sanguineo');
-        $this->Doador_model->sexo = $this->input->post('doador_sexo');
+				$this->Doador_model->tipo_sanguineo = $this->input->post('doador_tipo_sanguineo');
+				$this->Doador_model->sexo = $this->input->post('doador_sexo');
 				$this->Doador_model->endereco = $this->input->post('doador_endereco');
 				$this->Doador_model->estado = $this->input->post('doador_estado');
 				$this->Doador_model->cidade = $this->input->post('doador_cidade');
@@ -81,9 +81,9 @@ class Doador extends CI_Controller {
 
 		//seleciona os dados na tabela de doador
 		$this->db->select("*")
-    ->from("Doador")
-    ->where("email", $doador_email)
-    ->where("senha", md5($doador_senha));
+		->from("Doador")
+		->where("email", $doador_email)
+		->where("senha", md5($doador_senha));
 
 		$dadosDoador = $this->db->get();
 
@@ -94,7 +94,7 @@ class Doador extends CI_Controller {
 			$this->session->set_userdata('usuarioLogado', TRUE);
 			$this->session->set_userdata('id_doador', $doador->id_doador);
 
-       // direciona para o modulo doador
+			// direciona para o modulo doador
 			redirect('Painel_doador/index');
 
 		} else {
