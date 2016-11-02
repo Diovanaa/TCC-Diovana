@@ -31,7 +31,8 @@
                          <div class="panel-heading ">
                            <div class="row ">
                              <div class="col col-xs-6">
-                               <h3 class="panel-title"></h3>
+
+</h3>
                              </div>
                              <div class="col col-xs-6 text-right">
 
@@ -44,6 +45,8 @@
                            <table class="table">
                            <thead>
                                <tr>
+                                   <th>Nome Doador</th>
+                                   <th>Telefone</th>
                                    <th>Tipo da doação</th>
                                    <th>Data da doação</th>
                                    <th>Turno da doação</th>
@@ -54,8 +57,8 @@
                            <tbody id="myTable">
                            <?php if (!empty( $dadosDoacaoMarcada)):
                               foreach ( $dadosDoacaoMarcada as $row): ?>
-
-
+                                        <td><?php echo $row->nome; ?></td>
+                                      <td><?php echo $row->telefone; ?></td>
                                        <td><?php echo $row->tipo_doacao_marcada; ?></td>
                                        <td><?php echo $row->data_doacao_marcada; ?></td>
                                        <td> <?php echo $row->turno_doacao_marcada;?> </td>
