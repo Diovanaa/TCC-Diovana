@@ -42,22 +42,19 @@
 <div class=" content container-fluid card col-sm-12 col-sm-offset-2">
 
 		<div class="container-page">
-			<div class="col-md-6">
+			<div class="col-md-6 ">
 				<h3>Cadastro de Hemocentro:</h3>
 
         						<?php echo validation_errors(); ?>
         						<?php if ($this->input->get('alerta') == 1) { ?>
                       <a data-toggle="modal" href="<?=site_url('login/loginHemocentro')?>" >
-
-
-
-
         						<?php } ?>
         						<?php if ($this->input->get('alerta') == 2) { ?>
         						<div class="alert alert-danger">
         						<h2>E-mail já cadastrado!<h2>
         						</div>
         						<?php } ?>
+
         <form action="<?=site_url('hemocentro/salvar_hemocentro')?>" method="post">
 				<div class="form-group col-lg-6">
           <label for="nomeHemocentro">Nome Hemocentro*:</label>

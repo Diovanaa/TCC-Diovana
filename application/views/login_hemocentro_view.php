@@ -25,11 +25,15 @@
 </br>
 
 <div class="baixo">
-    <div class="row col-lg-12 ">
-        <div class="col-lg-3">
+    <div class="row col-lg-12 col-sm-12">
+        <div class="col-lg-3 col-sm-2">
         </div>
-        <div class="col-lg-9 ">
-
+        <div class="col-lg-9 col-sm-9 ">
+          <?php if ($this->input->get('alerta') == 3) { ?>
+              <div class="alert alert-success col-lg-7">
+                <h3 class="meio">Cadastro efetuado com sucesso!</h3>
+              </div>
+          <?php } ?>
 
 
             <h3 class="col-lg-7 centro"> Hemocentro efetue o login:</h3>
@@ -45,7 +49,7 @@
             <?php } ?>
             <form action="<?= site_url('hemocentro/loginhemocentro') ?>" method="post">
                 <!-- Entrada email do doador-->
-                <div class="form-group col-lg-7"></br> 
+                <div class="form-group col-lg-7"></br>
                     <label for="emailHemocentro">Email*:</label>
                     <input type="email" id="emailHemocentro" name="hemocentro_email"
                            value="" class="form-control" required placeholder="Endereço de email"  />

@@ -3,58 +3,57 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Painel_Doador extends MY_ControllerLogado {
-  // Carrega o cabeçalho do Painel doador
-  public function cabecalho() {
+
+  public function cabecalho() { // Carrega o cabeçalho do Painel doador
     $id_doador = $this->session->userdata('id_doador');
     $data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
     $this->load->view('doador/cabecalho_doador', $data);
   }
-  //Carrega pagina Home do Doador
-  public function index() {
+
+  public function index() {//Carrega pagina Home do Doador
     $id_doador = $this->session->userdata('id_doador');
     $data = array("dadosDoacao" => $this->Doador_model->minhasDoacoes(),"dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
     $this->load->view('doador/cabecalho_doador');
     $this->load->view('doador/home_doador_view', $data);
   }
-  // Carrega o perfil do doador
-  public function carregarPerfil() {
+
+  public function carregarPerfil() {// Carrega o perfil do doador
     $id_doador = $this->session->userdata('id_doador');
     $data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row(), "dadosDoacao" => $this->Doador_model->minhasDoacoes());
     $this->load->view('doador/cabecalho_doador');
     $this->load->view('doador/perfil_doador_teste2', $data);
     $this->load->view('rodape_view');
   }
-  // Sai do painel doador
-  function deslogar() {
+
+  function deslogar() {  // Sai do painel doador
     $this->session->sess_destroy();
-    $this->load->view('cabecalho_view');
-    $this->load->view('home_view_teste');
+    redirect('home/index');
   }
-  //Carrega pagina de cadastro das doações
-  public function carregarCadastroDoacao() {
+
+  public function carregarCadastroDoacao() {  //Carrega pagina de cadastro das doações
     $id_doador = $this->session->userdata('id_doador');
     $data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
     $this->load->view('doador/cabecalho_doador');
     $this->load->view('doador/cadastrar_doacoes', $data);
     $this->load->view('rodape_view');
   }
-  //Carrega as minhas doações cadastradas
-  public function carregaMinhasDoacoes() {
+
+  public function carregaMinhasDoacoes() {//Carrega as minhas doações cadastradas
     $id_doador = $this->session->userdata('id_doador');
     $data = array("dadosDoacao" => $this->Doador_model->minhasDoacoes(), "dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
     $this->load->view('doador/cabecalho_doador');
     $this->load->view('doador/minhasDoacoes', $data);
   }
 
-  // chama tela de configurações/edições de dados do doador
-  public function editaPerfilDoador() {
+
+  public function editaPerfilDoador() {// chama tela de configurações/edições de dados do doador
     $id_doador = $this->session->userdata('id_doador');
     $data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
     $this->load->view('doador/cabecalho_doador');
     $this->load->view('doador/configuracoes_view', $data);
   }
-  //Chama tela de localizar hemocentros
-  public function localizarHemocentros() {
+
+  public function localizarHemocentros() {  //Chama tela de localizar hemocentros
     $id_doador = $this->session->userdata('id_doador');
     $id_hemocentro = $this->session->userdata('id_hemocentro');
     $data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row(),
@@ -62,24 +61,24 @@ class Painel_Doador extends MY_ControllerLogado {
     $this->load->view('doador/cabecalho_doador');
     $this->load->view('doador/localizar_hemocentro', $data);
   }
-  //Carrega lista de Doadores para doar em um hemocentro específico cadastrado no sistema
-  public function doarAqui() {
+
+  public function doarAqui() {  //Carrega lista de Doadores para doar em um hemocentro específico cadastrado no sistema
     $id_doador = $this->session->userdata('id_doador');
     $data = array("dadosHemocentro" => $this->Doacao_model->procurarHemocentroParaDoar()->result(),
     "dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
     $this->load->view('doador/cabecalho_doador');
     $this->load->view('doador/doar_aqui', $data);
   }
-  //Chama tela de editar doações
-  public function editarDoacoes($id_doacao) {
+
+  public function editarDoacoes($id_doacao) {//Chama tela de editar doações
     $id_doador = $this->session->userdata('id_doador');
     $data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row(),
     "dadosDoacao" => $this->Doador_model->getDoacao($id_doacao)->row());
     $this->load->view('doador/cabecalho_doador');
     $this->load->view('doador/editar_doacoes', $data);
   }
-  // Salva as doações
-  public function salvarDoacao() {
+
+  public function salvarDoacao() {// Salva as doações
     $dados_doacao = array();
     $this->Doacao_model->tipo_doacao = $this->input->post('doacao_tipodoacao');
     $this->Doacao_model->data_doacao = $this->input->post('data_doacao');
@@ -102,8 +101,8 @@ class Painel_Doador extends MY_ControllerLogado {
       redirect('Painel_doador/carregaMinhasDoacoes/?alerta=2');
     }
   }
-  // Função para alterar os dados pessoais, como nome, telefone, data de nascimento, tipo sanguineo e sexo.
-  function AtualizarDadosPessoais() {
+
+  function AtualizarDadosPessoais() {// Função para alterar os dados pessoais, como nome, telefone, data de nascimento, tipo sanguineo e sexo.
     $data = array();
     $data['nome'] = $this->input->post('doador_nome');
     $data['telefone'] = $this->input->post('doador_telefone');
@@ -118,8 +117,8 @@ class Painel_Doador extends MY_ControllerLogado {
     $this->load->view('doador/cabecalho_doador');
     $this->load->view('doador/configuracoes_view', $dados2);
   }
-  // Função de atualizar endereço do doador
-  function AtualizarEndereco() {
+
+  function AtualizarEndereco() {// Função de atualizar endereço do doador
     $data = array();
     $data['endereco'] = $this->input->post('doador_endereco');
     $data['cidade'] = $this->input->post('doador_cidade');
@@ -132,8 +131,8 @@ class Painel_Doador extends MY_ControllerLogado {
     $this->load->view('doador/cabecalho_doador');
     $this->load->view('doador/configuracoes_view', $dados2);
   }
-  // Função de Atulizar email e senha do doador
-  function AtualizarSenha() {
+
+  function AtualizarSenha() {// Função de Atulizar email e senha do doador
     $data = array();
     $data['senha'] = md5($this->input->post('doador_senha'));
     $data['email'] = $this->input->post('doador_email');
@@ -146,8 +145,8 @@ class Painel_Doador extends MY_ControllerLogado {
     $this->load->view('doador/configuracoes_view', $dados2);
     $this->load->view('rodape_view');
   }
-  //Função de atualizar doações
-  function AtualizarDoacao() {
+
+  function AtualizarDoacao() { //Função de atualizar doações
     $data = array();
     $data['hemocentro_nome'] = $this->input->post('hemocentro_nome');
     $data['tipo_doacao'] = $this->input->post('doacao_tipodoacao');
@@ -162,16 +161,16 @@ class Painel_Doador extends MY_ControllerLogado {
     $this->load->view('doador/cabecalho_doador');
     $this->load->view('doador/editar_doacoes', $dados2);
   }
-  // dunção de excluir doação
-  public function excluir($id_doacao, $id_doador) {
+
+  public function excluir($id_doacao, $id_doador) {  // Função de excluir doação
     $id_doador = $this->session->userdata('id_doador');
     $data = array(
       "excluir" => $this->Doacao_model->excluir($id_doador, $id_doacao)
     );
     redirect('painel_doador/carregaMinhasDoacoes/?alerta=1');
   }
-  //Função de localizar hemocentros por estado e tipo sanguineo
-  public function localizar() {
+
+  public function localizar() {//Função de localizar hemocentros por estado e tipo sanguineo
     $teste = $this->input->post('busca');
     $this->db->select('*')->from('hemocentro')
     ->group_start()
@@ -192,8 +191,8 @@ class Painel_Doador extends MY_ControllerLogado {
       $this->load->view('doador/localizar_hemocentro', $data);
     }
   }
-  // função salvar doações marcadas
-  public function salvarDoacaoMarcada() {
+
+  public function salvarDoacaoMarcada() {// função salvar doações marcadas
     $dados_doacao_marcada = array();
     $this->DoacaoMarcada_model->tipo_doacao_marcada = $this->input->post('tipo_doacao_marcada');
     $this->DoacaoMarcada_model->data_doacao_marcada = $this->input->post('data_doacao_marcada');
@@ -217,13 +216,13 @@ class Painel_Doador extends MY_ControllerLogado {
       redirect('Painel_doador/doarAqui/?alerta=2');
     }
   }
-  public function carregaMinhasDoacoesMarcadas() {
+  public function carregaMinhasDoacoesMarcadas() {//Carrega pagina de cadastro das doações Marcadas
     $id_doador = $this->session->userdata('id_doador');
     $data = array("dadosDoacaoMarcada" => $this->Doador_model->minhasDoacoesMarcadas(), "dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
     $this->load->view('doador/cabecalho_doador');
     $this->load->view('doador/home_doador_view', $data);
   }
-  //Carrega pagina de cadastro das doações Marcadas
+
   public function doar() {
     $id_hemocentro = $this->input->post('id_hemocentro');
     $id_doador = $this->session->userdata('id_doador');

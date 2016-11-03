@@ -38,8 +38,7 @@ class Painel_hemocentro extends MY_ControllerLogado {
   }
   function deslogar() {
     $this->session->sess_destroy();
-    $this->load->view('cabecalho_view');
-    $this->load->view('home_view_teste');
+      redirect('home/index');
   }
   public function localizarDoadores(){
     $id_hemocentro = $this->session->userdata('id_hemocentro');

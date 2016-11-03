@@ -57,7 +57,7 @@ class Doador extends CI_Controller {
 
 				$this->Doador_model->Salvar();
 
-				redirect('login/loginDoador');
+				redirect('login/loginDoador/?alerta=3');
 			}
 
 		}

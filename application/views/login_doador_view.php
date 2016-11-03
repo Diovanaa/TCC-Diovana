@@ -25,24 +25,28 @@
 </br>
 
 <div class="baixo">
-<div class="row col-lg-12 ">
-  <div class="col-lg-3">
+<div class="row col-lg-12  col-sm-12">
+  <div class="col-lg-3 col-sm-2">
   </div>
-<div class="col-lg-9 ">
+<div class="col-lg-9 col-sm-9 ">
 
 
 
   <h3 class="col-lg-7 centro"> Doador efetue o login: </h3>
-
-  <?php if ($this->input->get('alerta') == 1) { ?>
-						<div class="alert alert-danger col-lg-7">
-						<h3 >Verifique se o email e a senha estão corretos.</h3>
-						</div>
+            <?php if ($this->input->get('alerta') == 3) { ?>
+                <div class="alert alert-success col-lg-7">
+                  <h3 class="meio">Cadastro efetuado com sucesso!</h3>
+                </div>
+            <?php } ?>
+            <?php if ($this->input->get('alerta') == 1) { ?>
+						        <div class="alert alert-danger col-lg-7">
+						                <h3 >Verifique se o email e a senha estão corretos.</h3>
+						        </div>
 						<?php } ?>
 						<?php if ($this->input->get('alerta') == 2) { ?>
-						<div class="alert alert-danger">
-							Você não possui acesso a url.
-						</div>
+						        <div class="alert alert-danger">
+							               Você não possui acesso a url.
+						        </div>
 						<?php } ?>
 <form action="<?=site_url('doador/logindoador')?>" method="post">
   <!-- Entrada email do doador-->

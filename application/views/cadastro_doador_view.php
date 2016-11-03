@@ -47,6 +47,7 @@
 				<h3>Cadastro de Doador:</h3>
                 <?php echo validation_errors(); ?>
         				<?php if ($this->input->get('alerta') == 1) { ?>
+
                   <a data-toggle="modal" href="<?=site_url('login/loginDoador')?>">
 
         				<?php } ?>

@@ -57,7 +57,7 @@ class Hemocentro extends CI_Controller {
         $this->Hemocentro_model->cep = $this->input->post('hemocentro_cep');
         $this->Hemocentro_model->Salvar();
 
-        redirect('login/loginHemocentro');
+        redirect('login/loginHemocentro/?alerta=3');
       }
     }
   }
