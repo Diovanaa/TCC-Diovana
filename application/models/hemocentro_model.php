@@ -94,25 +94,12 @@ class Hemocentro_model extends CI_Model {
 		$this->db
 		->select("*")
 		->from("doacao_marcada")
+		->join("doador", "doacao_marcada.id_doador = doador.id_doador")
 		->where('status_doacao_marcada', $status)
 		->where('id_hemocentro', $this->session->userdata('id_hemocentro'));
-		$query = $this->db->get()->result();
-		foreach ($query as $row) {
-			$this->db->select("*")
-			->from("doador")
-			->where("id_doador", $row->id_doador);
-			return $this->db->get()->result();
-		}
+		return $this->db->get()->result();
 
 	}
 
-	public function dadosDaPossivelDoacao(){
-		$status = 'Aguardando Confirmação';
-		$id_entidade = $this->session->userdata('id_entidade');
-		$this->db
-		->select("*")
-		->from("doacao_marcada")
-		->where('status_doacao_marcada', $status);
-		return $query = $this->db->get()->result();
-	}
+
 }

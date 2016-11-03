@@ -67,24 +67,28 @@
                            <tbody id="myTable">
                            <?php if (!empty( $dadosDoacaoMarcada)):
                               foreach ( $dadosDoacaoMarcada as $row): ?>
-                              <?php foreach ($dadosDaPossivelDoacao as $key): ?>
+
                                         <td><?php echo $row->nome; ?></td>
                                       <td><?php echo $row->telefone; ?></td>
+                                      <td>
+                                        <?php echo $row->tipo_doacao_marcada; ?>
+                                      </td>
+                                      <td>
+                                        <?php echo $row->data_doacao_marcada; ?>
+                                      </td>
+                                      <td>
+                                        <?php echo $row->turno_doacao_marcada; ?>
+                                      </td>
 
 
-
-
-                                       <td><?php echo $key->tipo_doacao_marcada; ?></td>
-                                       <td><?php echo $key->data_doacao_marcada; ?></td>
-                                       <td> <?php echo $key->turno_doacao_marcada;?> </td>
 
 <td>
 
-  <a  href="<?= site_url('Painel_hemocentro/aceitarDoador/' . $key->id_doacao_marcada) ?>"
+  <a  href="<?= site_url('Painel_hemocentro/aceitarDoador/' . $row->id_doacao_marcada) ?>"
                          class="btn btn-primary btn-sm">
                          <i class="" aria-hidden="true"></i>   Aceitar
                        </a>
-                       <a  href="<?= site_url('Painel_hemocentro/carregaRemarcarDoacao/' .  $key->id_doacao_marcada) ?>"
+                       <a  href="<?= site_url('Painel_hemocentro/carregaRemarcarDoacao/' .  $row->id_doacao_marcada) ?>"
                                               class="btn btn-primary btn-sm">
                                               <i class="" aria-hidden="true"></i>   Remarcar
                                             </a>
@@ -93,7 +97,7 @@
 
 
                                  </tr>
-                                 <?php endforeach; ?>
+
  <?php endforeach; ?>
                                      <?php else: {
                                        echo "<td colspan='5' align = 'center'>
