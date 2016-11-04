@@ -91,22 +91,22 @@
       <div class="col-lg-12 ">
         <div class="row col-lg-12 diferente fundo">
 
-             <div class="col-lg-2 col-md-6 col-xs-12 diferente1">
+             <div class="col-lg-2 col-md-6 col-xs-6 diferente1">
                <a class="diferente" href="<?=site_url('cadastro/chamandoCadastroDoador')?>" ></br>Cadastro de doador</a>
              </div>
-             <div class="col-lg-2 col-md-6 col-xs-12 diferente2">
+             <div class="col-lg-2 col-md-6 col-xs-6 diferente2">
                <a class="diferente" href="<?=site_url('como_doar/chamandoComoDoar')?>" ></br>Como doar</a>
              </div>
-             <div class="col-lg-2 col-md-6 col-xs-12 diferente3">
+             <div class="col-lg-2 col-md-6 col-xs-6 diferente3">
               <a class="diferente" href="<?=site_url('cadastro/chamandoCadastroHemocentro')?>" ></br> Cadastro de hemocentro  </a>
              </div>
-             <div class="col-lg-2 col-md-6 col-xs-12 diferente4">
+             <div class="col-lg-2 col-md-6 col-xs-6 diferente4">
                <a class="diferente" href="<?=site_url('ondedoar/chamandoOndeDoar')?>" > </br> Onde doar? </a>
              </div>
-             <div class="col-lg-2 col-md-6 col-xs-12 diferente5">
+             <div class="col-lg-2 col-md-6 col-xs-6 diferente5">
                <a class="diferente" href="<?=site_url('como_doar/chamandoComoDoar')?>" ></br>Estoques</a>
              </div>
-             <div class="col-lg-2 col-md-6 col-xs-12 diferente6">
+             <div class="col-lg-2 col-md-6 col-xs-6 diferente6">
               <a class="diferente" href="<?=site_url('login/loginHemocentro')?>" ></br>Sangue</a>
              </div>
 
