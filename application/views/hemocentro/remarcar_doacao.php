@@ -22,7 +22,7 @@
                <div class="panel-heading ">
                  <div class="row ">
                    <div class="col col-xs-6">
-                     <h1 class="panel-title">Adicionar novo Estoque</h1>
+                     <h1 class="panel-title">Alterar Doação</h1>
                    </div>
 
                  </div>

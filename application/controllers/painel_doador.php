@@ -12,7 +12,8 @@ class Painel_Doador extends MY_ControllerLogado {
 
   public function index() {//Carrega pagina Home do Doador
     $id_doador = $this->session->userdata('id_doador');
-    $data = array("dadosDoacao" => $this->Doador_model->minhasDoacoes(),"dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
+    $data = array("dadosDoacao" => $this->Doador_model->minhasDoacoes(),"dadosDoador" => $this->Doador_model->getDoador($id_doador)->row(),
+    "dadosDoacaoMarcada" => $this->Doador_model->minhasDoacoesMarcadas());
     $this->load->view('doador/cabecalho_doador');
     $this->load->view('doador/home_doador_view', $data);
   }
@@ -40,7 +41,8 @@ class Painel_Doador extends MY_ControllerLogado {
 
   public function carregaMinhasDoacoes() {//Carrega as minhas doações cadastradas
     $id_doador = $this->session->userdata('id_doador');
-    $data = array("dadosDoacao" => $this->Doador_model->minhasDoacoes(), "dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
+    $data = array("dadosDoacao" => $this->Doador_model->minhasDoacoes(), "dadosDoador" => $this->Doador_model->getDoador($id_doador)->row(),
+    "dadosDoacaoMarcada" => $this->Doador_model->minhasDoacoesMarcadas());
     $this->load->view('doador/cabecalho_doador');
     $this->load->view('doador/minhasDoacoes', $data);
   }
@@ -168,6 +170,20 @@ class Painel_Doador extends MY_ControllerLogado {
       "excluir" => $this->Doacao_model->excluir($id_doador, $id_doacao)
     );
     redirect('painel_doador/carregaMinhasDoacoes/?alerta=1');
+  }
+  public function excluirDoacaMarcada($id_doacao_marcada, $id_doador) {  // Função de excluir doação
+    $id_doador = $this->session->userdata('id_doador');
+    $data = array(
+      "excluir" => $this->DoacaoMarcada_model->excluir($id_doador, $id_doacao_marcada)
+    );
+    redirect('painel_doador/index/?alerta=1');
+  }
+  public function carregaRemarcarDoacao($id_doacao_marcada){
+    $id_doador = $this->session->userdata('id_doador');
+    $dados2 = array("dadosDoacaoMarcada" => $this->DoacaoMarcada_model->getDoacaoMarcadaCerta($id_doacao_marcada),
+    "dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row(),"dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
+    $this->load->view('hemocentro/cabecalho_hemocentro');
+    $this->load->view('hemocentro/remarcar_doacao', $dados2);
   }
 
   public function localizar() {//Função de localizar hemocentros por estado e tipo sanguineo

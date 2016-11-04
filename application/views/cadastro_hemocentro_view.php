@@ -143,22 +143,23 @@
 				<div class="form-group col-lg-6">
 					<label for="bairroHemocentro">Bairro*:</label>
 					<input type="text"
-					id="bairroHecmocentro" name="hemocentro_bairro" placeholder="Ex.: Centro"
+					id="bairroHemocentro" name="hemocentro_bairro" placeholder="Ex.: Centro"
 					value="" class="form-control" required  />
+
 				</div>
 
-<!--	<div class="form-group col-lg-6">
+<!--<div class="form-group col-lg-6">
 		<label for="numeroHemocentro">Número*:</label>
 		<input type="text"
 		id="numeroHemocentro" name="hemocentro_numero"
 		value="" class="form-control" required  />
-	</div>
--->
+	</div>-->
 
 	<div class="form-group col-lg-6"><label for="cepHemocentro">CEP*:</label>
 	<input type="text"
-	id="cepHemocentro" name="hemocentro_cep" placeholder="Ex.: 00000-000"
-	value="" class="form-control" required  />
+	id="cepHemocentro cep" name="hemocentro_cep" placeholder="Ex.: 00000-000"
+	value="" class="form-control cep" required  />
+
 	</div>
   <div class="col-lg-12">
   				<h5>*Campos obrigatórios</h5>
@@ -182,3 +183,29 @@
 		</div>
 
 </div>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script>
+	window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+	</script>
+
+	<script src="<?=base_url('assets/js/bootstrap.min.js')?>"></script>
+	<script src="<?=base_url('../../assets/js/vendor/holder.min.js')?>"></script>
+	<script src="<?=base_url('assets/js/jquery.mask.min.js')?>" type="text/javascript"></script>
+
+  <script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
+  <script>
+      webshims.setOptions('forms-ext', {types: 'date'});
+  webshims.polyfill('forms forms-ext');
+  </script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+  	$("input.data").mask("99/99/9999");
+          $("input.cpf").mask("999.999.999-99");
+          $("input.cep").mask("99.999-999");
+            $("input.telefone").mask("(99) 9999-9999");
+  });
+  </script>
+
+</body>
+</html>

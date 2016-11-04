@@ -83,10 +83,9 @@
               <!-- Entrada telefone do doador-->
 				      <div class="form-group col-lg-6">
 					         <label for="telefoneDoador">Telefone*:</label>
-					         <input type="tel"   id="" name="doador_telefone" placeholder="Ex.: (99) 9999-9999"
+					         <input type="text"   id="" name="doador_telefone" placeholder="Ex.: (99) 9999-9999"
 					         value="" class="telefone form-control " required  />
 				      </div>
-
 
               <!-- Seleção do tipo sanguineo do doador-->
 
@@ -210,13 +209,19 @@
 	<script src="<?=base_url('assets/js/bootstrap.min.js')?>"></script>
 	<script src="<?=base_url('../../assets/js/vendor/holder.min.js')?>"></script>
 	<script src="<?=base_url('assets/js/jquery.mask.min.js')?>" type="text/javascript"></script>
-  <script type="text/javascript">
-  		$('.telefone').mask('(00) 0000 - 0000');
-  </script>
+
   <script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
   <script>
       webshims.setOptions('forms-ext', {types: 'date'});
   webshims.polyfill('forms forms-ext');
+  </script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+  	$("input.data").mask("99/99/9999");
+          $("input.cpf").mask("999.999.999-99");
+          $("input.cep").mask("99.999-999");
+            $("input.telefone").mask("(99) 9999-9999");
+  });
   </script>
 
 </body>

@@ -45,11 +45,13 @@
                            <thead>
                                <tr>
                                    <th>Nome</th>
-                                   <th>Endereco</th>
-                                   <th>Cidade</th>
-                                   <th>CEP</th>
-                                   <th>Estado</th>
                                    <th>Telefone</th>
+                                   <th>Estado</th>
+                                   <th>Cidade</th>
+                                   <th>Endereco</th>
+                                   <th>CEP</th>
+
+
 
                                </tr>
                            </thead>
@@ -57,11 +59,13 @@
                            <?php if (!empty($dadosHemocentro)):
                               foreach ($dadosHemocentro as $row): ?>
                                        <td> <?php echo $row->nome;?> </td>
-                                       <td> <?php echo $row->endereco;?> </td>
-                                       <td><?php echo $row->cidade; ?></td>
-                                       <td><?php echo $row->cep; ?></td>
-                                       <td> <?php echo $row->estado;?> </td>
                                        <td> <?php echo $row->telefone;?> </td>
+                                       <td> <?php echo $row->estado;?> </td>
+                                        <td><?php echo $row->cidade; ?></td>
+                                       <td> <?php echo $row->endereco;?> </td>                                      
+                                       <td><?php echo $row->cep; ?></td>
+
+
 
                                        <form class="" action="<?=site_url('painel_doador/doar')?>" method="post">
                                          <input type="hidden" name="id_hemocentro" value="<?php echo $row->id_hemocentro;?>">

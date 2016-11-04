@@ -17,6 +17,14 @@ class DoacaoMarcada_model extends CI_Model {
   public function Salvar($dados){
     return $this->db->insert('doacao_marcada', $this);
   }
+  public function excluir($id_doador, $id_doacao_marcada){
+
+    $this->db->where('id_doador', $id_doador);
+    $this->db->where('id_doacao_marcada', $id_doacao_marcada);
+
+    return	$this->db->delete('doacao_marcada');
+
+  }
 
   function getDoacaoMarcada(){
     $id_doador = $this->session->userdata('id_doador');
@@ -27,11 +35,7 @@ class DoacaoMarcada_model extends CI_Model {
     ->where('id_doacao_marcada', $id_doacao_marcada);
     return $query = $this->db->get()->result();
   }
-  public function excluir($id_doador, $id_doacao){
-    $this->db->where('id_doador', $id_doador);
-    $this->db->where('id_doacao', $id_doacao);
-    return	$this->db->delete('Doacao_marcada');
-  }
+
 
   public function procurarHemocentroParaDoar(){
     $this->db

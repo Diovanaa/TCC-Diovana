@@ -29,8 +29,9 @@
 	<script src="<?=base_url('assets/js/bootstrap.js')?>" type="text/javascript"></script>
 	<script src="<?=base_url('assets/js/painel.js')?>" type="text/javascript"></script>
 	<script src="<?=base_url('assets/js/login-register.js')?>" type="text/javascript"></script>
-
-
+	<script src="<?=base_url('assets/js/jquery.js')?>" type="text/javascript"></script>
+	<script src="<?=base_url('assets/js/jquery.maskedinput.js')?>" type="text/javascript"></script>
+	
 </head>
 
 <body>
