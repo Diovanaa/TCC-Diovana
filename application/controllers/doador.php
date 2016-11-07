@@ -55,7 +55,7 @@ class Doador extends CI_Controller {
 				$this->Doador_model->endereco = $this->input->post('doador_endereco');
 				$this->Doador_model->estado = $this->input->post('doador_estado');
 				$this->Doador_model->cidade = $this->input->post('doador_cidade');
-				$this->Doador_model->mensagem = 'vazio';
+			
 
 				$this->Doador_model->Salvar();
 

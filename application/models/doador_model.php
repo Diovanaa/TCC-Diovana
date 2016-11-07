@@ -13,7 +13,7 @@ class Doador_model extends CI_Model {
   public $endereco;
   public $estado;
   public $cidade;
-  public $mensagem;
+
 
   function __construct() {
     parent::__construct();
@@ -24,12 +24,6 @@ class Doador_model extends CI_Model {
     return $this->db->insert('Doador', $this);
   }
 
-  public function enviarMeensagem($data, $id_doador){
-    $this->db->where('id_doador', $id_doador);
-    $this->db->set($data);
-    return $this->db->update('doador');
-
-  }
   function getDoadorPorTipoSanguineo($teste) {
     $this->db
     ->select('*')

@@ -9,6 +9,7 @@ class DoacaoMarcada_model extends CI_Model {
   public $data_doacao_marcada;
   public $turno_doacao_marcada;
   public $status_doacao_marcada;
+  public $mensagem;
 
   function __construct() {
     parent::__construct();
@@ -50,6 +51,13 @@ class DoacaoMarcada_model extends CI_Model {
     return $this->db->update('doacao_marcada');
 
   }
+
+    public function enviarMeensagem($data, $id_doacao_marcada){
+      $this->db->where('id_doacao_marcada', $id_doacao_marcada);
+      $this->db->set($data);
+      return $this->db->update('doacao_marcada');
+
+    }
 
   public function getDoacaoMarcadaCerta($id_doacao_marcada){
     $this->db->select('*')

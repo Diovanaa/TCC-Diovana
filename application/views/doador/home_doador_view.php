@@ -74,11 +74,7 @@
                            <td>
                            <?php echo $row->status_doacao_marcada; ?></td>
 
-                             <td>
-
-                            <a href="#"
-                               class="btn btn-primary"><em class="fa fa-pencil"></em></a>
-
+                             <td>                            
                              <a  href="<?= site_url('painel_doador/excluirDoacaMarcada/' . $row->id_doacao_marcada) ?>"
                                class="btn btn-danger"
                                onclick="return confirm('Têm certeza que deseja excluir esta informação?')">

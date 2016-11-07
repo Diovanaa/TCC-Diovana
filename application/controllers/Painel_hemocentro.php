@@ -116,7 +116,12 @@ public function carregarCadastroEstoque() {
   $this->load->view('hemocentro/cabecalho_hemocentro');
   $this->load->view('hemocentro/cadastro_Estoque', $data);
 }
-
+public function carregaHorarioColeta() {
+  $id_hemocentro = $this->session->userdata('id_hemocentro');
+  $data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row());
+  $this->load->view('hemocentro/cabecalho_hemocentro');
+  $this->load->view('hemocentro/horario_coleta', $data);
+}
 public function salvarEstoque() {
   $dados_estoque = array();
   $this->Estoque_model->tipo_a0 = $this->input->post('estoquetipo_a0');
@@ -222,6 +227,15 @@ public function aceitarDoador($id_doacao_marcada){
   ], $id_doacao_marcada);
   redirect('Painel_hemocentro/index/?alerta=1');
 }
+
+public function carregaRemarcarDoacao($id_doacao_marcada){
+ $id_hemocentro = $this->session->userdata('id_hemocentro');
+  $dados2 = array("dadosDoacaoMarcada" => $this->DoacaoMarcada_model->getDoacaoMarcadaCerta($id_doacao_marcada),
+  "dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row());
+  $this->load->view('hemocentro/cabecalho_hemocentro');
+  $this->load->view('hemocentro/remarcar_doacao', $dados2);
+}
+
 public function carregaEnvioDeMensagem($id_doador){
   $id_hemocentro = $this->session->userdata('id_hemocentro');
   $dados2 = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row(),
@@ -232,33 +246,40 @@ public function carregaEnvioDeMensagem($id_doador){
 public function enviarMensagem(){
   $nova_mensagem = $this->input->post('mensagem');
 
-  $id_doador = $this->input->post('id_doador');
-  $this->Doador_model->enviarMeensagem([
+  
+  $id_doacao_marcada = $this->input->post('id_doacao_marcada');
+  $this->DoacaoMarcada_model->enviarMeensagem([
     "mensagem" => $nova_mensagem
   ], $id_doador);
   redirect('Painel_hemocentro/localizarDoadores/?alerta=3');
 }
 
-public function carregaRemarcarDoacao($id_doacao_marcada){
-  $id_hemocentro = $this->session->userdata('id_hemocentro');
-  $dados2 = array("dadosDoacaoMarcada" => $this->DoacaoMarcada_model->getDoacaoMarcadaCerta($id_doacao_marcada),
-  "dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row());
-  $this->load->view('hemocentro/cabecalho_hemocentro');
-  $this->load->view('hemocentro/remarcar_doacao', $dados2);
-}
+//public function carregaRemarcarDoacao($id_doacao_marcada){
+//  $id_hemocentro = $this->session->userdata('id_hemocentro');
+//  $dados2 = array("dadosDoacaoMarcada" => $this->DoacaoMarcada_model->getDoacaoMarcadaCerta($id_doacao_marcada),
+//  "dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row());
+//  $this->load->view('hemocentro/cabecalho_hemocentro');
+//  $this->load->view('hemocentro/remarcar_doacao', $dados2);
+//}
 
-public function remarcarDoacao(){
-  $status = 'Doação Remarcada';
-  $nova_data = $this->input->post('data_doacao_marcada');
-  $novo_turno = $this->input->post('turno_doacao_marcada');
+public function diaIndisponivel($id_doacao_marcada){
 
-  $id_doacao_marcada = $this->input->post('id_doacao_marcada');
+  $status = 'Dia Indisponível';
   $this->DoacaoMarcada_model->aceitarOuRecusar([
-    "status_doacao_marcada" => $status,
-    "data_doacao_marcada" => $nova_data,
-    "turno_doacao_marcada" => $novo_turno
+    "status_doacao_marcada" => $status
   ], $id_doacao_marcada);
   redirect('Painel_hemocentro/index/?alerta=3');
 }
+//public function remarcarDoacao(){
+  //$status = 'Data indisponível';
+
+
+//  $id_doacao_marcada = $this->input->post('id_doacao_marcada');
+//  $this->DoacaoMarcada_model->aceitarOuRecusar([
+  //  "status_doacao_marcada" => $status
+
+  //], $id_doacao_marcada);
+  //redirect('Painel_hemocentro/index/?alerta=3');
+//}
 
 }
