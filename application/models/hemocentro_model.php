@@ -100,6 +100,19 @@ class Hemocentro_model extends CI_Model {
 		return $this->db->get()->result();
 
 	}
+	function listarDoadores(){
+
+		$status = 'Doação Aceita';
+		$this->db
+		->select("*")
+		->from("doacao_marcada")
+		->join("doador", "doacao_marcada.id_doador = doador.id_doador")
+		->where('status_doacao_marcada', $status)
+		->where('id_hemocentro', $this->session->userdata('id_hemocentro'))
+		->order_by("doacao_marcada.data_doacao_marcada", "asc");
+		return $this->db->get()->result();
+
+	}
 
 
 }

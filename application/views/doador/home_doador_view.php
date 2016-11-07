@@ -4,11 +4,12 @@
           <ul class="nav nav-sidebar">
             <li class="active"><a class="fonte2" href="<?=site_url('painel_doador/index')?>"><i class="fa fa-home " aria-hidden="true"></i> Home</a></li>
             <li><a class="fonte2" href="<?=site_url('painel_doador/carregarPerfil')?>"><i class="fa fa-user" aria-hidden="true"></i> Perfil</a></li>
+            <li><a class="fonte2" href="<?=site_url('painel_doador/localizarHemocentros')?>"><i class="fa fa-map-marker" aria-hidden="true"></i> Hemocentros</a></li>
             <li><a class="fonte2" href="<?=site_url('painel_doador/carregarCadastroDoacao')?>"><i class="fa fa-plus " aria-hidden="true"></i> Nova Doação</a></li>
             <li><a class="fonte2" href="<?=site_url('painel_doador/carregaMinhasDoacoes')?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Minhas Doações</a></li>
             <li><a class="fonte2" href="<?=site_url('painel_doador/editaPerfilDoador')?>"><i class="fa fa-cog" aria-hidden="true"></i> Configurações</a></li>
-            <li><a class="fonte2" href="<?=site_url('painel_doador/localizarHemocentros')?>"><i class="fa fa-map-marker" aria-hidden="true"></i> Hemocentros</a></li>
-            <li><a class="fonte2" href="<?=site_url('painel_doador/doarAqui')?>"><i class="fa fa-map-marker" aria-hidden="true"></i> Doar em um hemocentros</a></li>
+
+          <!--  <li><a class="fonte2" href="<?=site_url('painel_doador/doarAqui')?>"><i class="fa fa-map-marker" aria-hidden="true"></i> Doar em um hemocentros</a></li>-->
           </ul>
         </div>
         <br>
@@ -62,7 +63,11 @@
                              <?php echo $row->tipo_doacao_marcada;?>
                            </td>
                            <td>
-                             <?php echo $row->data_doacao_marcada;?>
+                             <input type="date"
+                                        class="form-control" name="doador_data_nascimento"
+                                        placeholder="Data de Nascimento"
+                                        value="<?php echo $row->data_doacao_marcada;?>" disabled>
+
                            </td>
                            <td><?php echo $row->turno_doacao_marcada; ?></td>
 
@@ -147,7 +152,12 @@
                            <td>
                              <?php echo $row->tipo_doacao;?>
                            </td>
-                           <td><?php echo $row->data_doacao; ?></td>
+                           <td>
+                             <input type="date"
+                                        class="form-control" name=""
+                                        placeholder="Data da doacao"
+                                        value="<?php echo $row->data_doacao; ?>" disabled>
+                             </td>
 
                            <td>
 
@@ -196,5 +206,10 @@
     <script src="../../assets/js/vendor/holder.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="//cdn.jsdelivr.net/webshim/1.14.5/polyfiller.js"></script>
+    <script>
+        webshims.setOptions('forms-ext', {types: 'date'});
+    webshims.polyfill('forms forms-ext');
+    </script>
   </body>
 </html>

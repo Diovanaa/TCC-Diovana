@@ -229,7 +229,7 @@ class Painel_Doador extends MY_ControllerLogado {
       return;
     } else {
       $this->DoacaoMarcada_model->Salvar($dados_doacao_marcada);
-      redirect('Painel_doador/doarAqui/?alerta=2');
+      redirect('Painel_doador/index/?alerta=2');
     }
   }
   public function carregaMinhasDoacoesMarcadas() {//Carrega pagina de cadastro das doações Marcadas

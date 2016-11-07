@@ -39,12 +39,23 @@
 <br>
 <br>
 <div class="container theme-showcase" role="main">
+  <div class="row jumbotron">
+    <div class="col-lg-12">
+      <h1 class="meio"> Doe sangue!</h1>
+      <p class="meio">
+        Somos uma organização sem fins lucrativos. <br>
+        Ajude-nos a divulgar cada vez mais essa ideia!
+      </p>
+    </div>
+
+  </div>
 
 
     <!-- Carousel
    ================================================== -->
    <div id="myCarousel" class="carousel slide" data-ride="carousel">
      <!-- Indicators -->
+     <!--
      <ol class="carousel-indicators">
        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
        <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -84,7 +95,8 @@
        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
        <span class="sr-only">Next</span>
      </a>
-   </div><!-- /.carousel -->
+   -->
+<!--   </div> /.carousel -->
 
 
     <div class="row fundo">

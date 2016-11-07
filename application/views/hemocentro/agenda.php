@@ -3,9 +3,9 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-              <li class="active"><a class="fonte2" href="<?=site_url('Painel_hemocentro/index')?>"><i class="fa fa-home " aria-hidden="true"></i> Home</a></li>
+              <li ><a class="fonte2" href="<?=site_url('Painel_hemocentro/index')?>"><i class="fa fa-home " aria-hidden="true"></i> Home</a></li>
               <li><a class="fonte2" href="<?=site_url('Painel_hemocentro/carregarPerfil')?>"><i class="fa fa-user" aria-hidden="true"></i> Perfil</a></li>
-              <li><a class="fonte2" href="<?=site_url('Painel_hemocentro/agenda')?>"><i class="fa fa-calendar " aria-hidden="true"></i> Agenda</a></li>
+              <li class="active"><a class="fonte2" href="<?=site_url('Painel_hemocentro/agenda')?>"><i class="fa fa-calendar " aria-hidden="true"></i> Agenda</a></li>
               <li><a class="fonte2" href="<?=site_url('Painel_hemocentro/carregarCadastroEstoque')?>"><i class="fa fa-plus " aria-hidden="true"></i> Novo Estoque</a></li>
               <li><a class="fonte2" href="<?=site_url('Painel_hemocentro/carregaMeuEstoque')?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Meu Estoque</a></li>
               <li><a class="fonte2" href="<?=site_url('Painel_hemocentro/localizarDoadores')?>"><i class="fa fa-plus" aria-hidden="true"></i> Procurar Doadores</a></li>
@@ -15,7 +15,7 @@
 
         </div>
         <div class="col-lg-12">
-          <h1 class="meio">Lista de Doadores aguardando confirmação</h1>
+          <h1 class="meio">Agenda da semana</h1>
         </div>
         <div class="col-sm-9 col-sm-offset-2">
           <?php if ($this->input->get('alerta') == 2) { ?>
@@ -37,7 +37,7 @@
 
 <div class="col-lg-2"></div>
 
-        <div class="col-lg-10">
+        <div class="col-lg-9 col-md-9 col-md-offset-2 col-sm-9 col-sm-offset-3">
                       <div class="panel panel-default panel-table">
                          <div class="panel-heading ">
                            <div class="row ">
@@ -61,7 +61,7 @@
                                    <th>Tipo da doação</th>
                                    <th>Data da doação</th>
                                    <th>Turno da doação</th>
-
+                                  <th>Status</th>
 
                                </tr>
                            </thead>
@@ -75,32 +75,14 @@
                                         <?php echo $row->tipo_doacao_marcada; ?>
                                       </td>
                                       <td>
-                                        <input type="date"
-                                                   class="form-control" name=""
-                                                   placeholder="Data da doacao"
-                                                   value="<?php echo $row->data_doacao_marcada; ?>" disabled >
-
+                                        <?php echo $row->data_doacao_marcada; ?>
                                       </td>
                                       <td>
                                         <?php echo $row->turno_doacao_marcada; ?>
                                       </td>
-
-
-
-<td>
-
-  <a  href="<?= site_url('Painel_hemocentro/aceitarDoador/' . $row->id_doacao_marcada) ?>"
-                         class="btn btn-primary btn-sm">
-                         <i class="" aria-hidden="true"></i>   Aceitar
-                       </a>
-                       <a  href="<?= site_url('Painel_hemocentro/carregaRemarcarDoacao/' .  $row->id_doacao_marcada) ?>"
-                                              class="btn btn-primary btn-sm">
-                                              <i class="" aria-hidden="true"></i>   Remarcar
-                                            </a>
-
-</td>
-
-
+                                      <td>
+                                        <?php echo $row->status_doacao_marcada; ?>
+                                      </td>
                                  </tr>
 
  <?php endforeach; ?>

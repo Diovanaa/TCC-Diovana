@@ -5,10 +5,10 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li  class="active"><a class="fonte2" href="<?=site_url('Painel_hemocentro/index')?>"><i class="fa fa-home " aria-hidden="true"></i> Home</a></li>
+            <li><a class="fonte2" href="<?=site_url('Painel_hemocentro/index')?>"><i class="fa fa-home " aria-hidden="true"></i> Home</a></li>
             <li><a class="fonte2" href="<?=site_url('Painel_hemocentro/carregarPerfil')?>"><i class="fa fa-user" aria-hidden="true"></i> Perfil</a></li>
-              <li><a class="fonte2" href="<?=site_url('Painel_hemocentro/agenda')?>"><i class="fa fa-calendar " aria-hidden="true"></i> Agenda</a></li>
-            <li><a class="fonte2" href="<?=site_url('Painel_hemocentro/carregarCadastroEstoque')?>"><i class="fa fa-plus " aria-hidden="true"></i> Novo Estoque</a></li>
+            <li><a class="fonte2" href="<?=site_url('Painel_hemocentro/agenda')?>"><i class="fa fa-calendar " aria-hidden="true"></i> Agenda</a></li>
+            <li class="active"><a class="fonte2" href="<?=site_url('Painel_hemocentro/carregarCadastroEstoque')?>"><i class="fa fa-plus " aria-hidden="true"></i> Novo Estoque</a></li>
             <li><a class="fonte2" href="<?=site_url('Painel_hemocentro/carregaMeuEstoque')?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Meu Estoque</a></li>
             <li><a class="fonte2" href="<?=site_url('Painel_hemocentro/localizarDoadores')?>"><i class="fa fa-plus" aria-hidden="true"></i> Procurar Doadores</a></li>
             <li><a class="fonte2" href="<?=site_url('Painel_hemocentro/editaPerfilHemocentro')?>"><i class="fa fa-cog" aria-hidden="true"></i> Configurações</a></li>
@@ -23,37 +23,34 @@
                <div class="panel-heading ">
                  <div class="row ">
                    <div class="col col-xs-6">
-                     <h1 class="panel-title">Alterar Doação</h1>
+                     <h1 class="panel-title">Enviar mensagem para doador</h1>
                    </div>
+                   <div class="col col-xs-6 text-right">
 
+
+
+
+
+                   </div>
                  </div>
                </div>
                <div class="panel-body">
-                 <form action="<?=site_url('Painel_hemocentro/remarcarDoacao')?>" method="post">
+                 <form action="<?=site_url('Painel_hemocentro/enviarMensagem')?>" method="post">
 
-                   <div class="form-group col-lg-6">
-                       <label for="turnoDoacaoMarcada">Turno da doação*:</label>
-                            <select class="form-control" name="turno_doacao_marcada" id="">
-                                 <option>Manhã</option>
-                                 <option>Tarde</option>
-                                 <option>Noite</option>
-                           </select>
+                   <div class="form-group col-lg-12">
+                      <label for="dataDoacaoMarcada">Mensagem*:</label>
+                       <textarea class="form-control" rows="5"></textarea>
                   </div>
 
-                   <div class="form-group col-lg-6">
-                         <label for="dataDoacaoMarcada">Data da doação*:</label>
-                         <input type="date" id="" name="data_doacao_marcada" placeholder="Data da doação marcada"
-                         value="" class="form-control" required  />
-                   </div>
 
-<input type="hidden" name="id_doacao_marcada" value="<?php echo $dadosDoacaoMarcada->id_doacao_marcada; ?>">
+      <!-- <input type="hidden" name="id_doador" value="<?php echo $dadosDoador->id_doador; ?>">-->
 
-                    <h5>*Campos obrigatórios</h5>
+
 
                     <div class="col-lg-3">
-                          <button type="submit" class="btn btn-primary">
-                                 Salvar
-                          </button>
+                      <button type="submit" class="btn btn-primary">
+                            Enviar
+                      </button>
 
                     </div>
 

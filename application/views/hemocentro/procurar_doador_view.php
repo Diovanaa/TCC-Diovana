@@ -7,6 +7,7 @@
           <ul class="nav nav-sidebar">
               <li><a class="fonte2" href="<?=site_url('Painel_hemocentro/index')?>"><i class="fa fa-home " aria-hidden="true"></i> Home</a></li>
               <li><a class="fonte2" href="<?=site_url('Painel_hemocentro/carregarPerfil')?>"><i class="fa fa-user" aria-hidden="true"></i> Perfil</a></li>
+              <li><a class="fonte2" href="<?=site_url('Painel_hemocentro/agenda')?>"><i class="fa fa-calendar " aria-hidden="true"></i> Agenda</a></li>
               <li><a class="fonte2" href="<?=site_url('Painel_hemocentro/carregarCadastroEstoque')?>"><i class="fa fa-plus " aria-hidden="true"></i> Novo Estoque</a></li>
               <li><a class="fonte2" href="<?=site_url('Painel_hemocentro/carregaMeuEstoque')?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Meu Estoque</a></li>
               <li class="active"><a class="fonte2" href="<?=site_url('Painel_hemocentro/localizarDoadores')?>"><i class="fa fa-plus" aria-hidden="true"></i> Procurar Doadores</a></li>
@@ -17,14 +18,14 @@
         </div>
         <br>
         <div  class="col-sm-9 col-sm-offset-2 row">
-          <?php if ($this->input->get('aviso') == 5) { ?>
+          <?php if ($this->input->get('aviso') == 2) { ?>
             <div class="alert alert-danger">
-              Você já se candidatou a essa vaga anteriormente!!!
+              A sua busca não retornou nenhum resultado...
             </div>
             <?php } ?>
                   </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        <!--  <h1 class="page-header"><?php echo $dadosHemocentro->nome ?></h1>-->
+
 
 
           <div class="panel panel-default panel-table">
@@ -86,6 +87,7 @@
                          <th>Estado</th>
                          <th>Cidade</th>
                          <th>Endereço</th>
+                         <th>Opções</th>
                        </tr>
                      </thead>
                      <tbody>
@@ -102,19 +104,21 @@
                             <td><?php echo $row->estado; ?></td>
                            <td><?php echo $row->cidade; ?></td>
                           <td><?php echo $row->endereco; ?></td>
-
+                          <td>
+                            <a  href="<?= site_url('Painel_hemocentro/carregaEnvioDeMensagem/' .  $row->id_doador) ?>"  class="btn btn-primary btn-sm">
+                                <i class="fa fa-envelope" aria-hidden="true"></i> Mensagem
+                            </a>
+                          </td>
 
                          </tr>
 
-                       <?php endforeach;
-                       elseif ($this->input->get('aviso') == 2): {
-                         echo "<td colspan='5' align = 'center'>
-                         <div class='alert alert-danger'>
-                         A sua busca não retornou nenhum resultado...
-                         </div>
-                         </td>";
-                       }
-                     endif; ?>
+                       <?php endforeach;?>
+                       <?php else: {
+                         echo "<td colspan='8' align = 'center'>
+                       Procure por um doador
+                                   </td>";
+                       } ?>
+                       <?php    endif; ?>
                    </tbody>
 
                    </table>

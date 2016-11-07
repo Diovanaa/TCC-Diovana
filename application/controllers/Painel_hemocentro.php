@@ -12,6 +12,13 @@ class Painel_hemocentro extends MY_ControllerLogado {
     $this->load->view('hemocentro/cabecalho_hemocentro');
     $this->load->view('hemocentro/home_hemocentro_view', $data);
   }
+  public function agenda() {
+    $id_hemocentro = $this->session->userdata('id_hemocentro');
+    $data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row(),
+    "dadosDoacaoMarcada" => $this->Hemocentro_model->listarDoadores());
+    $this->load->view('hemocentro/cabecalho_hemocentro');
+    $this->load->view('hemocentro/agenda', $data);
+  }
   public function teste_procurar(){
     $id_doador = $this->session->userdata('id_doador');
     $data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row(),
@@ -54,11 +61,6 @@ public function localizar(){
 
   $teste = $this->input->post('busca');
 
-  //$this->db->select('*');
-  //  $this->db->like('estado', $this->input->post('busca'));
-  //$this->db->or_like('cidade', $this->input->post('busca'));
-  //  $retorno = $this->db->get('hemocentro')->num_rows();
-
   $this->db->select('*')->from('doador')
   ->group_start()
   ->where('tipo_sanguineo', $this->input->post('busca'))
@@ -72,7 +74,7 @@ public function localizar(){
   $retorno = $this->db->get('doador')->num_rows();
 
   if ($retorno == 0) {
-    redirect('Painel_hemocentro/localizarDoadores/?aviso=2');
+    redirect('hemocentro/procurar_doador_view/?aviso=2');
   }
 
   else {
@@ -83,9 +85,6 @@ public function localizar(){
   $this->load->view('hemocentro/cabecalho_hemocentro');
   $this->load->view('hemocentro/procurar_doador_view', $data);
 }
-
-
-
 }
 
 public function carregarPerfil() {
@@ -222,6 +221,22 @@ public function aceitarDoador($id_doacao_marcada){
     "status_doacao_marcada" => $status
   ], $id_doacao_marcada);
   redirect('Painel_hemocentro/index/?alerta=1');
+}
+public function carregaEnvioDeMensagem($id_doador){
+  $id_hemocentro = $this->session->userdata('id_hemocentro');
+  $dados2 = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row(),
+  "dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row());
+  $this->load->view('hemocentro/cabecalho_hemocentro');
+  $this->load->view('hemocentro/enviar_mensagem', $dados2);
+}
+public function enviarMensagem(){
+  $nova_mensagem = $this->input->post('mensagem');
+
+  $id_doador = $this->input->post('id_doador');
+  $this->Doador_model->enviarMeensagem([
+    "mensagem" => $nova_mensagem
+  ], $id_doador);
+  redirect('Painel_hemocentro/localizarDoadores/?alerta=3');
 }
 
 public function carregaRemarcarDoacao($id_doacao_marcada){
