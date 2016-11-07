@@ -49,7 +49,7 @@
 
 						 </ul>
 					 </li>
-							<li><a class="branco" href="<?=site_url('painel_doador/deslogar')?>">Sair</a></li>
+							<li><a class="branco" href="<?=site_url('painel_doador/deslogar')?>" onclick="return confirm('Têm certeza que deseja sair do sistema?')">Sair</a></li>
 	          </ul>
 	          <form class="navbar-form navbar-right">
 	          <!--  <input type="text" class="form-control" placeholder="Procurar...">-->

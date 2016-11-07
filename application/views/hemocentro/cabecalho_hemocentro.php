@@ -51,7 +51,8 @@
 
 						 </ul>
 					 </li>
-								<li><a class="branco" href="<?=site_url('Painel_hemocentro/deslogar')?>">Sair</a></li>
+								<li><a class="branco" href="<?=site_url('Painel_hemocentro/deslogar')?>" onclick="return confirm('Têm certeza que deseja sair do sistema?')">Sair</a></li>
+
 	          </ul>
 	          <form class="navbar-form navbar-right">
 	          <!--  <input type="text" class="form-control" placeholder="Procurar...">-->

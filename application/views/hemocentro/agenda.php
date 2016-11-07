@@ -75,7 +75,11 @@
                                         <?php echo $row->tipo_doacao_marcada; ?>
                                       </td>
                                       <td>
-                                        <?php echo $row->data_doacao_marcada; ?>
+                                        <input type="date"
+                                                   class="form-control" name=""
+                                                   placeholder="Data da doacao"
+                                                   value="<?php echo $row->data_doacao_marcada; ?>" disabled >
+
                                       </td>
                                       <td>
                                         <?php echo $row->turno_doacao_marcada; ?>
