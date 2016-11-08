@@ -10,6 +10,7 @@ class Painel_Doador extends MY_ControllerLogado {
     $this->load->view('doador/cabecalho_doador', $data);
   }
 
+
   public function index() {//Carrega pagina Home do Doador
     $id_doador = $this->session->userdata('id_doador');
     $data = array("dadosDoacao" => $this->Doador_model->minhasDoacoes(),"dadosDoador" => $this->Doador_model->getDoador($id_doador)->row(),
@@ -21,9 +22,18 @@ class Painel_Doador extends MY_ControllerLogado {
 
   public function carregarPerfil() {// Carrega o perfil do doador
     $id_doador = $this->session->userdata('id_doador');
-    $data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row(), "dadosDoacao" => $this->Doador_model->minhasDoacoes());
+    $data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row(),
+    "dadosMensagem" => $this->Mensagem_model->listarmensagens());
     $this->load->view('doador/cabecalho_doador');
     $this->load->view('doador/perfil_doador_teste2', $data);
+    $this->load->view('doador/rodape_doador');
+  }
+  public function mensagens() {// Carrega o perfil do doador
+    $id_doador = $this->session->userdata('id_doador');
+    $data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row(),
+    "dadosMensagem" => $this->Mensagem_model->listarmensagens());
+    $this->load->view('doador/cabecalho_doador');
+    $this->load->view('doador/mensagens', $data);
     $this->load->view('doador/rodape_doador');
   }
 

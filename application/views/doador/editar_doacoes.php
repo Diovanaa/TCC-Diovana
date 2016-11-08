@@ -8,6 +8,7 @@
                 <li><a class="fonte2" href="<?= site_url('painel_doador/carregarPerfil') ?>"><i class="fa fa-user" aria-hidden="true"></i> Perfil</a></li>
                   <li><a class="fonte2" href="<?= site_url('painel_doador/localizarHemocentros') ?>"><i class="fa fa-map-marker" aria-hidden="true"></i> Hemocentros</a></li>
                 <li class="active"><a class="fonte2" href="<?= site_url('painel_doador/carregarCadastroDoacao') ?>"><i class="fa fa-plus " aria-hidden="true"></i> Nova Doação</a></li>
+<li><a class="fonte2" href="<?=site_url('painel_doador/mensagens')?>"><i class="fa fa-envelope " aria-hidden="true"></i> Mensagens</a></li>
               <!--  <li><a class="fonte2" href="<?= site_url('painel_doador/carregaMinhasDoacoes') ?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Minhas Doações</a></li>-->
                 <li ><a class="fonte2" href="<?= site_url('painel_doador/editaPerfilDoador') ?>"><i class="fa fa-cog" aria-hidden="true"></i> Configurações</a></li>
 
@@ -17,7 +18,7 @@
 
         </div>
         <div  class="col-sm-9 col-sm-offset-2 row">
-                              
+
                               <?php if ($this->input->get('alerta') == 4) { ?>
                               <div class="alert alert-success">
                                 Doação alterada com sucesso!!!

@@ -31,4 +31,11 @@ public function carregarEnvioMensagem($id_doador) {
   $this->load->view('hemocentro/enviar_mensagem', $data);
 
 }
+public function excluir($id_mensagem, $id_doador) {  // Função de excluir Mensagem
+  $id_doador = $this->session->userdata('id_doador');
+  $data = array(
+    "excluir" => $this->Mensagem_model->excluir($id_doador, $id_mensagem)
+  );
+  redirect('painel_doador/carregarPerfil/?alerta=1');
+}
 }
