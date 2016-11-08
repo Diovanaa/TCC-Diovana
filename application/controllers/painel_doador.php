@@ -16,6 +16,7 @@ class Painel_Doador extends MY_ControllerLogado {
     "dadosDoacaoMarcada" => $this->Doador_model->minhasDoacoesMarcadas());
     $this->load->view('doador/cabecalho_doador');
     $this->load->view('doador/home_doador_view', $data);
+      $this->load->view('doador/rodape_doador');
   }
 
   public function carregarPerfil() {// Carrega o perfil do doador
@@ -23,7 +24,7 @@ class Painel_Doador extends MY_ControllerLogado {
     $data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row(), "dadosDoacao" => $this->Doador_model->minhasDoacoes());
     $this->load->view('doador/cabecalho_doador');
     $this->load->view('doador/perfil_doador_teste2', $data);
-    $this->load->view('rodape_view');
+    $this->load->view('doador/rodape_doador');
   }
 
   function deslogar() {  // Sai do painel doador
@@ -36,7 +37,7 @@ class Painel_Doador extends MY_ControllerLogado {
     $data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
     $this->load->view('doador/cabecalho_doador');
     $this->load->view('doador/cadastrar_doacoes', $data);
-    $this->load->view('rodape_view');
+      $this->load->view('doador/rodape_doador');
   }
 
   public function carregaMinhasDoacoes() {//Carrega as minhas doações cadastradas
@@ -53,6 +54,7 @@ class Painel_Doador extends MY_ControllerLogado {
     $data = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
     $this->load->view('doador/cabecalho_doador');
     $this->load->view('doador/configuracoes_view', $data);
+    $this->load->view('doador/rodape_doador');
   }
 
   public function localizarHemocentros() {  //Chama tela de localizar hemocentros
@@ -62,6 +64,7 @@ class Painel_Doador extends MY_ControllerLogado {
     "dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
     $this->load->view('doador/cabecalho_doador');
     $this->load->view('doador/localizar_hemocentro', $data);
+    $this->load->view('doador/rodape_doador');
   }
 
   public function doarAqui() {  //Carrega lista de Doadores para doar em um hemocentro específico cadastrado no sistema
@@ -78,6 +81,7 @@ class Painel_Doador extends MY_ControllerLogado {
     "dadosDoacao" => $this->Doador_model->getDoacao($id_doacao)->row());
     $this->load->view('doador/cabecalho_doador');
     $this->load->view('doador/editar_doacoes', $data);
+      $this->load->view('doador/rodape_doador');
   }
 
   public function salvarDoacao() {// Salva as doações
@@ -100,7 +104,7 @@ class Painel_Doador extends MY_ControllerLogado {
       return;
     } else {
       $this->Doacao_model->Salvar();
-      redirect('Painel_doador/carregaMinhasDoacoes/?alerta=2');
+      redirect('Painel_doador/index/?alerta=2');
     }
   }
 
@@ -145,7 +149,7 @@ class Painel_Doador extends MY_ControllerLogado {
     $dados2 = array("dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
     $this->load->view('doador/cabecalho_doador');
     $this->load->view('doador/configuracoes_view', $dados2);
-    $this->load->view('rodape_view');
+    $this->load->view('doador/rodape_doador');
   }
 
   function AtualizarDoacao() { //Função de atualizar doações

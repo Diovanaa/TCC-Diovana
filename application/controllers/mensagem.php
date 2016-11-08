@@ -6,13 +6,14 @@ class Mensagem extends MY_ControllerLogado {
 
 
 public function salvarMensagem() {// Salva as Mensagens
-  $dados_Mensagem = array();
+  $dados_mensagem = array();
+
   $this->Mensagem_model->mensagem = $this->input->post('mensagem');
   $this->Mensagem_model->id_doador = $this->input->post('id_doador');
-  $this->Mensagem_model->id_hemocentro = $session_id = $this->session->userdata('id_doador');
+  $this->Mensagem_model->id_hemocentro = $session_id = $this->session->userdata('id_hemocentro');
 
   $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
-  $this->form_validation->set_rules('mensagem', 'Mensagem para doador', 'required|max_length[120]');
+  $this->form_validation->set_rules('mensagem', 'Mensagem para doador', 'required|max_length[700]');
 
   if ($this->form_validation->run() == FALSE) {
     $this->carregarEnvioMensagem();

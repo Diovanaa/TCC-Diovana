@@ -20,13 +20,14 @@ class Login extends CI_Controller {
 	{
 		$this->load->view('cabecalho_view');
 		$this->load->view('login_doador_view');
+		$this->load->view('rodape_view');
 
 	}
 	public function loginHemocentro()
 	{
 		$this->load->view('cabecalho_view');
 		$this->load->view('login_hemocentro_view');
-
+		$this->load->view('rodape_view');
 	}
 
 

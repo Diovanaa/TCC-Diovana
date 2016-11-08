@@ -6,7 +6,7 @@
             <li><a class="fonte2" href="<?=site_url('painel_doador/carregarPerfil')?>"><i class="fa fa-user" aria-hidden="true"></i> Perfil</a></li>
             <li><a class="fonte2" href="<?=site_url('painel_doador/localizarHemocentros')?>"><i class="fa fa-map-marker" aria-hidden="true"></i> Hemocentros</a></li>
             <li><a class="fonte2" href="<?=site_url('painel_doador/carregarCadastroDoacao')?>"><i class="fa fa-plus " aria-hidden="true"></i> Nova Doação</a></li>
-            <li><a class="fonte2" href="<?=site_url('painel_doador/carregaMinhasDoacoes')?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Minhas Doações</a></li>
+          <!--  <li><a class="fonte2" href="<?=site_url('painel_doador/carregaMinhasDoacoes')?>"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Minhas Doações</a></li>-->
             <li><a class="fonte2" href="<?=site_url('painel_doador/editaPerfilDoador')?>"><i class="fa fa-cog" aria-hidden="true"></i> Configurações</a></li>
 
           <!--  <li><a class="fonte2" href="<?=site_url('painel_doador/doarAqui')?>"><i class="fa fa-map-marker" aria-hidden="true"></i> Doar em um hemocentros</a></li>-->
@@ -22,6 +22,11 @@
                               <?php if ($this->input->get('alerta') == 2) { ?>
                               <div class="alert alert-success">
                                 Você adicionou uma nova doação com sucesso!!!
+                              </div>
+                              <?php } ?>
+                              <?php if ($this->input->get('alerta') == 4) { ?>
+                              <div class="alert alert-success">
+                                Doação alterada com sucesso!!!
                               </div>
                               <?php } ?>
                   </div>
@@ -74,7 +79,7 @@
                            <td>
                            <?php echo $row->status_doacao_marcada; ?></td>
 
-                             <td>                            
+                             <td>
                              <a  href="<?= site_url('painel_doador/excluirDoacaMarcada/' . $row->id_doacao_marcada) ?>"
                                class="btn btn-danger"
                                onclick="return confirm('Têm certeza que deseja excluir esta informação?')">

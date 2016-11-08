@@ -11,6 +11,7 @@ class Painel_hemocentro extends MY_ControllerLogado {
     "dadosDoacaoMarcada" => $this->Hemocentro_model->listarPossiveisDoadores());
     $this->load->view('hemocentro/cabecalho_hemocentro');
     $this->load->view('hemocentro/home_hemocentro_view', $data);
+      $this->load->view('hemocentro/rodape_hemocentro');
   }
   public function agenda() {
     $id_hemocentro = $this->session->userdata('id_hemocentro');
@@ -18,6 +19,7 @@ class Painel_hemocentro extends MY_ControllerLogado {
     "dadosDoacaoMarcada" => $this->Hemocentro_model->listarDoadores());
     $this->load->view('hemocentro/cabecalho_hemocentro');
     $this->load->view('hemocentro/agenda', $data);
+      $this->load->view('hemocentro/rodape_hemocentro');
   }
   public function teste_procurar(){
     $id_doador = $this->session->userdata('id_doador');
@@ -25,6 +27,7 @@ class Painel_hemocentro extends MY_ControllerLogado {
     "dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row());
     $this->load->view('hemocentro/cabecalho_hemocentro');
     $this->load->view('hemocentro/home_hemocentro_view', $data);
+      $this->load->view('hemocentro/rodape_hemocentro');
   }
   public function doacoesAguardandoResposta() {
     $id_doador = $this->input->post('id_doador');
@@ -34,6 +37,7 @@ class Painel_hemocentro extends MY_ControllerLogado {
     "dadosDoacaoMarcada" => $this->DoacaoMarcada_model->getDoacaoMarcada($id_doacao_marcada)->row());
     $this->load->view('doador/cabecalho_doador');
     $this->load->view('doador/home_hemocentro_view', $data);
+      $this->load->view('hemocentro/rodape_hemocentro');
   }
 
   public function editarEstoque($id_estoque) {
@@ -42,6 +46,7 @@ class Painel_hemocentro extends MY_ControllerLogado {
     "dadosEstoque" => $this->Hemocentro_model->getEstoque($id_estoque)->row());
     $this->load->view('hemocentro/cabecalho_hemocentro');
     $this->load->view('hemocentro/editar_estoque', $data);
+      $this->load->view('hemocentro/rodape_hemocentro');
   }
   function deslogar() {
     $this->session->sess_destroy();
@@ -56,6 +61,7 @@ class Painel_hemocentro extends MY_ControllerLogado {
   );
   $this->load->view('hemocentro/cabecalho_hemocentro');
   $this->load->view('hemocentro/procurar_doador_view', $data);
+    $this->load->view('hemocentro/rodape_hemocentro');
 }
 public function localizar(){
 
@@ -93,6 +99,7 @@ public function carregarPerfil() {
   "dadosEstoque" => $this->Hemocentro_model->meuEstoque());
   $this->load->view('hemocentro/cabecalho_hemocentro');
   $this->load->view('hemocentro/perfil_hemocentro_teste', $data);
+    $this->load->view('hemocentro/rodape_hemocentro');
 }
 
 public function carregaMeuEstoque() {
@@ -101,6 +108,7 @@ public function carregaMeuEstoque() {
 
   $this->load->view('hemocentro/cabecalho_hemocentro');
   $this->load->view('hemocentro/meu_estoque_view', $data);
+    $this->load->view('hemocentro/rodape_hemocentro');
 }
 
 public function editaPerfilHemocentro() {
@@ -108,6 +116,7 @@ public function editaPerfilHemocentro() {
   $data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row());
   $this->load->view('hemocentro/cabecalho_hemocentro');
   $this->load->view('hemocentro/configuracoes_hemocentro_view', $data);
+    $this->load->view('hemocentro/rodape_hemocentro');
 }
 
 public function carregarCadastroEstoque() {
@@ -115,6 +124,7 @@ public function carregarCadastroEstoque() {
   $data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row());
   $this->load->view('hemocentro/cabecalho_hemocentro');
   $this->load->view('hemocentro/cadastro_Estoque', $data);
+    $this->load->view('hemocentro/rodape_hemocentro');
 }
 public function carregaHorarioColeta() {
   $id_hemocentro = $this->session->userdata('id_hemocentro');
@@ -234,6 +244,7 @@ public function carregaRemarcarDoacao($id_doacao_marcada){
   "dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row());
   $this->load->view('hemocentro/cabecalho_hemocentro');
   $this->load->view('hemocentro/remarcar_doacao', $dados2);
+    $this->load->view('hemocentro/rodape_hemocentro');
 }
 
 public function carregaEnvioDeMensagem($id_doador){
@@ -242,11 +253,12 @@ public function carregaEnvioDeMensagem($id_doador){
   "dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row());
   $this->load->view('hemocentro/cabecalho_hemocentro');
   $this->load->view('hemocentro/enviar_mensagem', $dados2);
+    $this->load->view('hemocentro/rodape_hemocentro');
 }
 public function enviarMensagem(){
   $nova_mensagem = $this->input->post('mensagem');
 
-  
+
   $id_doacao_marcada = $this->input->post('id_doacao_marcada');
   $this->DoacaoMarcada_model->enviarMeensagem([
     "mensagem" => $nova_mensagem
