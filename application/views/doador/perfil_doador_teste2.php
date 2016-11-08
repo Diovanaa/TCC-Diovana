@@ -116,21 +116,17 @@
              </div>
 
 
-<!--
+
              <div class="panel panel-default panel-table">
                           <div class="panel-heading ">
                             <div class="row ">
                               <div class="col col-xs-6">
-                                <h1 class="panel-title">Minhas Doações</h1>
+                                <h1 class="panel-title">Mensagens</h1>
                               </div>
                               <div class="col col-xs-6 text-right">
 
 
-                                  <a href="<?=site_url('painel_doador/carregaMinhasDoacoes')?>">
-                                      </a>
-
-                                        <a href="<?=
-                                        site_url('painel_doador/carregarCadastroDoacao')?>" class="btn btn-primary"> Nova Doação </a>
+                                
 
                               </div>
                             </div>
@@ -142,9 +138,7 @@
                             <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Nome Hemocentro</th>
-                                    <th>Tipo doação</th>
-                                    <th>Data Doação</th>
+
                                     <!-- <th>Data Ultima Doação</th>-->
                               <!--  </tr>
                             </thead>
@@ -184,7 +178,7 @@
 </div>
                           </div>
 
-                        </div> -->
+                        </div>
         </div>
       </div>
     </div>
