@@ -15,4 +15,12 @@ class Mensagem_model extends CI_Model {
     return $this->db->insert('mensagem', $this);
   }
 
+  function  getDoador($id_doador){
+    $this->db
+    ->select("*")
+    ->from("Doador")
+    ->where('id_doador', $id_doador);
+    return $this->db->get();
+  }
+
 }

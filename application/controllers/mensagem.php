@@ -16,18 +16,17 @@ public function salvarMensagem() {// Salva as Mensagens
   $this->form_validation->set_rules('mensagem', 'Mensagem para doador', 'required|max_length[700]');
 
   if ($this->form_validation->run() == FALSE) {
-    $this->carregarEnvioMensagem();
+  redirect('Painel_hemocentro/localizarDoadores/?alerta=1');
     return;
   } else {
     $this->Mensagem_model->Salvar();
     redirect('Painel_hemocentro/localizarDoadores/?alerta=2');
   }
 }
-public function carregarEnvioMensagem() {
+public function carregarEnvioMensagem($id_doador) {
   $id_hemocentro = $this->session->userdata('id_hemocentro');
-  $id_doador = $this->input->post('id_doador');
   $data = array("dadosHemocentro" => $this->Hemocentro_model->getHemocentro($id_hemocentro)->row(),
-  "dadosDoador" => $this->Doador_model->getDoador($id_doador)->row());
+  "dadosDoador" => $this->Mensagem_model->getDoador($id_doador)->row());
   $this->load->view('hemocentro/cabecalho_hemocentro');
   $this->load->view('hemocentro/enviar_mensagem', $data);
 

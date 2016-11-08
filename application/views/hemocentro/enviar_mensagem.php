@@ -38,11 +38,14 @@
 
                    <div class="form-group col-lg-12">
                       <label for="dataDoacaoMarcada">Mensagem*:</label>
-                       <textarea class="form-control" rows="5"></textarea>
+                       <textarea class="form-control" rows="5"  name="mensagem"></textarea>
                   </div>
 
 
-      <!-- <input type="hidden" name="id_doador" value="<?php echo $dadosDoador->id_doador; ?>">-->
+
+
+
+       <input type="hidden" name="id_doador" value="<?php echo $dadosDoador->id_doador; ?>">
 
 
 
