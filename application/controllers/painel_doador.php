@@ -231,7 +231,7 @@ class Painel_Doador extends MY_ControllerLogado {
     $this->DoacaoMarcada_model->id_hemocentro = $this->input->post('id_hemocentro');
     $this->DoacaoMarcada_model->id_doador = $session_id = $this->session->userdata('id_doador');
     $this->DoacaoMarcada_model->status_doacao_marcada = 'Aguardando Confirmação';
-    $this->DoacaoMarcada_model->mensagem = 'vazio';
+    
 
     $this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
     $this->form_validation->set_rules('tipo_doacao_marcada', 'Tipo da Doacao Marcada', 'required|max_length[120]');

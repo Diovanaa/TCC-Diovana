@@ -127,7 +127,7 @@
            <!-- Repetindo a senha para ver se confere-->
 				   <div class="form-group col-lg-6">
 					        <label for="senhaDoador">Repita a senha*:</label>
-					        <input type="password" id="senhaDoador" name="doador_senha" placeholder="Repita sua senha"
+					        <input type="password" id="senhaDoador" name="doador_senhaconf" placeholder="Repita sua senha"
 					        value="" class="form-control" required  />
 			   	</div>
 

@@ -9,7 +9,7 @@ class DoacaoMarcada_model extends CI_Model {
   public $data_doacao_marcada;
   public $turno_doacao_marcada;
   public $status_doacao_marcada;
-  public $mensagem;
+  
 
   function __construct() {
     parent::__construct();

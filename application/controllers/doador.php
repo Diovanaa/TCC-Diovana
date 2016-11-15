@@ -25,22 +25,18 @@ class Doador extends CI_Controller {
 		if ($retorno > 0) {
 			redirect('Doador/index/?alerta=2');
 		} else {
-
 			$this->form_validation->set_error_delimiters('<div class="alert alert-danger">', '</div>');
-
-			$this->form_validation->set_rules('doador_nome', 'Nome', 'required|max_length[60]');
+			$this->form_validation->set_rules('doador_nome', 'Nome', 'required|max_length[120]');
 			$this->form_validation->set_rules('doador_telefone', 'Telefone', 'required|max_length[12]');
 			$this->form_validation->set_rules('doador_email', 'E-mail', 'required|max_length[60]|valid_email');
-			$this->form_validation->set_rules('doador_senha', 'Senha', 'required|max_length[30]|min_length[8]');
+			$this->form_validation->set_rules('doador_senha', 'Senha', 'required|max_length[120]|min_length[8]');
+			$this->form_validation->set_rules('doador_senhaconf', 'Confirmaçao de senha', 'required|matches[doador_senha]');
 			$this->form_validation->set_rules('doador_data_nascimento', 'Data de Nascimento', 'required|max_length[12]');
 			$this->form_validation->set_rules('doador_tipo_sanguineo', 'Tipo Sanguíneo', 'required|max_length[3]');
 			$this->form_validation->set_rules('doador_sexo', 'Sexo', 'required|max_length[20]');
-			$this->form_validation->set_rules('doador_endereco', 'Endereco', 'required|max_length[60]');
+			$this->form_validation->set_rules('doador_endereco', 'Endereco', 'required|max_length[120]');
 			$this->form_validation->set_rules('doador_estado', 'Estado', 'required|max_length[60]');
 			$this->form_validation->set_rules('doador_cidade', 'Cidade', 'required|max_length[60]');
-
-
-
 			if ($this->form_validation->run() == FALSE) {
 				$this->index();
 				return;
@@ -55,10 +51,7 @@ class Doador extends CI_Controller {
 				$this->Doador_model->endereco = $this->input->post('doador_endereco');
 				$this->Doador_model->estado = $this->input->post('doador_estado');
 				$this->Doador_model->cidade = $this->input->post('doador_cidade');
-			
-
 				$this->Doador_model->Salvar();
-
 				redirect('login/loginDoador/?alerta=3');
 			}
 

@@ -100,14 +100,33 @@ class Hemocentro_model extends CI_Model {
 		return $this->db->get()->result();
 
 	}
+	//function listarDoadores(){
+
+	//	$status = 'Doação Aceita';
+	//	$data_inicial = '2016-11-06';
+	//	$data_final = '2016-11-12';
+	//	$this->db
+	//	->select("*")
+	//	->from("doacao_marcada")
+	//	->join("doador", "doacao_marcada.id_doador = doador.id_doador")
+	//	->where('status_doacao_marcada', $status)
+	//  ->where('data_doacao_marcada BETWEEN "'. date('Y-m-d', strtotime($data_inicial)). '
+	//	" and "'. date('Y-m-d', strtotime($data_final)).'"')
+//		->where('id_hemocentro', $this->session->userdata('id_hemocentro'))
+//		->order_by("doacao_marcada.data_doacao_marcada", "asc");
+	//	return $this->db->get()->result();
+
+//	}
 	function listarDoadores(){
 
 		$status = 'Doação Aceita';
+		$data_atual = date('y/m/d');
 		$this->db
 		->select("*")
 		->from("doacao_marcada")
 		->join("doador", "doacao_marcada.id_doador = doador.id_doador")
 		->where('status_doacao_marcada', $status)
+	  ->where('data_doacao_marcada', $data_atual )
 		->where('id_hemocentro', $this->session->userdata('id_hemocentro'))
 		->order_by("doacao_marcada.data_doacao_marcada", "asc");
 		return $this->db->get()->result();

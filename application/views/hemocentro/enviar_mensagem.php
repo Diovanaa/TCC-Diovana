@@ -22,7 +22,8 @@
                <div class="panel-heading ">
                  <div class="row ">
                    <div class="col col-xs-6">
-                     <h1 class="panel-title">Enviar mensagem para doador</h1>
+                     <h1 class="panel-title">Enviar mensagem para doador voluntário:<b> <?php echo $dadosDoador->nome; ?><b>,
+                    <b> <?php echo $dadosDoador->tipo_sanguineo; ?><b> </h1>
                    </div>
                    <div class="col col-xs-6 text-right">
 
