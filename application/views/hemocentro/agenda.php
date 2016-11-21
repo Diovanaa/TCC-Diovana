@@ -57,6 +57,7 @@
                            <table class="table">
                            <thead>
                                <tr>
+                                   <th>Tipo</th>
                                    <th>Nome Doador</th>
                                    <th>Telefone</th>
                                    <th>Tipo da doação</th>
@@ -69,7 +70,7 @@
                            <tbody id="myTable">
                            <?php if (!empty( $dadosDoacaoMarcada)):
                               foreach ( $dadosDoacaoMarcada as $row): ?>
-
+                                        <td><?php echo $row->tipo_sanguineo; ?></td>
                                         <td><?php echo $row->nome; ?></td>
                                       <td><?php echo $row->telefone; ?></td>
                                       <td>
@@ -92,7 +93,7 @@
 
  <?php endforeach; ?>
                                      <?php else: {
-                                       echo "<td colspan='5' align = 'center'>
+                                       echo "<td colspan='7' align = 'center'>
                                      Não possuem doadores agendados
                                                  </td>";
                                      } ?>

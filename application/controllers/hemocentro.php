@@ -35,7 +35,8 @@ class Hemocentro extends CI_Controller {
       $this->form_validation->set_rules('hemocentro_telefone', 'Telefone', 'required|max_length[120]');
       $this->form_validation->set_rules('hemocentro_email', 'Email', 'required|max_length[120]');
       $this->form_validation->set_rules('hemocentro_senha', 'Senha', 'required|max_length[120]');
-      $this->form_validation->set_rules('hemocentro_endereco', 'Endereco', 'required|max_length[120]');
+      $this->form_validation->set_rules('hemocentro_senhaconf', 'Confirmar senha', 'required|matches[hemocentro_senha]');
+      $this->form_validation->set_rules('hemocentro_endereco', 'Endereço', 'required|max_length[120]');
       $this->form_validation->set_rules('hemocentro_bairro', 'Bairro', 'required|max_length[120]');
       $this->form_validation->set_rules('hemocentro_cidade', 'Cidade', 'required|max_length[120]');
       $this->form_validation->set_rules('hemocentro_cep', 'CEP', 'required|max_length[120]');

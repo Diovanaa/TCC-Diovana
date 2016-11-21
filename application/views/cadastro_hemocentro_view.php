@@ -88,7 +88,7 @@
         <div class="form-group col-lg-6">
           <label for="senhaHemocentro">Confirmar Senha*:</label>
           <input type="password"
-          id="senhaHemocentro" name="hemocentro_senha" placeholder="Repita a senha "
+          id="senhaHemocentro" name="hemocentro_senhaconf" placeholder="Repita a senha "
           value="" class="form-control" required  />
 				</div>
 

@@ -63,9 +63,9 @@
             <form action="<?= site_url('hemocentro/loginhemocentro') ?>" method="post">
                 <!-- Entrada email do doador-->
                 <div class="form-group col-lg-7"></br>
-                    <label for="emailHemocentro">Email*:</label>
+                    <label for="emailHemocentro">E-mail*:</label>
                     <input type="email" id="emailHemocentro" name="hemocentro_email"
-                           value="" class="form-control" required placeholder="Endereço de email"  />
+                           value="" class="form-control" required placeholder="Endereço de e-mail"  />
                 </div>
                 <!-- Entrada senha do doador-->
                 <div class="form-group col-lg-7 ">

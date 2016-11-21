@@ -89,7 +89,6 @@ class Hemocentro_model extends CI_Model {
 	}
 
 	function listarPossiveisDoadores(){
-
 		$status = 'Aguardando Confirmação';
 		$this->db
 		->select("*")
@@ -97,9 +96,11 @@ class Hemocentro_model extends CI_Model {
 		->join("doador", "doacao_marcada.id_doador = doador.id_doador")
 		->where('status_doacao_marcada', $status)
 		->where('id_hemocentro', $this->session->userdata('id_hemocentro'));
-		return $this->db->get()->result();
 
+		return $this->db->get()->result();
 	}
+
+
 	//function listarDoadores(){
 
 	//	$status = 'Doação Aceita';

@@ -64,11 +64,7 @@
                     <input type="text" id="nomeDoador" name="doador_nome" placeholder="Ex.: João da Silva"
                     value="" class="form-control" required  />
 				      </div>
-              <div class="form-group col-lg-12">
-                    <label for="emailDoador">Email*:</label>
-                    <input type="E-mail" id="emailDoador" name="doador_email" placeholder="joao@email.com"
-                    value="" class="form-control" required   />
-  						</div>
+
 
               <!-- Entrada data de nascimento do doador-->
 
@@ -117,7 +113,11 @@
                     </select>
            </div>
             <!-- Entrada email do doador-->
-
+            <div class="form-group col-lg-12">
+                  <label for="emailDoador">E-mail*:</label>
+                  <input type="E-mail" id="emailDoador" name="doador_email" placeholder="joao@email.com"
+                  value="" class="form-control" required   />
+            </div>
             <!-- Entrada senha do doador-->
 				    <div class="form-group col-lg-6">
 					         <label for="senhaDoador">Senha*:</label>

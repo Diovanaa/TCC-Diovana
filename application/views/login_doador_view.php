@@ -55,16 +55,24 @@
 						                <h3 >Verifique se o email e a senha estão corretos.</h3>
 						        </div>
 						<?php } ?>
-						<?php if ($this->input->get('alerta') == 2) { ?>
+						<?php if ($this->input->get('alerta') == 6) { ?>
 						        <div class="alert alert-danger">
 							               Você não possui acesso a url.
 						        </div>
 						<?php } ?>
+            <?php if ($this->input->get('alerta') == 6) { ?>
+              <div class="alert alert-danger col-lg-7 meio">
+                  Acesso negado!
+              </div>
+            <div class="alert alert-danger col-lg-7">
+                  Você não está logado ou não possui acesso a URL que tentou acessar!
+            </div>
+            <?php } ?>
 <form action="<?=site_url('doador/logindoador')?>" method="post">
   <!-- Entrada email do doador-->
   <div class="form-group col-lg-7"></br>
-        <label for="emailDoador">Email*:</label>
-        <input type="email" id="emailDoador" name="doador_email" placeholder="Endereço de email"
+        <label for="emailDoador">E-mail*:</label>
+        <input type="email" id="emailDoador" name="doador_email" placeholder="Endereço de e-mail"
         value="" class="form-control" required   />
   </div>
   <!-- Entrada senha do doador-->

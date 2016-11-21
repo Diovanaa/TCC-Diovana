@@ -36,6 +36,6 @@ public function excluir($id_mensagem, $id_doador) {  // Função de excluir Mens
   $data = array(
     "excluir" => $this->Mensagem_model->excluir($id_doador, $id_mensagem)
   );
-  redirect('painel_doador/carregarPerfil/?alerta=1');
+  redirect('painel_doador/mensagens/?alerta=1');
 }
 }

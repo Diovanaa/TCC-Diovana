@@ -6,7 +6,7 @@ class MY_ControllerLogado extends CI_Controller{
     parent::__construct();
 
       if(! $this->session->userdata('usuarioLogado')){
-        redirect('home/index');
+        redirect('login/loginDoador/?alerta=6');
       }
 
 

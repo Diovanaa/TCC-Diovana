@@ -6,12 +6,10 @@
     margin: 0 auto;
     padding-top:50px;
 }
-.navbar-brand{
+.navbar-brand, .navbar-nav{
   color: white !important;
 }
-.navbar-nav{
-  color: white !important;
-}
+
 .arial{
   font-family: verdana !important;
 }
@@ -127,16 +125,16 @@ h4{
     height: 100px;
     color: white;
 }
-.ativo{
-    background-color: #EE3B3B;
-    color: black !important;
-}
 .diferente2, .diferente4, .diferente6{
     background-color: #4682B4;
     height: 100px;
     color: white;
 }
 
+.ativo{
+    background-color: #EE3B3B;
+    color: black !important;
+}
 .titulo{
     text-align: center;
     font-size: 30px;

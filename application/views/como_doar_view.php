@@ -37,15 +37,16 @@
 </br>
 </br>
 </br><div class="row">
-    <div class="col-lg-12">
-      <h1 class="meio">Como doar?</h1>
-    </div>
-    <div class="col-lg-12">
+    <div class="  col-lg-12">
+      <h1 class="meio ">Como doar?</h1>
       <h3 class="meio">Existem diferentes tipos de doação de sangue,<br> os quais dependem da necessidade de quem vai receber o sangue coletado.
       </h3> <br>
-      <div class="col-lg-2">
+    </div>
+    <div class=" col-lg-12">
+
+      <div class="= col-lg-2">
       </div>
-      <div class="col-lg-8 jumbotron ">
+      <div class=" col-lg-8 jumbotron ">
         <h4>Doação de Sangue Total </h4> <br>
         É a coleta de sangue de doadores voluntários convencional, onde são retirando cerca de 450 ml de sangue.
         O processo da doação dura cerca de uma hora.
@@ -54,7 +55,7 @@
         Os doadores voluntários precisam ter entre 16 e 68 anos de idade, estar com a saúde em dia e pesar no mínimo 50 kg.
         O intervalo entre as doações são de 90 dias para homens e 120 dias para mulheres.
       </div>
-      <div class="col-lg-1">
+      <div class=" col-lg-1">
       </div>
 
 

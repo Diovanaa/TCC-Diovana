@@ -16,7 +16,7 @@
 
         </div>
         <br>
-        <div  class="col-sm-9 col-sm-offset-2 row">
+        <div  class="col-sm-9 col-sm-offset-2 col-md-10 col-md-offset-2 row">
                               <?php if ($this->input->get('alerta') == 1) { ?>
                               <div class="alert alert-success">
                                 Você excluiu a Mensagem com sucesso!!!

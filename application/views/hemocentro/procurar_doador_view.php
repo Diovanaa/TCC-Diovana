@@ -19,9 +19,9 @@
         </div>
         <br>
         <div  class="col-sm-9 col-sm-offset-2 row">
-          <?php if ($this->input->get('aviso') == 2) { ?>
-            <div class="alert alert-danger">
-              A sua busca não retornou nenhum resultado...
+          <?php if ($this->input->get('alerta') == 2) { ?>
+            <div class="alert alert-success">
+              Mensagem enviada com sucesso!!!
             </div>
             <?php } ?>
                   </div>

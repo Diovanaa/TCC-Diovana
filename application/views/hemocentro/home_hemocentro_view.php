@@ -15,7 +15,7 @@
 
 
         </div>
-        <div class="col-lg-12">
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 col-lg-12">
           <h1 class="meio">Lista de Doadores aguardando confirmação</h1>
         </div>
         <div class="col-sm-9 col-sm-offset-2">
@@ -38,7 +38,7 @@
 
 <div class="col-lg-2"></div>
 
-        <div class="col-lg-10">
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 col-lg-10">
                       <div class="panel panel-default panel-table">
                          <div class="panel-heading ">
                            <div class="row ">
@@ -57,6 +57,7 @@
                            <table class="table">
                            <thead>
                                <tr>
+                                   <th>Tipo Sanguineo</th>
                                    <th>Nome Doador</th>
                                    <th>Telefone</th>
                                    <th>Tipo da doação</th>
@@ -71,11 +72,10 @@
                            <tbody id="myTable">
                            <?php if (!empty( $dadosDoacaoMarcada)):
                               foreach ( $dadosDoacaoMarcada as $row): ?>
-
-                                        <td><?php echo $row->nome; ?></td>
+                                      <td><?php echo $row->tipo_sanguineo; ?></td>
+                                      <td><?php echo $row->nome; ?></td>
                                       <td><?php echo $row->telefone; ?></td>
-                                      <td>
-                                        <?php echo $row->tipo_doacao_marcada; ?>
+                                      <td> <?php echo $row->tipo_doacao_marcada; ?>
                                       </td>
                                       <td>
                                         <input type="date"
