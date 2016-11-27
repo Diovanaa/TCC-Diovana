@@ -57,19 +57,19 @@
                <a class="diferente" href="<?=site_url('cadastro/chamandoCadastroDoador')?>" ></br>Cadastro de doador</a>
              </div>
              <div class="col-lg-2 col-md-6 col-xs-6 diferente2">
-               <a class="diferente" href="<?=site_url('como_doar/chamandoComoDoar')?>" ></br>Como doar</a>
+               <a class="diferente" href="<?=site_url('home/comoDoar')?>" ></br>Como doar</a>
              </div>
              <div class="col-lg-2 col-md-6 col-xs-6 diferente3">
               <a class="diferente" href="<?=site_url('cadastro/chamandoCadastroHemocentro')?>" ></br> Cadastro de hemocentro  </a>
              </div>
              <div class="col-lg-2 col-md-6 col-xs-6 diferente4">
-               <a class="diferente" href="<?=site_url('ondedoar/chamandoOndeDoar')?>" > </br> Onde doar? </a>
+               <a class="diferente" href="<?=site_url('home/ondeDoar')?>" > </br> Onde doar? </a>
              </div>
              <div class="col-lg-2 col-md-6 col-xs-6 diferente5">
-               <a class="diferente" href="<?=site_url('como_doar/chamandoComoDoar')?>" ></br>Estoques</a>
+               <a class="diferente" href="<?=site_url('home/etapasDoacao')?>" ></br>Etapas da doação</a>
              </div>
              <div class="col-lg-2 col-md-6 col-xs-6 diferente6">
-              <a class="diferente" href="<?=site_url('login/loginHemocentro')?>" ></br>Sangue</a>
+              <a class="diferente" href="<?=site_url('home/sangue')?>" ></br>Sangue</a>
              </div>
 
 </div>

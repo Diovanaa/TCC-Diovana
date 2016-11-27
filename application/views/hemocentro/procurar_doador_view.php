@@ -60,7 +60,7 @@
 
                      <div class="col-sm-12">
                        <div class="form-group col-sm-9">
-                         <label for="">Por favor digite o estado ou tipo sanguíneo</label>
+                         <label for="">Por favor digite o <b>Estado</b> ou <b>Tipo Sanguíneo</b></label>
                          <br>	<input
                          type="text" class="form-control" name="busca"
                          placeholder="Procurar Doador" value=""   />

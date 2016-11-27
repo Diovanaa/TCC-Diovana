@@ -25,5 +25,24 @@ class Home extends CI_Controller {
 		$this->load->view('rodape_view');
 
 	}
-
+	public function comoDoar(){
+		$this->load->view('cabecalho_view');
+		$this->load->view('como_doar_view');
+		$this->load->view('rodape_view');
+	}
+	public function etapasDoacao(){
+		$this->load->view('cabecalho_view');
+		$this->load->view('etapas');
+		$this->load->view('rodape_view');
+	}
+	public function ondeDoar(){
+		$this->load->view('cabecalho_view');
+		$this->load->view('onde_doar_view');
+		$this->load->view('rodape_view');
+	}
+	public function sangue(){
+		$this->load->view('cabecalho_view');
+		$this->load->view('sangue');
+		$this->load->view('rodape_view');
+	}
 }
